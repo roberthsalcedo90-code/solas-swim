@@ -3309,14 +3309,14 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       column-gap: 4px;
-      row-gap: 24px;
+      row-gap: 4px;
       align-items: start;
     }
     #savoir-faire .craft-card {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
+      position: relative;
+      display: block;
       min-width: 0;
+      overflow: hidden;
     }
     #savoir-faire .craft-card.span-2,
     #savoir-faire .craft-card.span-2-row3 {
@@ -3325,12 +3325,21 @@
     #savoir-faire .craft-card .craft-media,
     #savoir-faire .craft-card.span-2 .craft-media,
     #savoir-faire .craft-card.span-2-row3 .craft-media {
+      position: relative;
       width: 100% !important;
       height: clamp(320px, 32vw, 500px) !important;
       aspect-ratio: unset !important;
       flex: none !important;
       overflow: hidden;
       background: var(--bg-warm);
+    }
+    #savoir-faire .craft-card .craft-media::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.42) 0%, rgba(0, 0, 0, 0.08) 38%, transparent 65%);
+      pointer-events: none;
+      z-index: 1;
     }
     #savoir-faire .craft-card .craft-media img {
       width: 100% !important;
@@ -3340,12 +3349,26 @@
       display: block !important;
     }
     #savoir-faire .craft-card .craft-caption {
-      flex-shrink: 0;
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 20px;
+      z-index: 2;
+      padding: 0;
+      pointer-events: none;
+    }
+    #savoir-faire .craft-card .craft-card-title {
+      color: #FFFFFF !important;
+      font-size: 13.5px !important;
+      font-weight: 600 !important;
+      letter-spacing: 1.2px !important;
+      margin: 0 !important;
+      text-shadow: 0 1px 10px rgba(0, 0, 0, 0.38);
     }
     @media (max-width: 992px) {
       #savoir-faire .explore-collections-grid {
         grid-template-columns: repeat(2, 1fr);
-        row-gap: 20px;
+        row-gap: 4px;
       }
       #savoir-faire .craft-card.span-2,
       #savoir-faire .craft-card.span-2-row3 {
@@ -3355,6 +3378,11 @@
       #savoir-faire .craft-card.span-2 .craft-media,
       #savoir-faire .craft-card.span-2-row3 .craft-media {
         height: clamp(240px, 56vw, 380px) !important;
+      }
+      #savoir-faire .craft-card .craft-caption {
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
       }
     }
 
