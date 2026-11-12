@@ -3767,741 +3767,242 @@
     }
 
     /* ==========================================================================
-       REDISEÑO ESTRUCTURAL HOME SOLAZ (8 SECCIONES EDITORIALES)
+       DISEÑO HOME SEGÚN MOCKUP OFICIAL PDF (SOLAZ SWIM)
        ========================================================================== */
-    /* 1. Barra Superior / Ticker en Movimiento (Anuncio) */
-    .solaz-top-ticker {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 32px;
-      background: #141413;
-      color: #FAF9F6;
-      z-index: 260;
-      overflow: hidden;
+    /* 1. Barra / Ticker en Movimiento debajo del Hero (Terracota Cálido) */
+    .solaz-hero-ticker {
       display: flex;
       align-items: center;
+      width: 100%;
+      height: 36px;
+      background: linear-gradient(90deg, #DC7B45 0%, #E58C59 50%, #DC7B45 100%);
+      color: #141413;
+      overflow: hidden;
       text-decoration: none;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       cursor: pointer;
-      transition: background 0.25s ease;
+      border-top: 1px solid rgba(20, 20, 19, 0.08);
+      border-bottom: 1px solid rgba(20, 20, 19, 0.08);
+      transition: filter 0.2s ease;
     }
-    .solaz-top-ticker:hover {
-      background: #262523;
+    .solaz-hero-ticker:hover {
+      filter: brightness(1.04);
     }
     .solaz-ticker-track {
       display: flex;
       width: max-content;
-      animation: solazTickerMarquee 28s linear infinite;
+      animation: solazTickerMarquee 26s linear infinite;
       will-change: transform;
     }
-    .solaz-top-ticker:hover .solaz-ticker-track {
+    .solaz-hero-ticker:hover .solaz-ticker-track {
       animation-play-state: paused;
     }
     .solaz-ticker-item {
       display: inline-flex;
       align-items: center;
-      gap: 28px;
-      padding-right: 28px;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
+      gap: 22px;
+      padding-right: 22px;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.2px;
       white-space: nowrap;
-      color: #FAF9F6;
+      color: #141413;
+    }
+    .solaz-ticker-item strong {
+      font-weight: 700;
     }
     .solaz-ticker-dot {
       display: inline-block;
-      width: 4px;
-      height: 4px;
+      width: 5px;
+      height: 5px;
       border-radius: 50%;
-      background: #D95B38;
-    }
-    .solaz-ticker-cta-tag {
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      font-weight: 600;
-      color: #F3EFE6;
+      background: #141413;
+      flex-shrink: 0;
     }
     @keyframes solazTickerMarquee {
       0% { transform: translate3d(0, 0, 0); }
       100% { transform: translate3d(-50%, 0, 0); }
     }
 
-    /* Ajuste de offset para header y paneles con la barra ticker superior */
-    .site-header {
-      top: 32px !important;
-    }
-    .jacq-mega-panel {
-      top: 90px !important;
-    }
-    .solaz-view:not(#view-home) {
-      padding-top: 32px;
-    }
-
-    /* 2. Banner Principal en Video (Slim Hero Section) */
-    #view-home .central-hero-banner.slim-hero {
-      margin-top: 32px;
-      height: 62vh !important;
-      min-height: 410px !important;
-      max-height: 560px !important;
-      padding-bottom: 36px !important;
-    }
-    .hero-brand-attributes {
+    /* 2. Barras de Subtítulo de Colección ("New - The Sun - Mujeres" / "Hombres" / "Otras Colecciones") */
+    .solaz-subcat-strip {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
       align-items: center;
-      gap: 8px 14px;
-      margin-top: 4px;
-      margin-bottom: 6px;
+      padding: 8px 20px;
+      background: #EFEFEF;
+      font-size: 12px;
+      color: #1A1A1A;
+      letter-spacing: 0.2px;
     }
-    .hero-attr-pill {
-      font-size: 10.5px;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.94);
-      background: rgba(20, 20, 19, 0.36);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      border: 1px solid rgba(255, 255, 255, 0.24);
-      padding: 4px 11px;
+    .solaz-subcat-strip.align-right {
+      justify-content: flex-end;
     }
-    .hero-main-slogan {
-      font-family: var(--font-sans);
-      font-size: clamp(26px, 4vw, 44px) !important;
-      font-weight: 700 !important;
-      letter-spacing: 4px !important;
-      text-transform: uppercase;
-      line-height: 1.05;
-      text-shadow: 0 2px 18px rgba(0, 0, 0, 0.38);
-      margin: 0;
+    .solaz-subcat-strip.align-left {
+      justify-content: flex-start;
     }
-
-    /* 3. Colección Principal: Zun (Hileras por Género) */
-    .zun-gender-section {
-      padding: 28px 0 12px 0;
-      background: var(--bg-canvas);
-    }
-    .zun-section-intro {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      padding: 0 28px 16px 28px;
-      border-bottom: 1px solid var(--border-hairline);
-      margin-bottom: 14px;
-    }
-    .zun-section-eyebrow {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      display: block;
-      margin-bottom: 4px;
-    }
-    .zun-section-title {
-      font-size: clamp(18px, 2.2vw, 24px);
-      font-weight: 700;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      color: var(--text-primary);
-      margin: 0;
-    }
-    .zun-gender-row {
-      margin-bottom: 22px;
-    }
-    .zun-gender-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 28px;
-    }
-    .zun-gender-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #141413;
-      color: #FFFFFF;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 6px 14px;
-    }
-    .zun-gender-link {
-      font-size: 11.5px;
-      font-weight: 600;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      text-decoration: underline;
-      text-underline-offset: 4px;
-      color: var(--text-primary);
+    .solaz-subcat-link {
+      color: #1A1A1A;
+      text-decoration: none;
+      cursor: pointer;
       transition: opacity 0.2s ease;
     }
-    .zun-gender-link:hover {
+    .solaz-subcat-link:hover {
       opacity: 0.65;
     }
-
-    /* 4. Iconos y Bloques de Información Dinámica (Pilares de Marca) */
-    .solaz-pillars-section {
-      padding: 54px 28px;
-      background: #F4F1EA;
-      border-top: 1px solid var(--border-hairline);
-      border-bottom: 1px solid var(--border-hairline);
-    }
-    .solaz-pillars-header {
-      text-align: center;
-      margin-bottom: 36px;
-    }
-    .solaz-pillars-eyebrow {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 2.2px;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      display: block;
-      margin-bottom: 6px;
-    }
-    .solaz-pillars-heading {
-      font-size: clamp(17px, 2vw, 22px);
+    .solaz-subcat-link strong {
       font-weight: 700;
-      letter-spacing: 1.4px;
+    }
+
+    /* 3. Sección de 6 Iconos y Pilares ("SUN SOAKED · SOUL-LED · EFFORTLESSLY BOLD") */
+    .solaz-pillars-section {
+      padding: 46px 28px 52px 28px;
+      background: #FFFFFF;
+    }
+    .solaz-pillars-mottos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: clamp(28px, 6vw, 88px);
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+      text-align: center;
+    }
+    .solaz-motto-phrase {
+      font-family: var(--font-display);
+      font-size: clamp(16px, 2.2vw, 25px);
+      font-weight: 700;
+      letter-spacing: 3.5px;
       text-transform: uppercase;
-      color: var(--text-primary);
-      margin: 0;
+      color: #141413;
     }
     .solaz-pillars-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 16px;
-      max-width: 1440px;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 18px 12px;
+      max-width: 1120px;
       margin: 0 auto;
+      align-items: start;
     }
     .solaz-pillar-card {
-      background: #FAF9F6;
-      border: 1px solid rgba(20, 20, 19, 0.08);
-      padding: 28px 20px;
-      text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 12px;
+      text-align: center;
+      gap: 10px;
+      padding: 8px 6px;
       opacity: 0;
-      transform: translateY(22px);
-      transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-                  transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-                  box-shadow 0.35s ease,
-                  border-color 0.35s ease,
-                  background 0.35s ease;
+      transform: translateY(18px);
+      transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
     }
     .solaz-pillar-card.is-visible {
       opacity: 1;
       transform: translateY(0);
     }
     .solaz-pillar-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(20, 20, 19, 0.28);
-      box-shadow: 0 14px 32px rgba(20, 20, 19, 0.07);
-      background: #FFFFFF;
+      transform: translateY(-5px);
     }
     .solaz-pillar-icon {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      background: #EFECE4;
-      color: #141413;
+      width: 58px;
+      height: 58px;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s ease, color 0.3s ease;
+      color: #B87348;
+      transition: transform 0.35s ease, color 0.3s ease;
     }
     .solaz-pillar-card:hover .solaz-pillar-icon {
-      transform: scale(1.12) rotate(-4deg);
-      background: #141413;
-      color: #FAF9F6;
+      transform: scale(1.1);
+      color: #9E5B32;
     }
     .solaz-pillar-title {
-      font-size: 12.5px;
-      font-weight: 700;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      color: var(--text-primary);
-      margin: 0;
-      line-height: 1.35;
-    }
-    .solaz-pillar-desc {
       font-size: 11.5px;
-      line-height: 1.55;
-      color: var(--text-muted);
+      font-weight: 400;
+      line-height: 1.25;
+      color: #1A1A1A;
       margin: 0;
+      max-width: 135px;
     }
 
-    /* 5. Colección: Holiday Flame (Grid de 4 Bloques) */
-    .holiday-flame-section {
-      padding: 44px 0 28px 0;
-      background: var(--bg-canvas);
-    }
-    .holiday-flame-header {
+    /* 4. Barra "Otras Colecciones · Descubre nuestro universo solaz · Colecciones - Holiday Flame." */
+    .solaz-other-collections-bar {
       display: flex;
       justify-content: space-between;
-      align-items: flex-end;
-      padding: 0 28px 18px 28px;
-    }
-    .holiday-flame-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 4px;
-    }
-    .hf-block {
-      position: relative;
-      height: clamp(360px, 46vw, 580px);
-      overflow: hidden;
-      background: #1F1918;
-      cursor: pointer;
-      display: block;
-    }
-    .hf-block img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 22%;
-      transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1), filter 0.5s ease;
-    }
-    .hf-block:hover img {
-      transform: scale(1.07);
-    }
-    .hf-block-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.68) 0%, rgba(0, 0, 0, 0.14) 48%, rgba(0, 0, 0, 0.12) 100%);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 18px;
-      color: #FFFFFF;
-      transition: background 0.35s ease;
-    }
-    .hf-block:hover .hf-block-overlay {
-      background: linear-gradient(to top, rgba(140, 22, 28, 0.72) 0%, rgba(0, 0, 0, 0.18) 55%, rgba(0, 0, 0, 0.1) 100%);
-    }
-    .hf-gender-tag {
-      align-self: flex-start;
-      background: rgba(20, 20, 19, 0.78);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-      color: #FFFFFF;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1.8px;
-      text-transform: uppercase;
-      padding: 5px 11px;
-      border: 1px solid rgba(255, 255, 255, 0.22);
-    }
-    .hf-block-bottom {
-      transform: translateY(4px);
-      transition: transform 0.35s ease;
-    }
-    .hf-block:hover .hf-block-bottom {
-      transform: translateY(0);
-    }
-    .hf-block-title {
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin: 0 0 4px 0;
-      color: #FFFFFF;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
-    }
-    .hf-block-price {
-      font-size: 12px;
-      font-weight: 600;
-      color: rgba(255, 255, 255, 0.92);
-      display: block;
-    }
-
-    /* 6. Colección: TQM (Diseño Dual / Split Screen) */
-    .tqm-split-section {
-      padding: 36px 0 24px 0;
-      background: var(--bg-canvas);
-    }
-    .tqm-split-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      padding: 0 28px 18px 28px;
-    }
-    .tqm-split-container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 4px;
-    }
-    .tqm-split-col {
-      position: relative;
-      height: clamp(440px, 56vw, 720px);
-      overflow: hidden;
-      background: #E5E0D5;
-      cursor: pointer;
-    }
-    .tqm-split-col > img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 24%;
-      transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-    .tqm-split-col:hover > img {
-      transform: scale(1.05);
-    }
-    .tqm-split-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(16, 16, 15, 0.78) 0%, rgba(16, 16, 15, 0.18) 50%, rgba(16, 16, 15, 0.12) 100%);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 28px;
-      color: #FFFFFF;
-    }
-    .tqm-col-badge {
-      align-self: flex-start;
-      background: #FFFFFF;
-      color: #141413;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 6px 14px;
-    }
-    .tqm-col-content {
-      max-width: 520px;
-    }
-    .tqm-col-heading {
-      font-size: clamp(20px, 2.5vw, 30px);
-      font-weight: 700;
-      letter-spacing: 1.6px;
-      text-transform: uppercase;
-      margin: 0 0 6px 0;
-      color: #FFFFFF;
-      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
-    }
-    .tqm-col-sub {
-      font-size: 12.5px;
-      color: rgba(255, 255, 255, 0.9);
-      margin: 0 0 14px 0;
-      line-height: 1.45;
-    }
-    .tqm-quick-pills {
-      display: flex;
+      align-items: center;
       flex-wrap: wrap;
-      gap: 8px;
-    }
-    .tqm-quick-pill {
-      background: rgba(255, 255, 255, 0.16);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      border: 1px solid rgba(255, 255, 255, 0.38);
-      color: #FFFFFF;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      padding: 7px 13px;
-      transition: background 0.25s ease, color 0.25s ease;
-    }
-    .tqm-quick-pill:hover {
-      background: #FFFFFF;
-      color: #141413;
-    }
-
-    /* 7. Franja de Envíos y Logística (Transición Limpia Animada) */
-    .solaz-logistics-strip {
-      padding: 56px 28px;
-      background: #FAF9F6;
-      border-top: 1px solid var(--border-hairline);
-      border-bottom: 1px solid var(--border-hairline);
-    }
-    .solaz-logistics-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-      max-width: 1260px;
-      margin: 0 auto;
-    }
-    .solaz-logistics-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 24px 20px;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-    .solaz-logistics-item:hover {
-      transform: translateY(-4px);
-    }
-    .solaz-logistics-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      border: 1px solid rgba(20, 20, 19, 0.16);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 14px;
-      color: #141413;
-      animation: solazIconFloat 3.6s ease-in-out infinite;
-      transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-    }
-    .solaz-logistics-item:nth-child(2) .solaz-logistics-icon {
-      animation-delay: 0.6s;
-    }
-    .solaz-logistics-item:nth-child(3) .solaz-logistics-icon {
-      animation-delay: 1.2s;
-    }
-    .solaz-logistics-item:hover .solaz-logistics-icon {
-      background: #141413;
-      color: #FAF9F6;
-      border-color: #141413;
-    }
-    @keyframes solazIconFloat {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
-    }
-    .solaz-logistics-title {
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--text-primary);
-      margin: 0 0 6px 0;
-    }
-    .solaz-logistics-sub {
-      font-size: 12px;
-      color: var(--text-muted);
-      line-height: 1.5;
-      max-width: 320px;
-      margin: 0;
-    }
-
-    /* 8. Sección Final: Explora Todo el Universo Solaz */
-    .solaz-universe-finale {
-      padding: 64px 28px 56px 28px;
-      background: #141413;
-      color: #FAF9F6;
-      text-align: center;
-    }
-    .solaz-universe-eyebrow {
-      font-size: 10.5px;
-      font-weight: 600;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: rgba(250, 249, 246, 0.65);
-      display: block;
-      margin-bottom: 10px;
-    }
-    .solaz-universe-heading {
-      font-family: var(--font-display);
-      font-size: clamp(26px, 3.6vw, 42px);
-      font-weight: normal;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #FFFFFF;
-      margin: 0 0 24px 0;
-    }
-    .solaz-universe-cta-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
       gap: 12px;
-      background: #FAF9F6;
-      color: #141413;
-      font-size: 12.5px;
-      font-weight: 700;
-      letter-spacing: 1.8px;
-      text-transform: uppercase;
-      padding: 16px 36px;
-      border: 1px solid #FAF9F6;
-      cursor: pointer;
-      transition: background 0.3s ease, color 0.3s ease, transform 0.25s ease;
-      margin-bottom: 42px;
+      padding: 18px 20px 14px 20px;
+      background: #FFFFFF;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     }
-    .solaz-universe-cta-btn:hover {
-      background: transparent;
-      color: #FFFFFF;
-      transform: translateY(-2px);
-    }
-    .solaz-universe-shortcuts {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 10px;
-      max-width: 1380px;
-      margin: 0 auto;
-    }
-    .solaz-universe-card {
-      position: relative;
-      height: 220px;
-      overflow: hidden;
-      background: #232220;
-      cursor: pointer;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-    }
-    .solaz-universe-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 25%;
-      opacity: 0.78;
-      transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease;
-    }
-    .solaz-universe-card:hover img {
-      transform: scale(1.08);
-      opacity: 0.95;
-    }
-    .solaz-universe-card-label {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.76) 0%, rgba(0, 0, 0, 0.15) 65%, transparent 100%);
+    .solaz-other-left {
       display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: flex-start;
-      padding: 16px;
-      text-align: left;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 16px;
     }
-    .solaz-universe-card-name {
-      font-size: 12.5px;
+    .solaz-other-heading {
+      font-family: var(--font-display);
+      font-size: clamp(20px, 2.3vw, 27px);
       font-weight: 700;
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
-      color: #FFFFFF;
+      color: #141413;
       margin: 0;
+      letter-spacing: 0.3px;
+    }
+    .solaz-universe-inline-cta {
+      font-size: 12px;
+      color: #4A4A4A;
+      text-decoration: none;
+      padding: 4px 10px;
+      background: #F5F5F3;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .solaz-universe-inline-cta strong {
+      color: #141413;
+      font-weight: 700;
+    }
+    .solaz-universe-inline-cta:hover {
+      background: #141413;
+      color: #FFFFFF;
+    }
+    .solaz-universe-inline-cta:hover strong {
+      color: #FFFFFF;
     }
 
-    /* Responsive para las 8 secciones nuevas */
-    @media (max-width: 1024px) {
+    @media (max-width: 900px) {
       .solaz-pillars-grid {
         grid-template-columns: repeat(3, 1fr);
+        gap: 24px 12px;
       }
-      .holiday-flame-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .solaz-universe-shortcuts {
-        grid-template-columns: repeat(3, 1fr);
+      .solaz-pillars-mottos {
+        gap: 18px 28px;
       }
     }
-    @media (max-width: 768px) {
-      #view-home .central-hero-banner.slim-hero {
-        height: 54svh !important;
-        min-height: 340px !important;
-        max-height: 450px !important;
-        padding-bottom: 24px !important;
-      }
-      .zun-section-intro,
-      .zun-gender-bar,
-      .holiday-flame-header,
-      .tqm-split-header {
-        padding-left: 16px;
-        padding-right: 16px;
-      }
+    @media (max-width: 600px) {
       .solaz-pillars-section {
-        padding: 38px 16px;
+        padding: 34px 16px 38px 16px;
       }
       .solaz-pillars-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        gap: 20px 10px;
       }
-      .solaz-pillar-card:last-child {
-        grid-column: span 2;
+      .solaz-motto-phrase {
+        font-size: 14px;
+        letter-spacing: 2px;
       }
-      .tqm-split-container {
-        grid-template-columns: 1fr;
+      .solaz-other-collections-bar {
+        padding: 14px 14px 12px 14px;
       }
-      .tqm-split-col {
-        height: clamp(360px, 92vw, 480px);
-      }
-      .tqm-split-overlay {
-        padding: 20px 16px;
-      }
-      .solaz-logistics-strip {
-        padding: 36px 16px;
-      }
-      .solaz-logistics-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-      .solaz-universe-finale {
-        padding: 46px 16px 40px 16px;
-      }
-      .solaz-universe-cta-btn {
-        width: 100%;
-        max-width: 360px;
-        padding: 15px 20px;
-        font-size: 11.5px;
-      }
-      .solaz-universe-shortcuts {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .solaz-universe-card {
-        height: 170px;
-      }
-    }
-    @media (max-width: 480px) {
-      .holiday-flame-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .hf-block {
-        height: clamp(250px, 68vw, 340px);
-      }
-      .hf-block-overlay {
-        padding: 12px;
-      }
-      .hf-block-title {
-        font-size: 11.5px;
+      .solaz-subcat-strip {
+        padding: 8px 14px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- 1. BARRA SUPERIOR / TICKER EN MOVIMIENTO (ANUNCIO INTERACTIVO -> SUSCRIPCIÓN 10% OFF) -->
-  <a href="#newsletter-signup" class="solaz-top-ticker" onclick="scrollToNewsletterSignup(event)" aria-label="Únete a nuestra comunidad y recibe el 10% off en tu compra">
-    <div class="solaz-ticker-track">
-      <div class="solaz-ticker-item">
-        <span>Únete a nuestra comunidad y recibe el 10% off en tu compra.</span>
-        <span class="solaz-ticker-cta-tag">Suscribirme &rarr;</span>
-        <span class="solaz-ticker-dot"></span>
-        <span>Únete a nuestra comunidad y recibe el 10% off en tu compra.</span>
-        <span class="solaz-ticker-cta-tag">Suscribirme &rarr;</span>
-        <span class="solaz-ticker-dot"></span>
-        <span>Únete a nuestra comunidad y recibe el 10% off en tu compra.</span>
-        <span class="solaz-ticker-cta-tag">Suscribirme &rarr;</span>
-        <span class="solaz-ticker-dot"></span>
-        <span>Únete a nuestra comunidad y recibe el 10% off en tu compra.</span>
-        <span class="solaz-ticker-cta-tag">Suscribirme &rarr;</span>
-        <span class="solaz-ticker-dot"></span>
-      </div>
-      <div class="solaz-ticker-item" aria-hidden="true">
-        <span>Únete a nuestra comunidad y recibe el 10% off en tu compra.</span>
-        <span class="solaz-ticker-cta-tag">Suscribirme &rarr;</span>
-        <span class="solaz-ticker-dot"></span>
-        <span>Únete a nuestra comunidad y recibe el 10% off en tu compra.</span>
-        <span class="solaz-ticker-cta-tag">Suscribirme &rarr;</span>
-        <span class="solaz-ticker-dot"></span>
-        <span>Únete a nuestra comunidad y recibe el 10% off en tu compra.</span>
-        <span class="solaz-ticker-cta-tag">Suscribirme &rarr;</span>
-        <span class="solaz-ticker-dot"></span>
-        <span>Únete a nuestra comunidad y recibe el 10% off en tu compra.</span>
-        <span class="solaz-ticker-cta-tag">Suscribirme &rarr;</span>
-        <span class="solaz-ticker-dot"></span>
-      </div>
-    </div>
-  </a>
-
-  <!-- 1B. HEADER OFICIAL SOLAZSWIM.COM + MEGA-MENÚ DESPLEGABLE (ESTILO JACQUEMUS) -->
+  <!-- 1. HEADER OFICIAL SOLAZSWIM.COM + MEGA-MENÚ DESPLEGABLE (ESTILO JACQUEMUS) -->
   <header class="site-header" id="siteHeader">
     <div class="jacq-header-left">
       <button class="mobile-menu-toggle" id="mobileMenuOpenBtn" onclick="toggleTopMegaMenu('shop')" aria-label="Abrir menú">
@@ -4572,12 +4073,12 @@
   </div>
 
   <!-- ========================================================================
-       VISTA 1: PÁGINA DE INICIO (HOME) — SECUENCIA EDITORIAL CURADA (8 SECCIONES)
+       VISTA 1: PÁGINA DE INICIO (HOME) — SECUENCIA EDITORIAL IDÉNTICA AL MOCKUP PDF
        ======================================================================== -->
     <main class="solaz-view active-view" id="view-home">
 
-    <!-- 2. BANNER PRINCIPAL EN VIDEO (SLIM HERO SECTION — "THE SUN IS OUT" + ATRIBUTOS DE LA COLECCIÓN) -->
-    <section class="central-hero-banner slim-hero" id="heroBanner" onclick="navigateToCollection('the-sun')" style="cursor:pointer;">
+    <!-- 1. BANNER PRINCIPAL EN VIDEO ("THE SUN IS OUT") -->
+    <section class="central-hero-banner" id="heroBanner" onclick="navigateToCollection('the-sun')" style="cursor:pointer;">
       <div class="banner-media-container">
         <img src="https://cdn.shopify.com/s/files/1/0526/3183/0711/collections/Diseno_sin_titulo_22.jpg?v=1786075480" alt="SOLAZ SWIM — THE SUN IS OUT" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
         <video playsinline autoplay loop muted preload="metadata" poster="https://cdn.shopify.com/s/files/1/0526/3183/0711/collections/Diseno_sin_titulo_22.jpg?v=1786075480" style="position:relative; z-index:1; width:100%; height:100%; object-fit:cover;">
@@ -4587,434 +4088,499 @@
       </div>
 
       <div class="banner-center-content">
-        <h1 class="hero-main-slogan">THE SUN IS OUT</h1>
-        <div class="hero-brand-attributes">
-          <span class="hero-attr-pill">COLECCIÓN ZUN</span>
-          <span class="hero-attr-pill">LYCRA ITALIANA UPF 50+</span>
-          <span class="hero-attr-pill">NÁCAR &amp; TAGUA ARTESANAL</span>
-          <span class="hero-attr-pill">HECHO EN COLOMBIA</span>
-        </div>
-        <a href="javascript:void(0)" onclick="event.stopPropagation(); navigateToCollection('the-sun')" class="banner-link-cta">EXPLORAR COLECCIÓN &rarr;</a>
+        <h1 class="banner-title" style="font-size: 22px; letter-spacing: 2px;">THE SUN IS OUT</h1>
+        <span style="font-size: 13px; opacity: 0.92;">Descubre nuestra nueva colección</span>
+        <a href="javascript:void(0)" onclick="event.stopPropagation(); navigateToCollection('the-sun')" class="banner-link-cta">SHOP NOW &rarr;</a>
       </div>
     </section>
 
-    <!-- 3. COLECCIÓN PRINCIPAL: ZUN (HILERAS POR GÉNERO — MUJER & HOMBRE) -->
-    <section class="zun-gender-section" id="coleccion-1">
-      <div class="zun-section-intro">
-        <div>
-          <span class="zun-section-eyebrow">COLECCIÓN PRINCIPAL</span>
-          <h2 class="zun-section-title">ZUN &middot; THE SUN</h2>
+    <!-- 2. BARRA / TICKER EN MOVIMIENTO DEBAJO DEL HERO (TERRACOTA INTERACTIVA -> SUSCRIPCIÓN 10% OFF) -->
+    <a href="#newsletter-signup" class="solaz-hero-ticker" onclick="scrollToNewsletterSignup(event)" aria-label="Únete a nuestra comunidad y recibe un 10% off en tu compra">
+      <div class="solaz-ticker-track">
+        <div class="solaz-ticker-item">
+          <span class="solaz-ticker-dot"></span>
+          <span><strong>Únete</strong> a <strong>nuestra comunidad</strong> y recibe un <strong>10% off</strong> en tu compra</span>
+          <span class="solaz-ticker-dot"></span>
+          <span><strong>Únete</strong> a <strong>nuestra comunidad</strong> y recibe un <strong>10% off</strong> en tu compra</span>
+          <span class="solaz-ticker-dot"></span>
+          <span><strong>Únete</strong> a <strong>nuestra comunidad</strong> y recibe un <strong>10% off</strong> en tu compra</span>
+          <span class="solaz-ticker-dot"></span>
+          <span><strong>Únete</strong> a <strong>nuestra comunidad</strong> y recibe un <strong>10% off</strong> en tu compra</span>
         </div>
-        <a href="javascript:void(0)" onclick="navigateToCollection('the-sun')" class="zun-gender-link">Ver toda la colección &rarr;</a>
-      </div>
-
-      <!-- PRIMERA HILERA (MUJER) -->
-      <div class="zun-gender-row" id="zun-hilera-mujer">
-        <div class="zun-gender-bar">
-          <span class="zun-gender-badge">MUJER</span>
-          <a href="javascript:void(0)" onclick="navigateToCollection('mujer')" class="zun-gender-link">Ver Mujer &rarr;</a>
-        </div>
-        <div class="catalog-grid cols-4" style="padding: 0;">
-          <article class="product-card" onclick="openProductById('8557373227191')">
-            <div class="product-media">
-              <span class="micro-badge">MUJER &middot; ZUN</span>
-              <img class="media-front" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/bikini_sol_1.jpg?v=1786052161" alt="Bikini Top Sol" loading="lazy">
-              <img class="media-hover" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/bikini_top_sol.jpg?v=1786052161" alt="Bikini Top Sol vista 2" loading="lazy">
-            </div>
-            <div class="product-info">
-              <div class="product-info-left">
-                <h3 class="product-title">Bikini Top Sol</h3>
-                <span class="product-price" data-cop="190000" data-usd="50">190.000 COP</span>
-              </div>
-              <button class="jacq-wishlist-heart" onclick="event.stopPropagation(); this.classList.toggle('liked')" title="Favoritos">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-              </button>
-            </div>
-          </article>
-
-          <article class="product-card" onclick="openProductById('8558369374391')">
-            <div class="product-media">
-              <span class="micro-badge">MUJER &middot; ZUN</span>
-              <img class="media-front" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/bikini_sol_2.jpg?v=1786052161" alt="Bikini Bottom Sol" loading="lazy">
-              <img class="media-hover" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/bikini_bottom_sol.jpg?v=1786052161" alt="Bikini Bottom Sol vista 2" loading="lazy">
-            </div>
-            <div class="product-info">
-              <div class="product-info-left">
-                <h3 class="product-title">Bikini Bottom Sol</h3>
-                <span class="product-price" data-cop="190000" data-usd="50">190.000 COP</span>
-              </div>
-              <button class="jacq-wishlist-heart" onclick="event.stopPropagation(); this.classList.toggle('liked')" title="Favoritos">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-              </button>
-            </div>
-          </article>
-
-          <article class="product-card" onclick="openProductById('8739455107255')">
-            <div class="product-media">
-              <span class="micro-badge">MUJER &middot; ZUN</span>
-              <div class="jacq-card-top-swatches"><span class="jacq-card-swatch-sq active" style="background-color: #D95B38;" title="Sunset" onclick="event.stopPropagation(); openProductById('8739455107255')"></span><span class="jacq-card-swatch-sq" style="background-color: #681A25;" title="Tinto" onclick="event.stopPropagation(); openProductById('8739459236023')"></span></div>
-              <img class="media-front" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/super_nova__onepiece_sunset_3.jpg?v=1787977413" alt="Enterizo Super Nova Sunset" loading="lazy">
-              <img class="media-hover" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/super_nova_one_piece_sunset_back.jpg?v=1787977413" alt="Enterizo Super Nova Sunset vista 2" loading="lazy">
-            </div>
-            <div class="product-info">
-              <div class="product-info-left">
-                <h3 class="product-title">Enterizo Super Nova Sunset</h3>
-                <span class="product-price" data-cop="320000" data-usd="84">320.000 COP</span>
-              </div>
-              <button class="jacq-wishlist-heart" onclick="event.stopPropagation(); this.classList.toggle('liked')" title="Favoritos">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-              </button>
-            </div>
-          </article>
-
-          <article class="product-card" onclick="openProductById('8701124935863')">
-            <div class="product-media">
-              <span class="micro-badge">MUJER &middot; ZUN</span>
-              <img class="media-front" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/vestido_ocaso.jpg?v=1786106988" alt="Vestido Ocaso" loading="lazy">
-              <img class="media-hover" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/vestido_ocaso_1.jpg?v=1786106988" alt="Vestido Ocaso vista 2" loading="lazy">
-            </div>
-            <div class="product-info">
-              <div class="product-info-left">
-                <h3 class="product-title">Vestido Ocaso</h3>
-                <span class="product-price" data-cop="390000" data-usd="103">390.000 COP</span>
-              </div>
-              <button class="jacq-wishlist-heart" onclick="event.stopPropagation(); this.classList.toggle('liked')" title="Favoritos">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-              </button>
-            </div>
-          </article>
+        <div class="solaz-ticker-item" aria-hidden="true">
+          <span class="solaz-ticker-dot"></span>
+          <span><strong>Únete</strong> a <strong>nuestra comunidad</strong> y recibe un <strong>10% off</strong> en tu compra</span>
+          <span class="solaz-ticker-dot"></span>
+          <span><strong>Únete</strong> a <strong>nuestra comunidad</strong> y recibe un <strong>10% off</strong> en tu compra</span>
+          <span class="solaz-ticker-dot"></span>
+          <span><strong>Únete</strong> a <strong>nuestra comunidad</strong> y recibe un <strong>10% off</strong> en tu compra</span>
+          <span class="solaz-ticker-dot"></span>
+          <span><strong>Únete</strong> a <strong>nuestra comunidad</strong> y recibe un <strong>10% off</strong> en tu compra</span>
         </div>
       </div>
+    </a>
 
-      <!-- SEGUNDA HILERA (HOMBRE) -->
-      <div class="zun-gender-row" id="zun-hilera-hombre">
-        <div class="zun-gender-bar">
-          <span class="zun-gender-badge">HOMBRE</span>
-          <a href="javascript:void(0)" onclick="navigateToCollection('hombre')" class="zun-gender-link">Ver Hombre &rarr;</a>
-        </div>
-        <div class="catalog-grid cols-4" style="padding: 0;">
-          <article class="product-card" onclick="openProductById('8701148823735')">
-            <div class="product-media">
-              <span class="micro-badge">HOMBRE &middot; ZUN</span>
-              <div class="jacq-card-top-swatches"><span class="jacq-card-swatch-sq active" style="background-color: #C85232;" title="Ocaso" onclick="event.stopPropagation(); openProductById('8701148823735')"></span><span class="jacq-card-swatch-sq" style="background-color: #D95B38;" title="Sunset" onclick="event.stopPropagation(); openProductById('8782536802487')"></span><span class="jacq-card-swatch-sq" style="background-color: #BFC3C6;" title="Silver" onclick="event.stopPropagation(); openProductById('7896146641079')"></span><span class="jacq-card-swatch-sq" style="background-color: #A4C8E1;" title="Baby Blue" onclick="event.stopPropagation(); openProductById('7896147198135')"></span></div>
-              <img class="media-front" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/axel_brief_ocaso.jpg?v=1786110316" alt="Axel Brief Ocaso" loading="lazy">
-              <img class="media-hover" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/axel_brief_ocaso_1.jpg?v=1786110316" alt="Axel Brief Ocaso vista 2" loading="lazy">
-            </div>
-            <div class="product-info">
-              <div class="product-info-left">
-                <h3 class="product-title">Axel Brief Ocaso</h3>
-                <span class="product-price" data-cop="280000" data-usd="74">280.000 COP</span>
-              </div>
-              <button class="jacq-wishlist-heart" onclick="event.stopPropagation(); this.classList.toggle('liked')" title="Favoritos">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-              </button>
-            </div>
-          </article>
+    <!-- 3. COLECCIÓN PRINCIPAL: NEW - THE SUN (HILERA 1: MUJERES · HILERA 2: HOMBRES) -->
+    <section class="curated-home-collection" id="coleccion-1" style="padding-top: 0;">
 
-          <article class="product-card" onclick="openProductById('8700769534135')">
-            <div class="product-media">
-              <span class="micro-badge">HOMBRE &middot; ZUN</span>
-              <div class="jacq-card-top-swatches"><span class="jacq-card-swatch-sq active" style="background-color: #D95B38;" title="Sunset" onclick="event.stopPropagation(); openProductById('8700769534135')"></span><span class="jacq-card-swatch-sq" style="background-color: #681A25;" title="Tinto" onclick="event.stopPropagation(); openProductById('8700784935095')"></span><span class="jacq-card-swatch-sq" style="background-color: #4E2A1E;" title="Caoba" onclick="event.stopPropagation(); openProductById('8782532640951')"></span><span class="jacq-card-swatch-sq" style="background-color: #581822;" title="Vinotinto" onclick="event.stopPropagation(); openProductById('7896126357687')"></span></div>
-              <img class="media-front" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/boris_brief_sunset_1.jpg?v=1786072370" alt="Boris Brief Sunset" loading="lazy">
-              <img class="media-hover" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/boris_brief_sunset_4.jpg?v=1786072370" alt="Boris Brief Sunset vista 2" loading="lazy">
-            </div>
-            <div class="product-info">
-              <div class="product-info-left">
-                <h3 class="product-title">Boris Brief Sunset</h3>
-                <span class="product-price" data-cop="285000" data-usd="75">285.000 COP</span>
-              </div>
-              <button class="jacq-wishlist-heart" onclick="event.stopPropagation(); this.classList.toggle('liked')" title="Favoritos">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-              </button>
-            </div>
-          </article>
+      <!-- Barra derecha: New - The Sun - Mujeres -->
+      <div class="solaz-subcat-strip align-right">
+        <a href="javascript:void(0)" onclick="navigateToCollection('mujer')" class="solaz-subcat-link">
+          <strong>New - The Sun</strong> - Mujeres
+        </a>
+      </div>
 
-          <article class="product-card" onclick="openProductById('8701118742711')">
-            <div class="product-media">
-              <span class="micro-badge">HOMBRE &middot; ZUN</span>
-              <div class="jacq-card-top-swatches"><span class="jacq-card-swatch-sq" style="background-color: #681A25;" title="Tinto" onclick="event.stopPropagation(); openProductById('8701116907703')"></span><span class="jacq-card-swatch-sq active" style="background-color: #D95B38;" title="Sunset" onclick="event.stopPropagation(); openProductById('8701118742711')"></span><span class="jacq-card-swatch-sq" style="background-color: #B32428;" title="Escarlata" onclick="event.stopPropagation(); openProductById('7896145461431')"></span><span class="jacq-card-swatch-sq" style="background-color: #581822;" title="Vinotinto" onclick="event.stopPropagation(); openProductById('7896145821879')"></span></div>
-              <img class="media-front" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/eros_brief_sunset.jpg?v=1786106003" alt="Eros Brief Sunset" loading="lazy">
-              <img class="media-hover" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/eros_brief_sunset_1.jpg?v=1786106003" alt="Eros Brief Sunset vista 2" loading="lazy">
+      <!-- Primera Hilera (Mujeres) -->
+      <div class="catalog-grid cols-4" style="padding: 0;">
+        <article class="product-card" onclick="openProductById('8557373227191')">
+          <div class="product-media">
+            <span class="micro-badge">NOVEDAD</span>
+            <img class="media-front" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/bikini_sol_1.jpg?v=1786052161" alt="Bikini Top Sol" loading="lazy">
+            <img class="media-hover" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/bikini_top_sol.jpg?v=1786052161" alt="Bikini Top Sol vista 2" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-info-left">
+              <h3 class="product-title">Bikini Top Sol</h3>
+              <span class="product-price" data-cop="190000" data-usd="50">190.000 COP</span>
             </div>
-            <div class="product-info">
-              <div class="product-info-left">
-                <h3 class="product-title">Eros Brief Sunset</h3>
-                <span class="product-price" data-cop="280000" data-usd="74">280.000 COP</span>
-              </div>
-              <button class="jacq-wishlist-heart" onclick="event.stopPropagation(); this.classList.toggle('liked')" title="Favoritos">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-              </button>
-            </div>
-          </article>
+            <button class="jacq-wishlist-heart" onclick="event.stopPropagation(); this.classList.toggle('liked')" title="Favoritos">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+        </article>
 
-          <article class="product-card" onclick="openProductById('8700784935095')">
-            <div class="product-media">
-              <span class="micro-badge">HOMBRE &middot; ZUN</span>
-              <div class="jacq-card-top-swatches"><span class="jacq-card-swatch-sq" style="background-color: #D95B38;" title="Sunset" onclick="event.stopPropagation(); openProductById('8700769534135')"></span><span class="jacq-card-swatch-sq active" style="background-color: #681A25;" title="Tinto" onclick="event.stopPropagation(); openProductById('8700784935095')"></span><span class="jacq-card-swatch-sq" style="background-color: #4E2A1E;" title="Caoba" onclick="event.stopPropagation(); openProductById('8782532640951')"></span><span class="jacq-card-swatch-sq" style="background-color: #581822;" title="Vinotinto" onclick="event.stopPropagation(); openProductById('7896126357687')"></span></div>
-              <img class="media-front" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/boris_brief_tinto_1.jpg?v=1786074408" alt="Boris Brief Tinto" loading="lazy">
-              <img class="media-hover" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/boris_brief_tinto_2.jpg?v=1786074408" alt="Boris Brief Tinto vista 2" loading="lazy">
+        <article class="product-card" onclick="openProductById('8558369374391')">
+          <div class="product-media">
+            <span class="micro-badge">NOVEDAD</span>
+            <img class="media-front" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/bikini_sol_2.jpg?v=1786052161" alt="Bikini Bottom Sol" loading="lazy">
+            <img class="media-hover" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/bikini_bottom_sol.jpg?v=1786052161" alt="Bikini Bottom Sol vista 2" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-info-left">
+              <h3 class="product-title">Bikini Bottom Sol</h3>
+              <span class="product-price" data-cop="190000" data-usd="50">190.000 COP</span>
             </div>
-            <div class="product-info">
-              <div class="product-info-left">
-                <h3 class="product-title">Boris Brief Tinto</h3>
-                <span class="product-price" data-cop="285000" data-usd="75">285.000 COP</span>
-              </div>
-              <button class="jacq-wishlist-heart" onclick="event.stopPropagation(); this.classList.toggle('liked')" title="Favoritos">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-              </button>
+            <button class="jacq-wishlist-heart" onclick="event.stopPropagation(); this.classList.toggle('liked')" title="Favoritos">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card" onclick="openProductById('8782469398711')">
+          <div class="product-media">
+            <span class="micro-badge">NOVEDAD</span>
+            <img class="media-front" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/PAREOOCASDOFRENTE.jpg?v=1789683861" alt="Pareo Ocaso" loading="lazy">
+            <img class="media-hover" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/PAREOOCASOESPALDA.jpg?v=1789683861" alt="Pareo Ocaso vista 2" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-info-left">
+              <h3 class="product-title">Pareo Ocaso</h3>
+              <span class="product-price" data-cop="175000" data-usd="46">175.000 COP</span>
             </div>
-          </article>
-        </div>
+            <button class="jacq-wishlist-heart" onclick="event.stopPropagation(); this.classList.toggle('liked')" title="Favoritos">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card" onclick="openProductById('8701124935863')">
+          <div class="product-media">
+            <span class="micro-badge">NOVEDAD</span>
+            <img class="media-front" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/vestido_ocaso.jpg?v=1786106988" alt="Vestido Ocaso" loading="lazy">
+            <img class="media-hover" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/vestido_ocaso_1.jpg?v=1786106988" alt="Vestido Ocaso vista 2" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-info-left">
+              <h3 class="product-title">Vestido Ocaso</h3>
+              <span class="product-price" data-cop="390000" data-usd="103">390.000 COP</span>
+            </div>
+            <button class="jacq-wishlist-heart" onclick="event.stopPropagation(); this.classList.toggle('liked')" title="Favoritos">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <!-- Barra izquierda: New - The Sun - Hombres -->
+      <div class="solaz-subcat-strip align-left">
+        <a href="javascript:void(0)" onclick="navigateToCollection('hombre')" class="solaz-subcat-link">
+          <strong>New - The Sun</strong> - Hombres
+        </a>
+      </div>
+
+      <!-- Segunda Hilera (Hombres - Colección The Sun) -->
+      <div class="catalog-grid cols-4" style="padding: 0;">
+        <article class="product-card" onclick="openProductById('8701148823735')">
+          <div class="product-media">
+            <span class="micro-badge">NOVEDAD</span>
+            <div class="jacq-card-top-swatches"><span class="jacq-card-swatch-sq active" style="background-color: #C85232;" title="Ocaso" onclick="event.stopPropagation(); openProductById('8701148823735')"></span><span class="jacq-card-swatch-sq" style="background-color: #D95B38;" title="Sunset" onclick="event.stopPropagation(); openProductById('8782536802487')"></span><span class="jacq-card-swatch-sq" style="background-color: #BFC3C6;" title="Silver" onclick="event.stopPropagation(); openProductById('7896146641079')"></span><span class="jacq-card-swatch-sq" style="background-color: #A4C8E1;" title="Baby Blue" onclick="event.stopPropagation(); openProductById('7896147198135')"></span></div>
+            <img class="media-front" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/axel_brief_ocaso.jpg?v=1786110316" alt="Axel Brief Ocaso" loading="lazy">
+            <img class="media-hover" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/axel_brief_ocaso_1.jpg?v=1786110316" alt="Axel Brief Ocaso vista 2" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-info-left">
+              <h3 class="product-title">Axel Brief Ocaso</h3>
+              <span class="product-price" data-cop="280000" data-usd="74">280.000 COP</span>
+            </div>
+            <button class="jacq-wishlist-heart" onclick="event.stopPropagation(); this.classList.toggle('liked')" title="Favoritos">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card" onclick="openProductById('8700769534135')">
+          <div class="product-media">
+            <span class="micro-badge">NOVEDAD</span>
+            <div class="jacq-card-top-swatches"><span class="jacq-card-swatch-sq active" style="background-color: #D95B38;" title="Sunset" onclick="event.stopPropagation(); openProductById('8700769534135')"></span><span class="jacq-card-swatch-sq" style="background-color: #681A25;" title="Tinto" onclick="event.stopPropagation(); openProductById('8700784935095')"></span><span class="jacq-card-swatch-sq" style="background-color: #4E2A1E;" title="Caoba" onclick="event.stopPropagation(); openProductById('8782532640951')"></span><span class="jacq-card-swatch-sq" style="background-color: #581822;" title="Vinotinto" onclick="event.stopPropagation(); openProductById('7896126357687')"></span></div>
+            <img class="media-front" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/boris_brief_sunset_1.jpg?v=1786072370" alt="Boris Brief Sunset" loading="lazy">
+            <img class="media-hover" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/boris_brief_sunset_4.jpg?v=1786072370" alt="Boris Brief Sunset vista 2" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-info-left">
+              <h3 class="product-title">Boris Brief Sunset</h3>
+              <span class="product-price" data-cop="285000" data-usd="75">285.000 COP</span>
+            </div>
+            <button class="jacq-wishlist-heart" onclick="event.stopPropagation(); this.classList.toggle('liked')" title="Favoritos">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card" onclick="openProductById('8701118742711')">
+          <div class="product-media">
+            <span class="micro-badge">NOVEDAD</span>
+            <div class="jacq-card-top-swatches"><span class="jacq-card-swatch-sq" style="background-color: #681A25;" title="Tinto" onclick="event.stopPropagation(); openProductById('8701116907703')"></span><span class="jacq-card-swatch-sq active" style="background-color: #D95B38;" title="Sunset" onclick="event.stopPropagation(); openProductById('8701118742711')"></span><span class="jacq-card-swatch-sq" style="background-color: #B32428;" title="Escarlata" onclick="event.stopPropagation(); openProductById('7896145461431')"></span><span class="jacq-card-swatch-sq" style="background-color: #581822;" title="Vinotinto" onclick="event.stopPropagation(); openProductById('7896145821879')"></span></div>
+            <img class="media-front" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/eros_brief_sunset.jpg?v=1786106003" alt="Eros Brief Sunset" loading="lazy">
+            <img class="media-hover" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/eros_brief_sunset_1.jpg?v=1786106003" alt="Eros Brief Sunset vista 2" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-info-left">
+              <h3 class="product-title">Eros Brief Sunset</h3>
+              <span class="product-price" data-cop="280000" data-usd="74">280.000 COP</span>
+            </div>
+            <button class="jacq-wishlist-heart" onclick="event.stopPropagation(); this.classList.toggle('liked')" title="Favoritos">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card" onclick="openProductById('8700784935095')">
+          <div class="product-media">
+            <span class="micro-badge">NOVEDAD</span>
+            <div class="jacq-card-top-swatches"><span class="jacq-card-swatch-sq" style="background-color: #D95B38;" title="Sunset" onclick="event.stopPropagation(); openProductById('8700769534135')"></span><span class="jacq-card-swatch-sq active" style="background-color: #681A25;" title="Tinto" onclick="event.stopPropagation(); openProductById('8700784935095')"></span><span class="jacq-card-swatch-sq" style="background-color: #4E2A1E;" title="Caoba" onclick="event.stopPropagation(); openProductById('8782532640951')"></span><span class="jacq-card-swatch-sq" style="background-color: #581822;" title="Vinotinto" onclick="event.stopPropagation(); openProductById('7896126357687')"></span></div>
+            <img class="media-front" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/boris_brief_tinto_1.jpg?v=1786074408" alt="Boris Brief Tinto" loading="lazy">
+            <img class="media-hover" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/boris_brief_tinto_2.jpg?v=1786074408" alt="Boris Brief Tinto vista 2" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-info-left">
+              <h3 class="product-title">Boris Brief Tinto</h3>
+              <span class="product-price" data-cop="285000" data-usd="75">285.000 COP</span>
+            </div>
+            <button class="jacq-wishlist-heart" onclick="event.stopPropagation(); this.classList.toggle('liked')" title="Favoritos">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+        </article>
       </div>
     </section>
 
-    <!-- 4. ICONOS Y BLOQUES DE INFORMACIÓN DINÁMICA (5 PILARES DE LA MARCA CON ANIMACIÓN AL SCROLL) -->
+    <!-- 4. ICONOS Y PILARES DE LA MARCA ("SUN SOAKED · SOUL-LED · EFFORTLESSLY BOLD" + 6 ICONOS LINEALES EN TERRACOTA) -->
     <section class="solaz-pillars-section" id="pilares-solaz">
-      <div class="solaz-pillars-header">
-        <span class="solaz-pillars-eyebrow">NUESTRO SAVOIR-FAIRE</span>
-        <h2 class="solaz-pillars-heading">Pilares de la Marca Solaz</h2>
+      <div class="solaz-pillars-mottos">
+        <span class="solaz-motto-phrase">SUN SOAKED</span>
+        <span class="solaz-motto-phrase">SOUL-LED</span>
+        <span class="solaz-motto-phrase">EFFORTLESSLY BOLD</span>
       </div>
 
       <div class="solaz-pillars-grid">
-        <!-- Pilar 1: Silueta y confort -->
-        <article class="solaz-pillar-card" style="transition-delay: 0.05s;">
+        <!-- 1. Diseño atemporal (Carrete de hilo artesanal) -->
+        <article class="solaz-pillar-card" style="transition-delay: 0.04s;">
           <div class="solaz-pillar-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          </div>
-          <h3 class="solaz-pillar-title">Silueta y confort</h3>
-          <p class="solaz-pillar-desc">Cortes anatómicos de segunda piel diseñados para realzar la figura con total libertad de movimiento.</p>
-        </article>
-
-        <!-- Pilar 2: Hecho en Colombia -->
-        <article class="solaz-pillar-card" style="transition-delay: 0.12s;">
-          <div class="solaz-pillar-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-          </div>
-          <h3 class="solaz-pillar-title">Hecho en Colombia</h3>
-          <p class="solaz-pillar-desc">Confección ética y apliques en nácar natural y semilla de tagua intervenidos a mano por artesanos locales.</p>
-        </article>
-
-        <!-- Pilar 3: Detalles metálicos inoxidables -->
-        <article class="solaz-pillar-card" style="transition-delay: 0.19s;">
-          <div class="solaz-pillar-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </div>
-          <h3 class="solaz-pillar-title">Detalles metálicos inoxidables</h3>
-          <p class="solaz-pillar-desc">Herrajes hipoalergénicos con baño de alto brillo que no se calientan al sol ni se oxidan en el mar.</p>
-        </article>
-
-        <!-- Pilar 4: Alma oceánica resistente al cloro -->
-        <article class="solaz-pillar-card" style="transition-delay: 0.26s;">
-          <div class="solaz-pillar-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg>
-          </div>
-          <h3 class="solaz-pillar-title">Alma oceánica resistente al cloro</h3>
-          <p class="solaz-pillar-desc">Tejidos sostenibles de secado rápido con protección UV 50+, resistentes al cloro, salitre y protectores solares.</p>
-        </article>
-
-        <!-- Pilar 5: Diseño atemporal -->
-        <article class="solaz-pillar-card" style="transition-delay: 0.33s;">
-          <div class="solaz-pillar-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18.178 8c5.096 0 5.096 8 0 8-5.095 0-7.133-8-12.739-8-4.585 0-4.585 8 0 8 5.606 0 7.644-8 12.74-8z"/></svg>
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M24 6v4"/>
+              <rect x="16" y="10" width="16" height="4" rx="2"/>
+              <rect x="16" y="34" width="16" height="4" rx="2"/>
+              <path d="M18 14v20M30 14v20"/>
+              <path d="M18 19l12-2M18 24l12-2M18 29l12-2"/>
+              <path d="M14 40h20"/>
+            </svg>
           </div>
           <h3 class="solaz-pillar-title">Diseño atemporal</h3>
-          <p class="solaz-pillar-desc">Siluetas limpias y sofisticadas concebidas para trascender temporadas y acompañarte del día a la noche.</p>
+        </article>
+
+        <!-- 2. Alma oceánica resistente al cloro (Ola con destellos) -->
+        <article class="solaz-pillar-card" style="transition-delay: 0.10s;">
+          <div class="solaz-pillar-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 32c5-8 11-11 18-8-3 3-3 7 2 8 6 1 11-2 16-6"/>
+              <path d="M10 37c6-4 13-4 20-1 4 2 8 1 12-1"/>
+              <path d="M26 14l1.5 3 3 1.5-3 1.5-1.5 3-1.5-3-3-1.5 3-1.5 1.5-3z"/>
+              <path d="M36 18l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2z"/>
+            </svg>
+          </div>
+          <h3 class="solaz-pillar-title">Alma oceánica<br>resistente al cloro</h3>
+        </article>
+
+        <!-- 3. Silueta y confort (Silueta estilizada con curvas) -->
+        <article class="solaz-pillar-card" style="transition-delay: 0.16s;">
+          <div class="solaz-pillar-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="24" cy="11" r="3"/>
+              <path d="M17 8c2 5 5 8 5 14s-4 11-2 18"/>
+              <path d="M31 12c-3 4-5 7-5 12s4 10 2 16"/>
+              <path d="M13 22h3M32 22h3"/>
+            </svg>
+          </div>
+          <h3 class="solaz-pillar-title">Silueta y confort</h3>
+        </article>
+
+        <!-- 4. Hecho en Colombia (Tejido entrelazado artesanal) -->
+        <article class="solaz-pillar-card" style="transition-delay: 0.22s;">
+          <div class="solaz-pillar-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="13" y="10" width="5" height="28" rx="2.5"/>
+              <rect x="22" y="10" width="5" height="28" rx="2.5"/>
+              <rect x="31" y="10" width="5" height="28" rx="2.5"/>
+              <path d="M10 16h28M10 24h28M10 32h28"/>
+            </svg>
+          </div>
+          <h3 class="solaz-pillar-title">Hecho en Colombia</h3>
+        </article>
+
+        <!-- 5. Detalles metálicos inoxidables (Escote con herraje metálico y destellos) -->
+        <article class="solaz-pillar-card" style="transition-delay: 0.28s;">
+          <div class="solaz-pillar-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 10l7 15M33 10l-7 15"/>
+              <path d="M18 10l6 13 6-13"/>
+              <circle cx="24" cy="27" r="3"/>
+              <rect x="22" y="30" width="4" height="7" rx="2"/>
+              <path d="M15 27h3M30 27h3M18 35l2-2M30 35l-2-2"/>
+            </svg>
+          </div>
+          <h3 class="solaz-pillar-title">Detalles metálicos<br>inoxidables</h3>
+        </article>
+
+        <!-- 6. Calidad rigurosa protector UV (Capas de protección UV) -->
+        <article class="solaz-pillar-card" style="transition-delay: 0.34s;">
+          <div class="solaz-pillar-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="24 10 38 18 24 26 10 18 24 10"/>
+              <polyline points="10 24 24 32 38 24"/>
+              <polyline points="10 30 24 38 38 30"/>
+            </svg>
+          </div>
+          <h3 class="solaz-pillar-title">Calidad rigurosa<br>protector UV</h3>
         </article>
       </div>
     </section>
 
-    <!-- 5. COLECCIÓN: HOLIDAY FLAME (GRID DE 4 BLOQUES INTERACTIVOS — 1 & 2 MUJER · 3 & 4 HOMBRE) -->
-    <section class="holiday-flame-section" id="coleccion-holiday-flame">
-      <div class="holiday-flame-header">
-        <div>
-          <span class="zun-section-eyebrow">CÁPSULA EDITORIAL</span>
-          <h2 class="zun-section-title">HOLIDAY FLAME</h2>
+    <!-- 5. DÍPTICO EDITORIAL 50/50 (MUJER & HOMBRE) -->
+    <section class="editorial-diptych" id="diptico">
+      <a href="javascript:void(0)" onclick="navigateToCollection('mujer')" class="diptych-panel">
+        <img src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/MUJER.jpg?v=1787973356" alt="MUJER — SOLAZ SWIM" loading="lazy">
+        <div class="diptych-caption">
+          <span class="diptych-title" style="font-size: 20px; letter-spacing: 2px;">MUJER</span>
         </div>
-        <a href="javascript:void(0)" onclick="navigateToCollection('holiday-flame')" class="zun-gender-link">Ver Holiday Flame &rarr;</a>
+      </a>
+
+      <a href="javascript:void(0)" onclick="navigateToCollection('hombre')" class="diptych-panel">
+        <img src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/HOMBRE.jpg?v=1787973571" alt="HOMBRE — SOLAZ SWIM" loading="lazy">
+        <div class="diptych-caption">
+          <span class="diptych-title" style="font-size: 20px; letter-spacing: 2px;">HOMBRE</span>
+        </div>
+      </a>
+    </section>
+
+    <!-- 6. OTRAS COLECCIONES ("Descubre nuestro universo solaz" + "Colecciones - Holiday Flame." + "Colecciones - T.Q.M.") -->
+    <section class="curated-home-collection" id="coleccion-2" style="padding-top: 0;">
+
+      <!-- Barra superior: Otras Colecciones | Descubre nuestro universo solaz | Colecciones - Holiday Flame. -->
+      <div class="solaz-other-collections-bar">
+        <div class="solaz-other-left">
+          <h2 class="solaz-other-heading">Otras Colecciones</h2>
+          <a href="javascript:void(0)" onclick="navigateToCollection('shop-all')" class="solaz-universe-inline-cta">
+            Descubre nuestro <strong>universo solaz</strong>
+          </a>
+        </div>
+        <a href="javascript:void(0)" onclick="navigateToCollection('holiday-flame')" class="solaz-subcat-link">
+          <strong>Colecciones</strong> - Holiday Flame.
+        </a>
       </div>
 
-      <div class="holiday-flame-grid">
-        <!-- Bloque 1 (Mujer): Pieza editorial Holiday Flame -->
-        <div class="hf-block" onclick="openProductById('7896130846903')">
-          <img src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/ELEA_ONE_PIECE_ROJO.jpg?v=1773695223" alt="Elea One-Piece Escarlata — Holiday Flame Mujer" loading="lazy">
-          <div class="hf-block-overlay">
-            <span class="hf-gender-tag">MUJER</span>
-            <div class="hf-block-bottom">
-              <h3 class="hf-block-title">Elea One-Piece Escarlata</h3>
-              <span class="hf-block-price product-price" data-cop="320000" data-usd="84">320.000 COP</span>
-            </div>
+      <!-- Hilera de 4 Bloques: Colecciones - Holiday Flame -->
+      <div class="catalog-grid cols-4" style="padding: 0;">
+        <article class="product-card" onclick="openProductById('8310493413559')">
+          <div class="product-media">
+            <span class="micro-badge">NOVEDAD</span>
+            <img class="media-front" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/poncho_ron_cola_1.jpg?v=1787978715" alt="Poncho Ron Cola" loading="lazy">
+            <img class="media-hover" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/poncho_ron_cola.jpg?v=1787978715" alt="Poncho Ron Cola vista 2" loading="lazy">
           </div>
-        </div>
+          <div class="product-info">
+            <div class="product-info-left">
+              <h3 class="product-title">Poncho Ron Cola</h3>
+              <span class="product-price" data-cop="220000" data-usd="58">220.000 COP</span>
+            </div>
+            <button class="jacq-wishlist-heart" onclick="event.stopPropagation(); this.classList.toggle('liked')" title="Favoritos">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+        </article>
 
-        <!-- Bloque 2 (Mujer): Conjunto Holiday Flame para mujer -->
-        <div class="hf-block" onclick="openProductById('8310494429367')">
-          <img src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/santa_flame_bikini_red.jpg?v=1779420354" alt="Santa Flame Bikini — Holiday Flame Mujer" loading="lazy">
-          <div class="hf-block-overlay">
-            <span class="hf-gender-tag">MUJER</span>
-            <div class="hf-block-bottom">
-              <h3 class="hf-block-title">Santa Flame Bikini</h3>
-              <span class="hf-block-price product-price" data-cop="290000" data-usd="76">290.000 COP</span>
-            </div>
+        <article class="product-card" onclick="openProductById('8310493479095')">
+          <div class="product-media">
+            <span class="micro-badge">NOVEDAD</span>
+            <img class="media-front" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/pareo_ron_cola_1.jpg?v=1787978838" alt="Pareo Ron Cola" loading="lazy">
+            <img class="media-hover" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/pareo_ron_cola_2.jpg?v=1787978838" alt="Pareo Ron Cola vista 2" loading="lazy">
           </div>
-        </div>
+          <div class="product-info">
+            <div class="product-info-left">
+              <h3 class="product-title">Pareo Ron Cola</h3>
+              <span class="product-price" data-cop="220000" data-usd="58">220.000 COP</span>
+            </div>
+            <button class="jacq-wishlist-heart" onclick="event.stopPropagation(); this.classList.toggle('liked')" title="Favoritos">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+        </article>
 
-        <!-- Bloque 3 (Hombre): Pieza Holiday Flame para hombre -->
-        <div class="hf-block" onclick="openProductById('7896145461431')">
-          <img src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/EROS_BRIEFS_ROJO.jpg?v=1773694730" alt="Eros Brief Escarlata — Holiday Flame Hombre" loading="lazy">
-          <div class="hf-block-overlay">
-            <span class="hf-gender-tag">HOMBRE</span>
-            <div class="hf-block-bottom">
-              <h3 class="hf-block-title">Eros Brief Escarlata</h3>
-              <span class="hf-block-price product-price" data-cop="270000" data-usd="71">270.000 COP</span>
-            </div>
+        <article class="product-card" onclick="openProductById('7896130846903')">
+          <div class="product-media">
+            <span class="micro-badge">NOVEDAD</span>
+            <div class="jacq-card-top-swatches"><span class="jacq-card-swatch-sq active" style="background-color: #B32428;" title="Escarlata" onclick="event.stopPropagation(); openProductById('7896130846903')"></span><span class="jacq-card-swatch-sq" style="background-color: #BFC3C6;" title="Silver" onclick="event.stopPropagation(); openProductById('7896132976823')"></span><span class="jacq-card-swatch-sq" style="background-color: #5C3A28;" title="Cacao" onclick="event.stopPropagation(); openProductById('6167670030519')"></span></div>
+            <img class="media-front" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/ELEA_ONE_PIECE_ROJO.jpg?v=1773695223" alt="Elea One-Piece Escarlata" loading="lazy">
+            <img class="media-hover" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/ELEA_ONE_PIECE_ROJO_TANGA_BACK.jpg?v=1773695247" alt="Elea One-Piece Escarlata vista 2" loading="lazy">
           </div>
-        </div>
+          <div class="product-info">
+            <div class="product-info-left">
+              <h3 class="product-title">Elea One-Piece Escarlata</h3>
+              <span class="product-price" data-cop="320000" data-usd="84">320.000 COP</span>
+            </div>
+            <button class="jacq-wishlist-heart" onclick="event.stopPropagation(); this.classList.toggle('liked')" title="Favoritos">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+        </article>
 
-        <!-- Bloque 4 (Hombre): Look de resortwear y pieza Holiday Flame para hombre -->
-        <div class="hf-block" onclick="openProductById('7896126357687')">
-          <img src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/BORIS_BRIEF_VINO_TINTO.jpg?v=1773694936" alt="Boris Brief Vinotinto — Holiday Flame Hombre" loading="lazy">
-          <div class="hf-block-overlay">
-            <span class="hf-gender-tag">HOMBRE</span>
-            <div class="hf-block-bottom">
-              <h3 class="hf-block-title">Boris Brief Vinotinto</h3>
-              <span class="hf-block-price product-price" data-cop="275000" data-usd="72">275.000 COP</span>
-            </div>
+        <article class="product-card" onclick="openProductById('7896132976823')">
+          <div class="product-media">
+            <span class="micro-badge">NOVEDAD</span>
+            <div class="jacq-card-top-swatches"><span class="jacq-card-swatch-sq" style="background-color: #B32428;" title="Escarlata" onclick="event.stopPropagation(); openProductById('7896130846903')"></span><span class="jacq-card-swatch-sq active" style="background-color: #BFC3C6;" title="Silver" onclick="event.stopPropagation(); openProductById('7896132976823')"></span><span class="jacq-card-swatch-sq" style="background-color: #5C3A28;" title="Cacao" onclick="event.stopPropagation(); openProductById('6167670030519')"></span></div>
+            <img class="media-front" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/ELEA_ONE_PIECE_SILVER.jpg?v=1773695097" alt="Elea One-Piece Silver" loading="lazy">
+            <img class="media-hover" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/ELEA_ONE_PIECE_TONG_BACK.jpg?v=1773695143" alt="Elea One-Piece Silver vista 2" loading="lazy">
           </div>
-        </div>
+          <div class="product-info">
+            <div class="product-info-left">
+              <h3 class="product-title">Elea One-Piece Silver</h3>
+              <span class="product-price" data-cop="320000" data-usd="84">320.000 COP</span>
+            </div>
+            <button class="jacq-wishlist-heart" onclick="event.stopPropagation(); this.classList.toggle('liked')" title="Favoritos">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <!-- Barra izquierda: Colecciones - T.Q.M. -->
+      <div class="solaz-subcat-strip align-left">
+        <a href="javascript:void(0)" onclick="navigateToCollection('tqm')" class="solaz-subcat-link">
+          <strong>Colecciones</strong> - T.Q.M.
+        </a>
+      </div>
+
+      <!-- Hilera de 4 Bloques: Colecciones - T.Q.M. (2 Hombres Izquierda · 2 Mujeres Derecha) -->
+      <div class="catalog-grid cols-4" style="padding: 0 0 12px 0;">
+        <article class="product-card" onclick="openProductById('7896126357687')">
+          <div class="product-media">
+            <span class="micro-badge">NOVEDAD</span>
+            <div class="jacq-card-top-swatches"><span class="jacq-card-swatch-sq" style="background-color: #D95B38;" title="Sunset" onclick="event.stopPropagation(); openProductById('8700769534135')"></span><span class="jacq-card-swatch-sq" style="background-color: #681A25;" title="Tinto" onclick="event.stopPropagation(); openProductById('8700784935095')"></span><span class="jacq-card-swatch-sq" style="background-color: #4E2A1E;" title="Caoba" onclick="event.stopPropagation(); openProductById('8782532640951')"></span><span class="jacq-card-swatch-sq active" style="background-color: #581822;" title="Vinotinto" onclick="event.stopPropagation(); openProductById('7896126357687')"></span><span class="jacq-card-swatch-sq" style="background-color: #1A1A1A;" title="Black" onclick="event.stopPropagation(); openProductById('7896129437879')"></span></div>
+            <img class="media-front" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/BORIS_BRIEF_VINO_TINTO.jpg?v=1773694936" alt="Boris Brief Vinotinto" loading="lazy">
+            <img class="media-hover" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/BORIS_BRIEFS_VINO_TINTO_BACK.jpg?v=1773694964" alt="Boris Brief Vinotinto vista 2" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-info-left">
+              <h3 class="product-title">Boris Brief Vinotinto</h3>
+              <span class="product-price" data-cop="275000" data-usd="72">275.000 COP</span>
+            </div>
+            <button class="jacq-wishlist-heart" onclick="event.stopPropagation(); this.classList.toggle('liked')" title="Favoritos">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card" onclick="openProductById('7896145821879')">
+          <div class="product-media">
+            <span class="micro-badge">NOVEDAD</span>
+            <div class="jacq-card-top-swatches"><span class="jacq-card-swatch-sq" style="background-color: #681A25;" title="Tinto" onclick="event.stopPropagation(); openProductById('8701116907703')"></span><span class="jacq-card-swatch-sq" style="background-color: #D95B38;" title="Sunset" onclick="event.stopPropagation(); openProductById('8701118742711')"></span><span class="jacq-card-swatch-sq" style="background-color: #B32428;" title="Escarlata" onclick="event.stopPropagation(); openProductById('7896145461431')"></span><span class="jacq-card-swatch-sq active" style="background-color: #581822;" title="Vinotinto" onclick="event.stopPropagation(); openProductById('7896145821879')"></span><span class="jacq-card-swatch-sq" style="background-color: #D97036;" title="Tangerine" onclick="event.stopPropagation(); openProductById('7119208382647')"></span></div>
+            <img class="media-front" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/EROS_BRIEFS_VINO_TINTO.jpg?v=1773694672" alt="Eros Brief Vinotinto" loading="lazy">
+            <img class="media-hover" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/EROS_BRIFS_VINO_TINTO_BACK.jpg?v=1773694694" alt="Eros Brief Vinotinto vista 2" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-info-left">
+              <h3 class="product-title">Eros Brief Vinotinto</h3>
+              <span class="product-price" data-cop="270000" data-usd="71">270.000 COP</span>
+            </div>
+            <button class="jacq-wishlist-heart" onclick="event.stopPropagation(); this.classList.toggle('liked')" title="Favoritos">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card" onclick="openProductById('7896148869303')">
+          <div class="product-media">
+            <span class="micro-badge">NOVEDAD</span>
+            <div class="jacq-card-top-swatches"><span class="jacq-card-swatch-sq active" style="background-color: #1A1A1A;" title="Black" onclick="event.stopPropagation(); openProductById('7896148869303')"></span><span class="jacq-card-swatch-sq" style="background-color: #581822;" title="Vinotinto" onclick="event.stopPropagation(); openProductById('7896147886263')"></span></div>
+            <img class="media-front" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/isis_bikini_black_tagua.jpg?v=1779419863" alt="Isis Bikini Top Black" loading="lazy">
+            <img class="media-hover" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/isis_bikini_top_tagua_black.jpg?v=1779419904" alt="Isis Bikini Top Black vista 2" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-info-left">
+              <h3 class="product-title">Isis Bikini Top Black</h3>
+              <span class="product-price" data-cop="220000" data-usd="58">220.000 COP</span>
+            </div>
+            <button class="jacq-wishlist-heart" onclick="event.stopPropagation(); this.classList.toggle('liked')" title="Favoritos">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card" onclick="openProductById('7896149229751')">
+          <div class="product-media">
+            <span class="micro-badge">NOVEDAD</span>
+            <div class="jacq-card-top-swatches"><span class="jacq-card-swatch-sq active" style="background-color: #1A1A1A;" title="Black" onclick="event.stopPropagation(); openProductById('7896149229751')"></span><span class="jacq-card-swatch-sq" style="background-color: #581822;" title="Vinotinto" onclick="event.stopPropagation(); openProductById('7896148803767')"></span></div>
+            <img class="media-front" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/IMG_1789.jpg?v=1766063049" alt="Isis Bikini Bottom Black" loading="lazy">
+            <img class="media-hover" src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/isis_bikini_black_tagua.jpg?v=1779419863" alt="Isis Bikini Bottom Black vista 2" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-info-left">
+              <h3 class="product-title">Isis Bikini Bottom Black</h3>
+              <span class="product-price" data-cop="210000" data-usd="55">210.000 COP</span>
+            </div>
+            <button class="jacq-wishlist-heart" onclick="event.stopPropagation(); this.classList.toggle('liked')" title="Favoritos">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+        </article>
       </div>
     </section>
 
-    <!-- 6. COLECCIÓN: TQM (DISEÑO DUAL / SPLIT SCREEN 50/50 — IZQUIERDA HOMBRE · DERECHA MUJER) -->
-    <section class="tqm-split-section" id="coleccion-tqm">
-      <div class="tqm-split-header">
-        <div>
-          <span class="zun-section-eyebrow">DISEÑO DUAL &middot; SIDE-BY-SIDE</span>
-          <h2 class="zun-section-title">COLECCIÓN T.Q.M.</h2>
-        </div>
-        <a href="javascript:void(0)" onclick="navigateToCollection('tqm')" class="zun-gender-link">Ver Colección T.Q.M. &rarr;</a>
+    <!-- 7. FRANJA DE ENVÍOS, CITAS Y PAGO SEGURO (UBICADA ANTES DEL MOSAICO DE CATEGORÍAS COMO EN EL PDF) -->
+    <section class="services-strip">
+      <div class="service-item" style="cursor:pointer;" onclick="openSitePage('stockists')">
+        <span class="service-title" style="text-decoration:underline; text-underline-offset:4px;">Concertar una cita en la tienda</span>
+        <span class="service-sub">Medellín, Cartagena (St. Dom), Bogotá...</span>
       </div>
-
-      <div class="tqm-split-container">
-        <!-- Columna Izquierda (Hombre): Propuesta masculina TQM -->
-        <div class="tqm-split-col" onclick="navigateToCollection('tqm')">
-          <img src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/BLUE_AXEL_BRIEF.jpg?v=1773694381" alt="TQM Hombre — Briefs, Bottoms y Piezas Destacadas" loading="lazy">
-          <div class="tqm-split-overlay">
-            <span class="tqm-col-badge">HOMBRE &middot; T.Q.M.</span>
-            <div class="tqm-col-content">
-              <h3 class="tqm-col-heading">T.Q.M. HOMBRE</h3>
-              <p class="tqm-col-sub">Briefs, bottoms y siluetas masculinas destacadas en tonos Baby Blue, Silver e Ivory.</p>
-              <div class="tqm-quick-pills">
-                <span class="tqm-quick-pill" onclick="event.stopPropagation(); openProductById('7896147198135')">Axel Baby Blue</span>
-                <span class="tqm-quick-pill" onclick="event.stopPropagation(); openProductById('7896146641079')">Axel Silver</span>
-                <span class="tqm-quick-pill" onclick="event.stopPropagation(); openProductById('8563824558263')">Boris Ivory</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Columna Derecha (Mujer): Propuesta femenina TQM -->
-        <div class="tqm-split-col" onclick="navigateToCollection('tqm')">
-          <img src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/ELEA_ONE_PIECE_SILVER.jpg?v=1773695097" alt="TQM Mujer — One Pieces, Bikinis y Conjuntos" loading="lazy">
-          <div class="tqm-split-overlay">
-            <span class="tqm-col-badge">MUJER &middot; T.Q.M.</span>
-            <div class="tqm-col-content">
-              <h3 class="tqm-col-heading">T.Q.M. MUJER</h3>
-              <p class="tqm-col-sub">One pieces, bikinis y conjuntos de corte escultórico en acabados metálicos y texturas suaves.</p>
-              <div class="tqm-quick-pills">
-                <span class="tqm-quick-pill" onclick="event.stopPropagation(); openProductById('7896132976823')">Elea One-Piece Silver</span>
-                <span class="tqm-quick-pill" onclick="event.stopPropagation(); openProductById('7896134746263')">Mena Bikini Top</span>
-                <span class="tqm-quick-pill" onclick="event.stopPropagation(); openProductById('7896144249015')">Mena Bikini Bottom</span>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="service-item" style="cursor:pointer;" onclick="openSitePage('returns')">
+        <span class="service-title" style="text-decoration:underline; text-underline-offset:4px;">Envío y devoluciones gratis</span>
+        <span class="service-sub">Envío gratuito y devoluciones fáciles en un plazo de 14 días.</span>
+      </div>
+      <div class="service-item" style="cursor:pointer;" onclick="openSitePage('shipping')">
+        <span class="service-title" style="text-decoration:underline; text-underline-offset:4px;">Pago seguro</span>
+        <span class="service-sub">Visa, Mastercard, PSE, Apple Pay, Addi, Sistecrédito</span>
       </div>
     </section>
 
-    <!-- 7. FRANJA DE ENVÍOS Y LOGÍSTICA (ICONOS ANIMADOS Y RESPIRO VISUAL) -->
-    <section class="solaz-logistics-strip" id="logistica-solaz">
-      <div class="solaz-logistics-grid">
-        <div class="solaz-logistics-item" onclick="openSitePage('shipping')">
-          <div class="solaz-logistics-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-          </div>
-          <h3 class="solaz-logistics-title">Envíos seguros en Colombia</h3>
-          <p class="solaz-logistics-sub">Despachos asegurados a todo el país y envíos internacionales express vía DHL.</p>
-        </div>
-
-        <div class="solaz-logistics-item" onclick="openSitePage('shipping')">
-          <div class="solaz-logistics-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-          </div>
-          <h3 class="solaz-logistics-title">Pasarelas de pago</h3>
-          <p class="solaz-logistics-sub">Pagos 100% protegidos con tarjetas, PSE, Apple Pay, Addi y Sistecrédito.</p>
-        </div>
-
-        <div class="solaz-logistics-item" onclick="openSitePage('contact')">
-          <div class="solaz-logistics-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-          </div>
-          <h3 class="solaz-logistics-title">Soporte y Concierge</h3>
-          <p class="solaz-logistics-sub">Asesoría personalizada de tallas, cambios fáciles y atención directa por WhatsApp.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 8. SECCIÓN FINAL: EXPLORA TODO EL UNIVERSO SOLAZ (CTA CENTRAL + ACCESOS DIRECTOS A COLECCIONES) -->
-    <section class="solaz-universe-finale" id="universo-solaz">
-      <span class="solaz-universe-eyebrow">EXPLORA TODO EL UNIVERSO SOLAZ</span>
-      <h2 class="solaz-universe-heading">SOLAZ SWIM &middot; ALL COLLECTIONS</h2>
-      <button type="button" class="solaz-universe-cta-btn" onclick="navigateToCollection('shop-all')">
-        <span>Descubre nuestro universo solaz</span>
-        <span>&rarr;</span>
-      </button>
-
-      <div class="solaz-universe-shortcuts">
-        <div class="solaz-universe-card" onclick="navigateToCollection('shop-all')">
-          <img src="https://cdn.shopify.com/s/files/1/0526/3183/0711/collections/CRUISE25-10.png?v=1777818176" alt="Catálogo Completo" loading="lazy">
-          <div class="solaz-universe-card-label">
-            <h3 class="solaz-universe-card-name">CATÁLOGO COMPLETO</h3>
-          </div>
-        </div>
-
-        <div class="solaz-universe-card" onclick="navigateToCollection('resortwear')">
-          <img src="https://cdn.shopify.com/s/files/1/0526/3183/0711/files/vestido_ocaso.jpg?v=1786106988" alt="Resortwear" loading="lazy">
-          <div class="solaz-universe-card-label">
-            <h3 class="solaz-universe-card-name">RESORTWEAR</h3>
-          </div>
-        </div>
-
-        <div class="solaz-universe-card" onclick="navigateToCollection('beachwear')">
-          <img src="https://cdn.shopify.com/s/files/1/0526/3183/0711/collections/2L0A5915_611318d8-bf83-401b-b885-e151ca3ac273.png?v=1777818713" alt="Beachwear" loading="lazy">
-          <div class="solaz-universe-card-label">
-            <h3 class="solaz-universe-card-name">BEACHWEAR</h3>
-          </div>
-        </div>
-
-        <div class="solaz-universe-card" onclick="navigateToCollection('the-sun')">
-          <img src="https://cdn.shopify.com/s/files/1/0526/3183/0711/collections/Diseno_sin_titulo_22.jpg?v=1786075480" alt="The Sun" loading="lazy">
-          <div class="solaz-universe-card-label">
-            <h3 class="solaz-universe-card-name">THE SUN</h3>
-          </div>
-        </div>
-
-        <div class="solaz-universe-card" onclick="navigateToCollection('holiday-flame')">
-          <img src="https://cdn.shopify.com/s/files/1/0526/3183/0711/collections/IMG_1665.jpg?v=1787782457" alt="Holiday Flame" loading="lazy">
-          <div class="solaz-universe-card-label">
-            <h3 class="solaz-universe-card-name">HOLIDAY FLAME</h3>
-          </div>
-        </div>
-
-        <div class="solaz-universe-card" onclick="navigateToCollection('tqm')">
-          <img src="https://cdn.shopify.com/s/files/1/0526/3183/0711/collections/2L0A5797.jpg?v=1787782120" alt="TQM" loading="lazy">
-          <div class="solaz-universe-card-label">
-            <h3 class="solaz-universe-card-name">T.Q.M.</h3>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- GRILLA DE CATEGORÍAS CON TÍTULOS EN NEGRILLA SOBRE LAS FOTOS -->
+    <!-- 8. MOSAICO FINAL DE CATEGORÍAS Y COLECCIONES CON TÍTULOS EN NEGRILLA SOBRE LAS FOTOS -->
     <section class="craft-section" id="savoir-faire" style="padding-top: 12px;">
 
       <!-- Distribución Editorial 3 Filas: Fila 1 (2x span-2) · Fila 2 (4x span-1) · Fila 3 (1x span-2 + 2x span-1) -->
@@ -7334,22 +6900,6 @@
     </div>
   </aside>
 
-
-  <!-- 8. FRANJA DE SERVICIOS (CONECTADA A LAS PÁGINAS DE TIENDAS, ENVÍOS Y CAMBIOS) -->
-  <section class="services-strip">
-    <div class="service-item" style="cursor:pointer;" onclick="openSitePage('stockists')">
-      <span class="service-title" style="text-decoration:underline; text-underline-offset:4px;">Concertar una cita en la tienda</span>
-      <span class="service-sub">Medellín, Cartagena (St. Dom), Bogotá...</span>
-    </div>
-    <div class="service-item" style="cursor:pointer;" onclick="openSitePage('returns')">
-      <span class="service-title" style="text-decoration:underline; text-underline-offset:4px;">Envío y devoluciones gratis</span>
-      <span class="service-sub">Envío gratuito y devoluciones fáciles en un plazo de 14 días.</span>
-    </div>
-    <div class="service-item" style="cursor:pointer;" onclick="openSitePage('shipping')">
-      <span class="service-title" style="text-decoration:underline; text-underline-offset:4px;">Pago seguro</span>
-      <span class="service-sub">Visa, Mastercard, PSE, Apple Pay, Addi, Sistecrédito</span>
-    </div>
-  </section>
 
   <!-- 9. FOOTER NOIR OFICIAL (ESTRUCTURA DE SOLAZSWIM.COM) -->
   <footer class="site-footer" id="siteFooter">
