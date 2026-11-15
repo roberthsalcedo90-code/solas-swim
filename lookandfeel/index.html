@@ -1,0 +1,1776 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Look and Feel | Interior Design | Colombia</title>
+  <meta name="description" content="La forma en la que habitamos los espacios es el reflejo de lo que sentimos. Somos un estudio de Diseño interior en Bogotá, Colombia. Descubre tu espacio." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       RÉPLICA EXACTA DE LA ARQUITECTURA CSS DE STUDIOASHBY.COM
+       Con tipografía Montserrat y la paleta de 5 colores:
+       #D3F4A1 · #A0CF62 · #2094A2 · #9148BD · #6B2817
+       ========================================================================== */
+    :root {
+      --c-lime: #D3F4A1;      /* Color 1 */
+      --c-green: #A0CF62;     /* Color 2 */
+      --c-teal: #2094A2;      /* Color 3 */
+      --c-purple: #9148BD;    /* Color 4 */
+      --c-mahogany: #6B2817;  /* Color 5 (Reemplaza #633b2f de Studio Ashby) */
+      --c-cream: #f9f3f0;     /* Lienzo base exacto de Studio Ashby */
+      --font: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-display: swap;
+    }
+
+    body {
+      background-color: var(--c-cream);
+      color: var(--c-mahogany);
+      font-family: var(--font);
+      font-weight: 300;
+      min-height: 100vh;
+      overflow-x: hidden;
+      width: 100vw;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      background: none;
+      border: none;
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ==========================================================================
+       1. HEADER (.site--studio-ashby.header) — Exacto a studioashby.com
+       ========================================================================== */
+    .header {
+      align-items: center;
+      display: flex;
+      height: auto;
+      justify-content: center;
+      padding: 22px 0;
+      position: fixed;
+      top: 0;
+      transition: all 0.6s ease;
+      width: 100%;
+      z-index: 999;
+      color: var(--c-cream);
+    }
+    .header:hover,
+    .header.is-solid {
+      background: var(--c-cream);
+      color: var(--c-mahogany);
+      box-shadow: 0 1px 0 rgba(107, 40, 23, 0.08);
+    }
+    .header__inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .header__row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 auto;
+      width: 100%;
+      padding: 0 24px;
+    }
+    @media (min-width: 900px) {
+      .header__row {
+        padding: 0 48px;
+      }
+    }
+    .header__col {
+      display: flex;
+      align-items: center;
+    }
+    .header__col:first-of-type {
+      width: 22%;
+    }
+    .header__col.navigation {
+      width: 56%;
+      justify-content: center;
+    }
+    .header__col:last-of-type {
+      width: 22%;
+      justify-content: flex-end;
+      gap: 20px;
+    }
+    .header .logo a {
+      font-family: var(--font);
+      font-size: 18px;
+      font-weight: 300;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      transition: color 0.3s ease;
+    }
+    .header nav ul {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+    .header nav ul li a,
+    .header nav ul li button {
+      font-family: var(--font);
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      line-height: 18px;
+      text-transform: uppercase;
+      transition: opacity 0.3s ease, color 0.3s ease;
+    }
+    .header nav ul li:hover a,
+    .header nav ul li:hover button {
+      opacity: 0.5;
+    }
+    .header .logo-mark a,
+    .header .logo-mark button {
+      font-family: var(--font);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border: 1px solid currentColor;
+      padding: 6px 14px;
+      transition: all 0.3s ease;
+    }
+    .header .logo-mark button:hover {
+      background-color: var(--c-mahogany);
+      color: var(--c-cream);
+      border-color: var(--c-mahogany);
+    }
+    .header__hamburger {
+      display: none;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    @media (max-width: 967px) {
+      .header__col.navigation {
+        display: none;
+      }
+      .header__hamburger {
+        display: inline-block;
+      }
+    }
+
+    /* ==========================================================================
+       2. #LANDING — SPLASH INTERACTIVO 50/50 EXACTO A STUDIOASHBY.COM
+          Columna Izq: #6B2817 | Columna Der: #A0CF62
+          Al pasar el mouse aparece la foto a pantalla completa; al hacer clic entra
+       ========================================================================== */
+    #landing {
+      background-color: var(--c-cream);
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      transition: opacity 0.65s ease-in-out, visibility 0.65s ease-in-out;
+      width: 100vw;
+      z-index: 9999;
+    }
+    #landing.dismissed {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    #landing .landing__inner {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      height: 100dvh;
+      width: 100%;
+    }
+    @media (min-width: 900px) {
+      #landing .landing__inner {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        height: 100vh;
+      }
+    }
+    #landing .col {
+      background-color: var(--c-mahogany);
+      height: 50dvh;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    @media (min-width: 900px) {
+      #landing .col {
+        height: 100vh;
+        width: 50%;
+      }
+    }
+    #landing .col:last-of-type {
+      background-color: var(--c-teal);
+    }
+    #landing .col__inner {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      padding: 10% 64px;
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      color: var(--c-cream);
+      transition: color 0.4s ease;
+    }
+    #landing .col__brand {
+      font-family: var(--font);
+      font-size: clamp(28px, 3.4vw, 48px);
+      font-weight: 200;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+    #landing .col__sub {
+      font-family: var(--font);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--c-lime);
+      margin-bottom: 24px;
+    }
+    #landing .col__quote {
+      font-family: var(--font);
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.6;
+      max-width: 360px;
+      opacity: 0.9;
+      transition: opacity 0.4s ease;
+    }
+    #landing .col__enter {
+      margin-top: 32px;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--c-lime);
+      padding-bottom: 4px;
+      color: var(--c-lime);
+    }
+    #landing .landing__image {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.65s ease, transform 1.4s ease;
+      z-index: 1;
+    }
+    #landing .landing__image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.28);
+    }
+    @media (min-width: 900px) {
+      #landing .col:hover .landing__image {
+        opacity: 1;
+        transform: scale(1.03);
+      }
+    }
+
+    /* ==========================================================================
+       3. SECCIONES DE IMAGEN A PANTALLA COMPLETA (.fullwidth-image-section)
+          Exacto a studioashby.com: 2 retratos 50vw con 2px de separación,
+          overlay rgba(0,0,0,.2) y .project-info centrado en Matter/Montserrat 13px
+       ========================================================================== */
+    .fullwidth-image-section {
+      margin: 0 0 2px;
+      width: 100%;
+    }
+    .fullwidth-image-section:last-of-type {
+      margin: 0;
+    }
+    .fullwidth-image-section .item {
+      position: relative;
+      width: 100%;
+    }
+    .fullwidth-image-section .portrait-images {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 2px;
+      background-color: var(--c-cream);
+    }
+    @media (min-width: 900px) {
+      .fullwidth-image-section .portrait-images {
+        flex-wrap: nowrap;
+      }
+    }
+    .fullwidth-image-section .portrait-item {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1260 / 1628;
+      overflow: hidden;
+      display: block;
+      cursor: pointer;
+    }
+    @media (min-width: 900px) {
+      .fullwidth-image-section .portrait-item {
+        width: calc(50% - 1px);
+      }
+    }
+    .fullwidth-image-section .portrait-item img {
+      transition: transform 1.2s ease;
+    }
+    .fullwidth-image-section .portrait-item:hover img {
+      transform: scale(1.025);
+    }
+    .fullwidth-image-section .item .overlay {
+      background-color: rgba(0, 0, 0, 0.24);
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: opacity 0.5s ease;
+      z-index: 5;
+    }
+    .fullwidth-image-section .item .project-info {
+      color: var(--c-cream);
+      left: 50%;
+      opacity: 1;
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.8s ease;
+      z-index: 10;
+      width: 84%;
+      pointer-events: none;
+    }
+    @media (min-width: 900px) {
+      .fullwidth-image-section .item .project-info {
+        opacity: 0;
+      }
+      .fullwidth-image-section .portrait-item:hover .overlay,
+      .fullwidth-image-section .portrait-item:hover .project-info {
+        opacity: 1;
+      }
+    }
+    .fullwidth-image-section .item .project-info h2 {
+      color: var(--c-cream);
+      font-family: var(--font);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      line-height: 20px;
+      margin: 0 0 8px;
+      text-transform: uppercase;
+    }
+    .fullwidth-image-section .item .project-info p {
+      color: var(--c-lime);
+      font-family: var(--font);
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* ==========================================================================
+       4. .PULL-QUOTE (MANIFIESTO CENTRAL EXACTO A STUDIOASHBY.COM)
+          border-top & border-bottom 1px solid #f9f3f0, padding 72px 48px, max-width 956px
+       ========================================================================== */
+    .pull-quote {
+      border-bottom: 1px solid var(--c-cream);
+      border-top: 1px solid var(--c-cream);
+      padding: 40px 24px;
+      width: 100%;
+      background-color: var(--c-mahogany);
+    }
+    @media (min-width: 900px) {
+      .pull-quote {
+        padding: 72px 48px;
+      }
+    }
+    .pull-quote__inner {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+      margin: 0 auto;
+      max-width: 956px;
+      text-align: center;
+    }
+    .pull-quote__title {
+      color: var(--c-lime);
+      font-family: var(--font);
+      font-size: 28px;
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      line-height: 40px;
+      margin: 0;
+      text-transform: uppercase;
+    }
+    @media (min-width: 900px) {
+      .pull-quote__title {
+        font-size: 36px;
+        line-height: normal;
+      }
+    }
+    .pull-quote__text {
+      color: var(--c-cream);
+      font-family: var(--font);
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 24px;
+      margin: 0;
+      padding: 0;
+    }
+    @media (min-width: 900px) {
+      .pull-quote__text {
+        font-size: 20px;
+        line-height: 30px;
+      }
+    }
+    .pull-quote__attribution {
+      color: var(--c-green);
+      font-family: var(--font);
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      line-height: 18px;
+      text-transform: uppercase;
+    }
+
+    /* ==========================================================================
+       5. .TEXT-IMAGE-VIDEO (SECCIÓN 50/50 CON IMAGEN SECUNDARIA ABAJO A LA IZQ)
+          Exacto a Guernsey Family Home en studioashby.com
+       ========================================================================== */
+    .text-image-video {
+      width: 100%;
+      margin-bottom: 2px;
+    }
+    .text-image-video__row {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      padding: 0;
+    }
+    @media (min-width: 900px) {
+      .text-image-video__row {
+        flex-direction: row;
+        min-height: 100vh;
+      }
+      .text-image-video__row.reverse {
+        flex-direction: row-reverse;
+      }
+    }
+    .text-image-video__text-col {
+      display: flex;
+      order: 2;
+      width: 100%;
+      background-color: var(--c-teal);
+    }
+    @media (min-width: 900px) {
+      .text-image-video__text-col {
+        order: 0;
+        width: 50%;
+      }
+    }
+    .text-image-video__text-inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 60vw;
+      width: 100%;
+    }
+    @media (min-width: 900px) {
+      .text-image-video__text-inner {
+        gap: 27px;
+        min-height: 100vh;
+      }
+    }
+    .text-image-video__text-group {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      gap: 22px;
+      max-width: 100%;
+      padding: 28px 24px;
+    }
+    @media (min-width: 900px) {
+      .text-image-video__text-group {
+        max-width: 74%;
+        padding: 36px 36px 0;
+      }
+    }
+    .text-image-video__title {
+      color: var(--c-cream);
+      font-family: var(--font);
+      font-size: clamp(28px, 3.2vw, 44px);
+      font-weight: 300;
+      line-height: 1.08;
+      margin: 0 0 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .text-image-video__body p {
+      color: var(--c-cream);
+      font-family: var(--font);
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 20px;
+      margin: 0 0 12px;
+    }
+    .text-image-video__body strong {
+      color: var(--c-lime);
+      font-weight: 500;
+    }
+    .text-image-video__button {
+      border: 1px solid var(--c-cream);
+      color: var(--c-cream);
+      display: inline-block;
+      font-family: var(--font);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      line-height: 15px;
+      padding: 9px 18px 10px;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+    .text-image-video__button:hover {
+      background-color: var(--c-lime);
+      border-color: var(--c-lime);
+      color: var(--c-mahogany);
+    }
+    .text-image-video__secondary-image {
+      align-self: flex-start;
+      flex-shrink: 0;
+      max-width: 100%;
+      padding: 0 24px 24px;
+      width: 100%;
+    }
+    @media (min-width: 900px) {
+      .text-image-video__secondary-image {
+        align-self: flex-start;
+        max-width: 51%;
+        padding: 0 36px 36px;
+      }
+    }
+    .text-image-video__secondary-image img {
+      aspect-ratio: 1440 / 1860;
+      object-fit: cover;
+    }
+    .text-image-video__media {
+      min-height: 476px;
+      order: 1;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+    }
+    @media (min-width: 900px) {
+      .text-image-video__media {
+        min-height: 100vh;
+        order: 0;
+        width: 50%;
+      }
+    }
+
+    /* ==========================================================================
+       6. .IMAGE-ROW (FILA DE 4 COLUMNAS EN FONDO CLARO #F9F3F0 CON HOVER SWAP)
+          Exacto a la sección "Projects" de studioashby.com
+       ========================================================================== */
+    .image-row {
+      overflow: hidden;
+      padding-bottom: 35px;
+      width: 100%;
+      background-color: var(--c-cream);
+    }
+    .image-row__header {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      min-height: 72px;
+      padding: 27px 20px;
+    }
+    @media (min-width: 900px) {
+      .image-row__header {
+        padding: 27px 36px;
+      }
+    }
+    .image-row__heading {
+      color: var(--c-mahogany);
+      font-family: var(--font);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      line-height: 18px;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    @media (min-width: 900px) {
+      .image-row__heading {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+    .image-row__arrow {
+      align-items: center;
+      display: flex;
+      flex-shrink: 0;
+      justify-content: center;
+      color: var(--c-mahogany);
+    }
+    .image-row__track {
+      -webkit-overflow-scrolling: touch;
+      display: flex;
+      gap: 2px;
+      overflow-x: auto;
+      padding: 1px 0;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+    }
+    .image-row__track::-webkit-scrollbar {
+      display: none;
+    }
+    @media (min-width: 900px) {
+      .image-row__track {
+        overflow-x: visible;
+        padding: 1px 0;
+        scroll-snap-type: none;
+      }
+    }
+    .image-row__item {
+      align-items: center;
+      display: flex;
+      flex: 0 0 82vw;
+      flex-direction: column;
+      gap: 18px;
+      scroll-snap-align: start;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    @media (min-width: 900px) {
+      .image-row__item {
+        flex: 1 1 0%;
+      }
+    }
+    .image-row__image-wrap {
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      background-color: #e6dfd9;
+    }
+    .image-row__image {
+      height: 100%;
+      inset: 0;
+      position: absolute;
+      width: 100%;
+      transition: opacity 0.45s ease;
+    }
+    .image-row__image--secondary {
+      opacity: 0;
+    }
+    .image-row__item:hover .image-row__image--secondary {
+      opacity: 1;
+    }
+    .image-row__title {
+      color: var(--c-mahogany);
+      display: block;
+      font-family: var(--font);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      line-height: 16px;
+      text-align: center;
+      text-transform: uppercase;
+      padding: 0 12px;
+    }
+    @media (min-width: 900px) {
+      .image-row__title {
+        font-size: 12.5px;
+        line-height: 18px;
+      }
+    }
+
+    /* ==========================================================================
+       7. FOOTER (.site--studio-ashby.footer) — Exacto 96.09px de alto
+       ========================================================================== */
+    .footer {
+      background-color: var(--c-mahogany);
+      bottom: 0;
+      height: auto;
+      left: 0;
+      margin-top: auto;
+      padding: 32px 0 35px;
+      position: relative;
+      width: 100%;
+      z-index: 99;
+      color: var(--c-cream);
+    }
+    @media (min-width: 900px) {
+      .footer {
+        height: 96.09px;
+        padding: 32px 0 35px;
+      }
+    }
+    .footer__inner {
+      align-items: flex-end;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 0 auto;
+      max-width: 100%;
+      padding: 0 24px;
+    }
+    @media (min-width: 900px) {
+      .footer__inner {
+        align-items: center;
+        flex-wrap: nowrap;
+        padding: 0 48px;
+      }
+    }
+    .footer__col {
+      width: 100%;
+    }
+    @media (min-width: 900px) {
+      .footer__col {
+        width: 60%;
+      }
+      .footer__col:first-of-type {
+        width: 20%;
+      }
+      .footer__col:last-of-type {
+        display: flex;
+        justify-content: flex-end;
+        text-align: right;
+        width: 20%;
+      }
+    }
+    .footer .logo a {
+      font-family: var(--font);
+      font-size: 16px;
+      font-weight: 300;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--c-cream);
+    }
+    .footer nav ul {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px 32px;
+      list-style: none;
+      margin: 28px 0;
+      padding: 0;
+    }
+    @media (min-width: 900px) {
+      .footer nav ul {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin: 0;
+      }
+    }
+    .footer nav ul li a,
+    .footer nav ul li button {
+      font-family: var(--font);
+      font-size: 11.5px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--c-cream);
+      transition: opacity 0.3s ease;
+    }
+    .footer nav ul li a:hover,
+    .footer nav ul li button:hover {
+      opacity: 0.5;
+    }
+    .footer p.copyright {
+      color: var(--c-lime);
+      font-family: var(--font);
+      font-size: 11px;
+      font-weight: 300;
+      line-height: 18px;
+      margin: 0;
+    }
+
+    /* ==========================================================================
+       8. PANELES DESLIZANTES (MODALES ESTILO STUDIO ASHBY PARA:
+          - CONTACTO / COTIZADOR
+          - QUIÉNES SOMOS (PAOLA & GERMÁN)
+          - LECTURA DE ARTÍCULOS DEL BLOG)
+       ========================================================================== */
+    .ashby-drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 2000;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.45s ease, visibility 0.45s ease;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .ashby-drawer-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+    }
+    .ashby-drawer {
+      width: 100%;
+      max-width: 760px;
+      height: 100vh;
+      background-color: var(--c-mahogany);
+      color: var(--c-cream);
+      overflow-y: auto;
+      padding: 48px;
+      transform: translateX(100%);
+      transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .ashby-drawer-backdrop.open .ashby-drawer {
+      transform: translateX(0);
+    }
+    .ashby-drawer__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 24px;
+      margin-bottom: 36px;
+      border-bottom: 1px solid rgba(249, 243, 240, 0.25);
+    }
+    .ashby-drawer__label {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--c-lime);
+    }
+    .ashby-drawer__close {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border: 1px solid var(--c-cream);
+      padding: 7px 16px;
+    }
+    .ashby-drawer__close:hover {
+      background: var(--c-lime);
+      border-color: var(--c-lime);
+      color: var(--c-mahogany);
+    }
+    .ashby-form-group {
+      margin-bottom: 22px;
+    }
+    .ashby-form-group label {
+      display: block;
+      font-size: 10.5px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--c-lime);
+      margin-bottom: 8px;
+    }
+    .ashby-form-group input,
+    .ashby-form-group select,
+    .ashby-form-group textarea {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(249, 243, 240, 0.4);
+      padding: 10px 0;
+      color: var(--c-cream);
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 300;
+      outline: none;
+    }
+    .ashby-form-group select option {
+      background: var(--c-mahogany);
+      color: var(--c-cream);
+    }
+    .ashby-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .ashby-pill {
+      font-size: 10.5px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 9px 16px;
+      border: 1px solid rgba(249, 243, 240, 0.35);
+      transition: all 0.3s ease;
+    }
+    .ashby-pill.active,
+    .ashby-pill:hover {
+      background: var(--c-lime);
+      color: var(--c-mahogany);
+      border-color: var(--c-lime);
+      font-weight: 500;
+    }
+    .article-body p {
+      font-size: 14.5px;
+      line-height: 1.75;
+      margin-bottom: 18px;
+      color: var(--c-cream);
+    }
+    .article-body h3 {
+      font-size: 20px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--c-lime);
+      margin: 28px 0 12px;
+    }
+    .article-body blockquote {
+      border-left: 2px solid var(--c-lime);
+      padding-left: 18px;
+      font-style: italic;
+      margin: 24px 0;
+      color: var(--c-lime);
+    }
+  
+    /* ==========================================================================
+       9. OPTIMIZACIÓN INTEGRAL MOBILE-FIRST (EXACTO A STUDIOASHBY.COM EN MÓVIL)
+       ========================================================================== */
+    .off-canvas {
+      position: fixed;
+      inset: 0;
+      background-color: var(--c-mahogany);
+      color: var(--c-cream);
+      z-index: 998;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 96px 24px 36px;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+    .off-canvas.open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+    .off-canvas__nav ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .off-canvas__nav a,
+    .off-canvas__nav button {
+      font-family: var(--font);
+      font-size: 22px;
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--c-cream);
+    }
+    .off-canvas__footer {
+      border-top: 1px solid rgba(249, 243, 240, 0.25);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--c-lime);
+    }
+
+    @media (max-width: 899px) {
+      /* En móvil no hay hover de mouse: mostramos las fotos de #landing con velo elegante */
+      #landing .landing__image {
+        opacity: 0.42;
+      }
+      #landing .col__inner {
+        padding: 24px;
+      }
+      #landing .col__brand {
+        font-size: 24px;
+        letter-spacing: 0.22em;
+        margin-bottom: 10px;
+      }
+      #landing .col__sub {
+        font-size: 10px;
+        margin-bottom: 12px;
+      }
+      #landing .col__quote {
+        font-size: 12px;
+        max-width: 300px;
+      }
+      #landing .col__enter {
+        margin-top: 18px;
+        font-size: 10px;
+      }
+
+      /* En móvil el overlay de los dípticos es siempre visible para legibilidad táctil */
+      .fullwidth-image-section .item .overlay {
+        opacity: 1;
+        background: linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.45) 100%);
+      }
+      .fullwidth-image-section .item .project-info {
+        opacity: 1;
+        width: 88%;
+      }
+      .fullwidth-image-section .portrait-item {
+        aspect-ratio: 4 / 4.8;
+      }
+
+      /* Pull quote en móvil */
+      .pull-quote {
+        padding: 48px 22px;
+      }
+      .pull-quote__inner {
+        gap: 22px;
+      }
+      .pull-quote__title {
+        font-size: 24px;
+        line-height: 1.25;
+      }
+      .pull-quote__text {
+        font-size: 15px;
+        line-height: 23px;
+      }
+
+      /* Text-image-video en móvil */
+      .text-image-video__media {
+        min-height: 68vw;
+      }
+      .text-image-video__text-inner {
+        min-height: auto;
+        gap: 20px;
+      }
+      .text-image-video__text-group {
+        padding: 32px 22px 12px;
+      }
+      .text-image-video__secondary-image {
+        padding: 0 22px 28px;
+        max-width: 72%;
+      }
+
+      /* Carrusel táctil horizontal en móvil para el Blog también */
+      #blog .image-row__track {
+        display: flex !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        gap: 2px !important;
+      }
+      #blog .image-row__item {
+        flex: 0 0 80vw !important;
+      }
+
+      /* Drawers a pantalla completa en móvil + prevención de auto-zoom en iOS (16px) */
+      .ashby-drawer {
+        padding: 24px 20px 48px;
+        height: 100dvh;
+      }
+      .ashby-form-group input,
+      .ashby-form-group select,
+      .ashby-form-group textarea {
+        font-size: 16px;
+      }
+    }
+
+  </style>
+</head>
+<body class="page-template--home">
+
+  <!-- ========================================================================
+       HEADER EXACTO A STUDIO ASHBY (.site--studio-ashby.header)
+       ======================================================================== -->
+  <header class="site--studio-ashby header" id="mainHeader">
+    <div class="header__inner">
+      <div class="header__row">
+        <div class="header__col">
+          <div class="logo">
+            <a href="#" onclick="reopenLanding(event)">LOOK AND FEEL</a>
+          </div>
+        </div>
+
+        <div class="header__col navigation">
+          <nav>
+            <ul>
+              <li><a href="#servicios">Servicios</a></li>
+              <li><a href="#quienes-somos">Quiénes Somos</a></li>
+              <li><button type="button" onclick="openContactDrawer('Proyecto General')">Contacto</button></li>
+              <li><a href="#fika">Productos</a></li>
+              <li><a href="#blog">Blog</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="header__col">
+          <div class="logo-mark">
+            <button type="button" onclick="openContactDrawer('Cotización')">Cotizar</button>
+          </div>
+          <button type="button" class="header__hamburger" id="mobileMenuBtn" onclick="toggleMobileMenu()">Menú</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MENÚ MÓVIL OFF-CANVAS EXACTO A STUDIO ASHBY -->
+  <div class="off-canvas" id="mobileMenu">
+    <nav class="off-canvas__nav">
+      <ul>
+        <li><a href="#servicios" onclick="closeMobileMenu()">Servicios</a></li>
+        <li><a href="#quienes-somos" onclick="closeMobileMenu(); openAboutDrawer()">Quiénes Somos</a></li>
+        <li><button type="button" onclick="closeMobileMenu(); openContactDrawer('Proyecto General')">Contacto</button></li>
+        <li><a href="#fika" onclick="closeMobileMenu()">Productos · FIKA</a></li>
+        <li><a href="#blog" onclick="closeMobileMenu()">Blog</a></li>
+      </ul>
+    </nav>
+    <div class="off-canvas__footer" onclick="closeMobileMenu(); openContactDrawer('Cotización Móvil')">
+      <span>Cotiza tu Proyecto en Bogotá</span>
+      <span>WhatsApp →</span>
+    </div>
+  </div>
+
+  <div class="wrapper fade-wrapper fadein">
+    <main>
+
+      <!-- ====================================================================
+           SECTION 1: #LANDING (SPLASH 50/50 INTERACTIVO EXACTO A STUDIO ASHBY)
+           Pasa el cursor para revelar la imagen; haz clic para entrar al sitio
+           ==================================================================== -->
+      <section id="landing">
+        <div class="landing__inner">
+          <!-- Mitad Izquierda: Look and Feel Interior Design (#6B2817) -->
+          <div class="col" onclick="dismissLanding()">
+            <div class="col__inner">
+              <span class="col__sub">Estudio de Diseño de Interiores · Colombia</span>
+              <h1 class="col__brand">LOOK AND FEEL</h1>
+              <p class="col__quote">“Haz que tus espacios cuenten historias y despierten tus sentidos”</p>
+              <span class="col__enter">Entrar al Estudio</span>
+            </div>
+            <div class="landing__image">
+              <img src="assets/30e03a_4d00c302cd6f4267a3602863f2d2b459~mv2.jpg" alt="Look and Feel Interior Design" />
+            </div>
+          </div>
+
+          <!-- Mitad Derecha: Diseño Interior & Mobiliario / FIKA (#2094A2) -->
+          <div class="col" onclick="dismissLanding('#fika')">
+            <div class="col__inner">
+              <span class="col__sub">#Diseñandoconlossentidos</span>
+              <div class="sister-logo">
+                <h2 class="col__brand">FIKA & STYLING</h2>
+              </div>
+              <p class="col__quote">Habitar nuestros espacios desde los cinco sentidos es conocer de ellos.</p>
+              <span class="col__enter">Explorar Universo Sensorial</span>
+            </div>
+            <div class="landing__image sister">
+              <img src="assets/30e03a_c3d934907ba746bfa529fa7ef2e5a3e7~mv2.jpg" alt="Look and Feel Sensory" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION 2: .FULLWIDTH-IMAGE-SECTION (DÍPTICO RETRATO 50VW / 50VW)
+           Exacto a St James's Park Apartment / Villa Robert Graves en Studio Ashby
+           ==================================================================== -->
+      <section class="fullwidth-image-section">
+        <div class="section-wrapper">
+          <div class="item portrait">
+            <div class="portrait-images">
+              <a class="portrait-item" href="#servicios">
+                <img src="assets/30e03a_c3d934907ba746bfa529fa7ef2e5a3e7~mv2.jpg" alt="Remodela o renueva tu HOGAR" />
+                <div class="project-info">
+                  <h2>Remodela o renueva tu HOGAR con soluciones innovadoras y personalizadas</h2>
+                  <p>Interiorismo Residencial · Bogotá</p>
+                </div>
+                <div class="overlay"></div>
+              </a>
+
+              <a class="portrait-item" href="#renovacion-decoracion">
+                <img src="assets/30e03a_4d00c302cd6f4267a3602863f2d2b459~mv2.jpg" alt="Haz que el alma de tu MARCA se vea reflejada" />
+                <div class="project-info">
+                  <h2>Haz que el alma de tu MARCA se vea reflejada en el espacio ideal para tu negocio</h2>
+                  <p>Espacios Comerciales · Bienestar y Confort</p>
+                </div>
+                <div class="overlay"></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION 3: .PULL-QUOTE (MANIFIESTO CENTRAL EXACTO A STUDIO ASHBY)
+           ==================================================================== -->
+      <section class="pull-quote" style="background-color:#6B2817">
+        <div class="pull-quote__inner">
+          <h2 class="pull-quote__title">Look and Feel Colombia</h2>
+          <blockquote class="pull-quote__text">
+            Somos un estudio de diseño interior enfocado en contar historias y transformar los espacios a través de los cinco sentidos. Que el diseño de tus espacios (interiores o exteriores) cuente tus historias y te genere bienestar y confort mediante planificación y desarrollo, asesoría y styling en compras, análisis de actividades, últimas tendencias sostenibles y acompañamiento constante.
+          </blockquote>
+          <span class="pull-quote__attribution">#Diseñandoconlossentidos · Arq. Paola Lozano & Ing. Germán Lozano</span>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION 4: .TEXT-IMAGE-VIDEO (50/50 + IMAGEN SECUNDARIA ABAJO A LA IZQ)
+           Servicio 1: Remodelación de Espacios (Con color #2094A2 de tu paleta)
+           ==================================================================== -->
+      <section class="text-image-video" id="servicios">
+        <div class="text-image-video__row text-image-video__row--full-bleed-media">
+          <div class="text-image-video__text-col" style="background-color:#2094A2">
+            <div class="text-image-video__text-inner">
+              <div class="text-image-video__text-group">
+                <h2 class="text-image-video__title">Remodelación de Espacios</h2>
+                <div class="text-image-video__body">
+                  <p>
+                    Mejora tus espacios, realiza cambios y mejoras constructivas. Actualiza tu entorno con materiales modernos y redistribuye la organización. Construye el lugar de tus sueños con el respaldo arquitectónico de Pao Lozano y la gerencia de obra civil de Germán Lozano.
+                  </p>
+                  <p>
+                    <strong>Renovación espacial:</strong> Si tu vivienda tiene más de 15 años y quieres mejorar la calidad de vida de tu familia y valorizar tu propiedad.<br/>
+                    <strong>Espacio nuevo:</strong> Si acabas de adquirir una propiedad y buscas mejorar su funcionalidad y distribución.<br/>
+                    <strong>Cambios constructivos:</strong> Si buscas ser más competitivo al arrendar tu vivienda o inversión.<br/>
+                    <strong>Espacio comercial:</strong> Si eres dueño de una oficina o local comercial y necesitas adecuarlo y redistribuirlo.
+                  </p>
+                </div>
+                <button type="button" onclick="openContactDrawer('Remodelación de Espacios')" class="text-image-video__button">Cotiza tu Remodelación</button>
+              </div>
+
+              <div class="text-image-video__secondary-image">
+                <img src="assets/30e03a_97d80a055c544dcb8327ae8bf46fa2f5~mv2.jpg" alt="Detalle Remodelación Look and Feel" />
+              </div>
+            </div>
+          </div>
+
+          <div class="text-image-video__media">
+            <img src="assets/30e03a_79e78fae13474dd59029441b95d6bb67~mv2.jpg" alt="Remodelación de espacios Bogotá" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION 5: .IMAGE-ROW (FILA DE 4 COLUMNAS EN FONDO CLARO #F9F3F0)
+           Con doble imagen en hover igual a la fila "Projects" de Studio Ashby
+           ==================================================================== -->
+      <section class="image-row">
+        <div class="image-row__header">
+          <a href="#servicios" class="image-row__heading">Nuestros Servicios & Metodología Sensorial</a>
+          <button type="button" onclick="openContactDrawer('Asesoría Integral')" class="image-row__arrow" aria-label="Pregunta por tu proyecto">
+            <svg width="36" height="12" viewBox="0 0 36 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 6H34M34 6L29 1M34 6L29 11" stroke="currentColor" stroke-width="1"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="image-row__track">
+          <!-- Item 1: Remodelación -->
+          <div class="image-row__item" onclick="openContactDrawer('Remodelación de Espacios')">
+            <div class="image-row__image-wrap" style="border-top: 3px solid #2094A2">
+              <div class="image-row__image image-row__image--primary">
+                <img src="assets/30e03a_79e78fae13474dd59029441b95d6bb67~mv2.jpg" alt="Remodelación de espacios" />
+              </div>
+              <div class="image-row__image image-row__image--secondary">
+                <img src="assets/30e03a_b5e004c096ef46808d6777bbc375b410~mv2.jpeg" alt="Cambios constructivos" />
+              </div>
+            </div>
+            <span class="image-row__title">Remodelación de Espacios</span>
+          </div>
+
+          <!-- Item 2: Renovación -->
+          <div class="image-row__item" onclick="openContactDrawer('Renovación de Espacios')">
+            <div class="image-row__image-wrap" style="border-top: 3px solid #A0CF62">
+              <div class="image-row__image image-row__image--primary">
+                <img src="assets/30e03a_4d00c302cd6f4267a3602863f2d2b459~mv2.jpg" alt="Renovación de espacios" />
+              </div>
+              <div class="image-row__image image-row__image--secondary">
+                <img src="assets/30e03a_c3d934907ba746bfa529fa7ef2e5a3e7~mv2.jpg" alt="Color, aromas y texturas" />
+              </div>
+            </div>
+            <span class="image-row__title">Renovación de Espacios</span>
+          </div>
+
+          <!-- Item 3: Decoración y Styling -->
+          <div class="image-row__item" onclick="openContactDrawer('Decoración y Styling')">
+            <div class="image-row__image-wrap" style="border-top: 3px solid #9148BD">
+              <div class="image-row__image image-row__image--primary">
+                <img src="assets/30e03a_88f5e5f0c5fb48a787d3bc534f000e77~mv2.jpg" alt="Decoración y Styling" />
+              </div>
+              <div class="image-row__image image-row__image--secondary">
+                <img src="assets/30e03a_d26f0b8cb7014482b79f39698bf56c67~mv2.jpg" alt="Asesoría en compras" />
+              </div>
+            </div>
+            <span class="image-row__title">Decoración y Styling</span>
+          </div>
+
+          <!-- Item 4: Diseño Interior y Mobiliario (Vela FIKA) -->
+          <div class="image-row__item" id="fika" onclick="openContactDrawer('Pedido Vela FIKA ($37.000 COP)')">
+            <div class="image-row__image-wrap" style="border-top: 3px solid #D3F4A1">
+              <div class="image-row__image image-row__image--primary">
+                <img src="assets/30e03a_455e5d23961f4b7c82da8be4265c8ac8~mv2.jpg" alt="Vela FIKA Diseño Boho" />
+              </div>
+              <div class="image-row__image image-row__image--secondary">
+                <img src="assets/30e03a_97d80a055c544dcb8327ae8bf46fa2f5~mv2.jpg" alt="Diseño Interior y Mobiliario" />
+              </div>
+            </div>
+            <span class="image-row__title">Vela FIKA · Diseño Boho ($37.000)</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION 6: .TEXT-IMAGE-VIDEO (RENOVACIÓN Y DECORACIÓN & STYLING)
+           Con el tono #9148BD y #6B2817 de tu paleta seleccionada
+           ==================================================================== -->
+      <section class="text-image-video" id="renovacion-decoracion">
+        <div class="text-image-video__row text-image-video__row--full-bleed-media reverse">
+          <div class="text-image-video__text-col" style="background-color:#6B2817">
+            <div class="text-image-video__text-inner">
+              <div class="text-image-video__text-group">
+                <h2 class="text-image-video__title">Renovación, Decoración & Styling</h2>
+                <div class="text-image-video__body">
+                  <p>
+                    <strong>Renovación de espacios:</strong> Transforma tus espacios a través del color, los aromas y texturas, la ambientación y la distribución espacial. Ideal si buscas transformar tu hogar o negocio sin invertir mucho dinero, darle un nuevo aire con nuevas tendencias, o preparar la llegada de un bebé.
+                  </p>
+                  <p>
+                    <strong>Decoración, Bienestar y Styling:</strong> Puedes intervenir tu mobiliario, agregar texturas con alfombras y elementos decorativos. <strong>Cuenta con acompañamiento en compras</strong> para quienes no saben qué muebles comprar, buscan tendencia y vanguardia, tienen un evento especial o quieren una transformación inmediata.
+                  </p>
+                </div>
+                <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                  <button type="button" onclick="openContactDrawer('Renovación de Espacios')" class="text-image-video__button">Cotiza tu Renovación</button>
+                  <button type="button" onclick="openContactDrawer('Decoración y Styling')" class="text-image-video__button">Cotiza tu Decoración</button>
+                </div>
+              </div>
+
+              <div class="text-image-video__secondary-image">
+                <img src="assets/30e03a_d26f0b8cb7014482b79f39698bf56c67~mv2.jpg" alt="Decoración y Styling Bogotá" />
+              </div>
+            </div>
+          </div>
+
+          <div class="text-image-video__media">
+            <img src="assets/30e03a_88f5e5f0c5fb48a787d3bc534f000e77~mv2.jpg" alt="Renovación y Decoración de Espacios" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION 7: .FULLWIDTH-IMAGE-SECTION (QUIÉNES SOMOS: PAOLA & GERMÁN)
+           Exacto al díptico final de Studio Ashby (Hampstead / Tamodi Estate)
+           ==================================================================== -->
+      <section class="fullwidth-image-section" id="quienes-somos">
+        <div class="section-wrapper">
+          <div class="item portrait">
+            <div class="portrait-images">
+              <div class="portrait-item" onclick="openAboutDrawer()">
+                <img src="assets/30e03a_b48c8d92561e49aaa48fce7659c43a5f~mv2.jpg" alt="Paola Lozano De la Pava" />
+                <div class="project-info">
+                  <h2>¡Hola! Soy Pao Lozano · Arquitecta & Diseñadora de Interiores</h2>
+                  <p>“Creo que el espacio que habito es el reflejo de lo que siento” · Leer Biografía</p>
+                </div>
+                <div class="overlay"></div>
+              </div>
+
+              <div class="portrait-item" onclick="openAboutDrawer()">
+                <img src="assets/30e03a_beacb37e009b4e79b79779ff25203ed7~mv2.jpeg" alt="Germán Lozano Velásquez" />
+                <div class="project-info">
+                  <h2>¡Hola! Soy Germán Lozano · Ingeniero Civil & Gerencia de Obras</h2>
+                  <p>“La planificación es la base de la ejecución para evitar el reproceso” · Leer Biografía</p>
+                </div>
+                <div class="overlay"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION 8: .IMAGE-ROW (BLOG DE DISEÑO INTERIOR — LAS 9 ENTRADAS)
+           ==================================================================== -->
+      <section class="image-row" id="blog">
+        <div class="image-row__header">
+          <span class="image-row__heading">Blog de Diseño Interior · La mejor manera de vivir el diseño es a través de los sentidos</span>
+          <span class="image-row__arrow" style="font-size:11px; letter-spacing:0.15em; text-transform:uppercase;">9 Entradas →</span>
+        </div>
+
+        <div class="image-row__track" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px 2px; padding: 0 2px;">
+          <div class="image-row__item" onclick="openArticle(0, event)">
+            <div class="image-row__image-wrap">
+              <div class="image-row__image image-row__image--primary">
+                <img src="assets/30e03a_08e83306ee6a49d5aacf308cee795bcd~mv2.png" alt="Estado de ánimo" />
+              </div>
+            </div>
+            <span class="image-row__title">¿Por qué el diseño interior influye en nuestro estado de ánimo?</span>
+          </div>
+
+          <div class="image-row__item" onclick="openArticle(1, event)">
+            <div class="image-row__image-wrap">
+              <div class="image-row__image image-row__image--primary">
+                <img src="assets/1c1fcfb3c2fa41a58394493406e03029.jpg" alt="Homefullness" />
+              </div>
+            </div>
+            <span class="image-row__title">Homefullness: 5 consejos para lograrlo en nuestro hogar</span>
+          </div>
+
+          <div class="image-row__item" onclick="openArticle(2, event)">
+            <div class="image-row__image-wrap">
+              <div class="image-row__image image-row__image--primary">
+                <img src="assets/30e03a_e9d2ab29434540b1b82782358a2ac19f~mv2.png" alt="8 cosas al remodelar" />
+              </div>
+            </div>
+            <span class="image-row__title">¿Vas a remodelar? 8 cosas que queremos que sepas</span>
+          </div>
+
+          <div class="image-row__item" onclick="openArticle(3, event)">
+            <div class="image-row__image-wrap">
+              <div class="image-row__image image-row__image--primary">
+                <img src="assets/30e03a_ad0c3e85bc364aa289de0453059f6917~mv2.png" alt="5 secretos orden" />
+              </div>
+            </div>
+            <span class="image-row__title">5 secretos para mantener tu casa en orden y con estilo</span>
+          </div>
+
+          <div class="image-row__item" onclick="openArticle(4, event)">
+            <div class="image-row__image-wrap">
+              <div class="image-row__image image-row__image--primary">
+                <img src="assets/30e03a_6847402d87124ba5b72b0de6a271dd80~mv2.png" alt="Espacios relajantes" />
+              </div>
+            </div>
+            <span class="image-row__title">El secreto del diseño interior para espacios relajantes</span>
+          </div>
+
+          <div class="image-row__item" onclick="openArticle(5, event)">
+            <div class="image-row__image-wrap">
+              <div class="image-row__image image-row__image--primary">
+                <img src="assets/30e03a_eb00f1c4a30c455cbec87fe40dabc711~mv2.png" alt="El arte de crear un hogar" />
+              </div>
+            </div>
+            <span class="image-row__title">El arte de crear un hogar a través del diseño de interiores</span>
+          </div>
+
+          <div class="image-row__item" onclick="openArticle(6, event)">
+            <div class="image-row__image-wrap">
+              <div class="image-row__image image-row__image--primary">
+                <img src="assets/30e03a_066e69607b7b438abe1db222c781e753~mv2.png" alt="5 consejos renovar" />
+              </div>
+            </div>
+            <span class="image-row__title">5 consejos que te pueden servir a la hora de renovar tu casa</span>
+          </div>
+
+          <div class="image-row__item" onclick="openArticle(7, event)">
+            <div class="image-row__image-wrap">
+              <div class="image-row__image image-row__image--primary">
+                <img src="assets/30e03a_522eafe2c90e4bea94d0534df9b0b835~mv2.png" alt="Habitación de tus sueños" />
+              </div>
+            </div>
+            <span class="image-row__title">Trucos para decorar la habitación de tus sueños</span>
+          </div>
+
+          <div class="image-row__item" onclick="openArticle(8, event)">
+            <div class="image-row__image-wrap">
+              <div class="image-row__image image-row__image--primary">
+                <img src="assets/30e03a_5ad2f83f3e2f47bd8ab627720e88d249~mv2.png" alt="Recinto para los sentidos" />
+              </div>
+            </div>
+            <span class="image-row__title">Convierte tu casa en un recinto para los sentidos</span>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ======================================================================
+         FOOTER EXACTO A STUDIO ASHBY (.site--studio-ashby.footer)
+         ====================================================================== -->
+    <footer class="site--studio-ashby footer">
+      <div class="footer__inner">
+        <div class="footer__col">
+          <div class="logo">
+            <a href="#" onclick="reopenLanding(event)">LOOK AND FEEL</a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <nav>
+            <ul>
+              <li><button type="button" onclick="openContactDrawer('Contacto')">Contacto</button></li>
+              <li><a href="https://www.instagram.com/lookandfeelinterior/" target="_blank" rel="noopener">Instagram</a></li>
+              <li><a href="https://co.pinterest.com/lookanfeel/" target="_blank" rel="noopener">Pinterest</a></li>
+              <li><a href="https://www.linkedin.com/company/look-and-feel-interior/" target="_blank" rel="noopener">LinkedIn</a></li>
+              <li><a href="https://www.facebook.com/lookandfeelinterior/" target="_blank" rel="noopener">Facebook</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="footer__col">
+          <p class="copyright">© 2026 Look and Feel Interior · Bogotá, Colombia</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ========================================================================
+       DRAWER 1: QUIÉNES SOMOS (TODA LA INFORMACIÓN DE /quienes-somos)
+       ======================================================================== -->
+  <div class="ashby-drawer-backdrop" id="aboutDrawer" onclick="if(event.target===this)closeAboutDrawer()">
+    <div class="ashby-drawer">
+      <div class="ashby-drawer__top">
+        <span class="ashby-drawer__label">Quiénes Somos · Look and Feel Colombia</span>
+        <button type="button" class="ashby-drawer__close" onclick="closeAboutDrawer()">Cerrar ✕</button>
+      </div>
+
+      <h2 style="font-size:28px; font-weight:300; text-transform:uppercase; letter-spacing:0.12em; margin-bottom:20px;">
+        “Creamos la experiencia de habitar a través de la transformación personal y la interpretación de lo que sentimos”
+      </h2>
+
+      <div class="article-body">
+        <p>
+          Somos un estudio de diseño interior creado por <strong>Pao Lozano</strong>, enfocados en mejorar los espacios a través de la exploración de los sentidos. Damos vida a las historias que cuentan las manos artesanas que hacen posible cada proyecto.
+        </p>
+
+        <h3>¡Hola! Soy Pao Lozano</h3>
+        <p>
+          Mi nombre es <strong>Paola Lozano De la Pava</strong>, nací en Bogotá, Colombia y allí vivo. Tengo estudios en Arquitectura y diseño de interiores con énfasis en diseño de espacios comerciales. Mi carrera es mi pasión y mi estilo de vida.
+        </p>
+        <p>
+          Desde que tengo memoria vivo encantada con las formas, los colores y las sensaciones que te dan los espacios que habitas, la memoria que guardan y las experiencias que creas en cada uno de ellos.
+        </p>
+        <blockquote>“Creo que el espacio que habito es el reflejo de lo que siento”</blockquote>
+        <p>
+          He descubierto que la forma en la que habito los espacios es el fiel reflejo de lo que siento en mi interior, de la forma en la que veo la vida, de mis gustos personales y sobre todo del crecimiento personal que tenemos como seres humanos. Vivir en el espacio de tus sueños es posible y no necesitas tener mucho dinero ni tampoco hacer parte de un selecto grupo de diseñadores. Solo necesitas de ti mismo, de tus sueños y de lo que está en tu interior.
+        </p>
+
+        <h3>¡Hola! Soy Germán Lozano</h3>
+        <p>
+          Mi nombre es <strong>Germán Lozano Velásquez</strong>, soy profesional de la Ingeniería Civil con especialización en Gerencia Integral de Obras, con gran sentido de la responsabilidad, metódico y organizado.
+        </p>
+        <blockquote>“Pienso que la planificación es la base de la ejecución de los proyectos para evitar el reproceso”</blockquote>
+        <p>
+          Espero poder hacer parte del desarrollo de sus proyectos de una manera eficaz para que tanto usted como yo lleguemos a cumplir las expectativas en los espacios que sueña. Estoy a su disposición.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       DRAWER 2: CONTACTO & COTIZADOR (UNIFICA /cotiza-tu-remodelacion,
+                 /cotiza-tu-renovacion, /cotiza-tu-decoracion)
+       ======================================================================== -->
+  <div class="ashby-drawer-backdrop" id="contactDrawer" onclick="if(event.target===this)closeContactDrawer()">
+    <div class="ashby-drawer">
+      <div class="ashby-drawer__top">
+        <span class="ashby-drawer__label">Ponte en contacto con nosotros · Bogotá, Colombia</span>
+        <button type="button" class="ashby-drawer__close" onclick="closeContactDrawer()">Cerrar ✕</button>
+      </div>
+
+      <h2 style="font-size:28px; font-weight:300; text-transform:uppercase; letter-spacing:0.12em; margin-bottom:14px;">
+        Cotiza tu Proyecto
+      </h2>
+      <p style="font-size:13px; color:var(--c-lime); margin-bottom:24px;">
+        paolozano@lookandfeelinterior.com · +57 311 444 5233 · Bogotá, Colombia
+      </p>
+
+      <div class="ashby-pills">
+        <button type="button" class="ashby-pill active" onclick="setDrawerService('Remodelación de Espacios', this)">Remodelación</button>
+        <button type="button" class="ashby-pill" onclick="setDrawerService('Renovación de Espacios', this)">Renovación</button>
+        <button type="button" class="ashby-pill" onclick="setDrawerService('Decoración y Styling', this)">Decoración & Styling</button>
+        <button type="button" class="ashby-pill" onclick="setDrawerService('Vela FIKA ($37.000 COP)', this)">Vela FIKA</button>
+      </div>
+
+      <form onsubmit="submitDrawerWhatsApp(event)">
+        <input type="hidden" id="drawerService" value="Remodelación de Espacios" />
+
+        <div class="ashby-form-group">
+          <label>Nombre *</label>
+          <input type="text" id="dName" required placeholder="Tu nombre completo" />
+        </div>
+        <div class="ashby-form-group">
+          <label>Email *</label>
+          <input type="email" id="dEmail" required placeholder="tu@correo.com" />
+        </div>
+        <div class="ashby-form-group">
+          <label>Teléfono / WhatsApp *</label>
+          <input type="tel" id="dPhone" required placeholder="+57 300 000 0000" />
+        </div>
+        <div class="ashby-form-group">
+          <label>¿Cuál espacio vas a remodelar, renovar o decorar? *</label>
+          <input type="text" id="dSpace" required placeholder="Ej. Sala-comedor, habitación, oficina, apartamento completo..." />
+        </div>
+        <div class="ashby-form-group">
+          <label>¿Cuántos metros cuadrados tiene tu espacio?</label>
+          <input type="text" id="dArea" placeholder="Ej. 85 m² (Opcional)" />
+        </div>
+        <div class="ashby-form-group">
+          <label>¿Te gustaría que te asesorara en tus compras?</label>
+          <select id="dShopper">
+            <option value="Sí, me gustaría acompañamiento en compras">Sí, quiero acompañamiento en compras</option>
+            <option value="Solo diseño y ejecución del espacio">Solo diseño y ejecución del espacio</option>
+          </select>
+        </div>
+        <div class="ashby-form-group">
+          <label>Cuéntanos qué tienes en mente *</label>
+          <textarea id="dMsg" rows="3" required placeholder="Cuéntame cuál es tu proyecto..."></textarea>
+        </div>
+
+        <button type="submit" class="text-image-video__button" style="background:var(--c-lime); color:var(--c-mahogany); border-color:var(--c-lime); font-weight:600; margin-top:10px;">
+          Enviar a WhatsApp (+57 311 444 5233)
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       DRAWER 3: LECTOR DE LOS 9 ARTÍCULOS DEL BLOG
+       ======================================================================== -->
+  <div class="ashby-drawer-backdrop" id="articleDrawer" onclick="if(event.target===this)closeArticle()">
+    <div class="ashby-drawer">
+      <div class="ashby-drawer__top">
+        <span class="ashby-drawer__label" id="artMeta">Blog de Diseño Interior</span>
+        <button type="button" class="ashby-drawer__close" onclick="closeArticle()">Cerrar ✕</button>
+      </div>
+      <h2 id="artTitle" style="font-size:26px; font-weight:300; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:24px;"></h2>
+      <div style="aspect-ratio:16/9; overflow:hidden; margin-bottom:28px;">
+        <img id="artImg" src="" alt="" />
+      </div>
+      <div class="article-body" id="artContent"></div>
+    </div>
+  </div>
+
+  <script>
+    const journalArticles = [{"title": "¿Por qué el diseño interior influye directamente en nuestro estado de ánimo?", "meta": "Por Pao Lozano · 6 oct 2023 · 7 min de lectura", "img": "assets/30e03a_08e83306ee6a49d5aacf308cee795bcd~mv2.png", "html": "<p>Mucho se dice de miles de cosas que influyen en nuestro día a día y en nuestro estado de ánimo, pero una cosa que sí les puedo asegurar es que la forma en la que habitamos nuestro espacio es esencial para darnos cuenta como nos sentimos. Sí quieres saber por qué sigue leyendo esta entrada de blog.</p><p>Alguna vez te has preguntado ¿Por qué no me siento bien acá?, quizá entras a un lugar y es oscuro, poca luz natural, huele a humedad o quizá llegas cada noche a un lugar blanco, una cama simple y sin nada en tu cuarto, que ni ganas te dan de organizar, entonces simplemente te levantas cada día y solo estiras las cobijas y sales de ahí dejando todo en desorden.</p><p>Sí quieres saber como armonizar tus espacios, visita aquí nuestras redes y descubre como renovar tus espacios</p><p>Pero para empezar… ¿Qué significa vibrar?</p><p>Es moverse, conmocionarse o emocionarse por algo. Es sentir, es creer, lo que ves, lo que tocas e incluso lo que hueles o lo que saboreas. Es sentirte vivo de una forma profunda. Pero…</p><h3>¿Cómo crees tú que vibran los espacios?</h3><p>Bueno esa es una pregunta que sólo tú puedes responder. Lo cierto es que desde que te encuentres en un espacio que te haga vibrar y emocionarte, tú estado de ánimo va a cambiar totalmente. Por ejemplo, el color que eliges para tus espacios tiene una influencia proporcional en la forma en la que te sientes. Y cada detalle como la elección de los muebles, la distribución del espacio, las texturas de los elementos de decoración va ayudarte a elevar esa vibración.</p><p>Tener un espacio diseñado y organizado también influye en la practicidad y en la organización, se va a convertir en un lugar en el que realmente quieras que permanezca limpio, ordenado y sé que se vea bien. Es por eso que te voy a dejar unos tips para que diseñes tu espacio acorde a ti mismo y te sirva para sentirte mejor cada día de tu vida.</p><p>La energía del hogar radica en el fuego que nunca se deja apagar…</p><h3>¿Cómo lograr un espacio en armonía?</h3><p>Un espacio que fluye genera una energía armónica que va a influir directamente en quien eres y en lo que quieres proyectar tu vida. Es esencial para que tu espacio se convierta en tierra fértil y puedas materializarte y desarrollarte plenamente.</p><p>Según estudios, los ambientes se dividen es 3 espacios: La entrada, el abastecimiento y el descanso. Activarte y descansar. En estos momentos en los que estar en casa significa encontrarlos todos, y cada una de las energías; quiero explicarte como distribuirlas para que no te sientas abrumado en un mismo espacio. Sigue leyendo...</p><h3>Cuida la entrada</h3><p>Llegar a tu hogar es la bienvenida a tu centro. Por ende, es el primer espacio que debemos armonizar. De la calle traemos muchas cosas que debemos dejar antes de entrar a nuestro espacio sagrado. Y más ahora que tenemos que cuidarnos tanto de los gérmenes que encontramos en el exterior.</p><p>Armoniza el espacio con un recibidor, sea grande o pequeño el espacio, decóralo de tal forma que sientas que te da la bienvenida a tu hogar con energías positivas y elementos como plantas, flores o fotografías familiares.</p><p>Diferencia este espacio del resto de tu casa, con texturas o una pintura de pared diferente, esto refuerza la sensación de bienvenida</p><p>La iluminación es esencial. Un bombillo de luz cálida es la mejor elección para este espacio</p><p>Adopta rutinas de entrada como; descargar tus elementos, e incluso quitarte los zapatos. Esto ayuda a que tu casa sea un espacio más limpio y menos contaminado. Sobre todo, en este tiempo de Coronavirus (COVID-19), es bueno que desinfectes todo y no entres con zapatos más allá del recibidor.</p><p>También te sirve para poner elementos que te ayuden a organizarte, como un llavero. De tal forma que llegues y dejes todo en un sitio y cuando tengas que salir lo encuentres fácil</p><h3>El diseño interior de la cocina es todo</h3><p>La cocina es el lugar en donde preparas tus alimentos, es decir la energía que le das a tu cuerpo. Es un espacio fundamental en tu día a día y la relación que tengas en ella es directamente proporcional a la relación que tienes con lo que consumes. Influye directamente en tu bienestar y en la prosperidad de tu hogar.</p><p>Busca elementos en madera o mobiliario en madera. Este elemento material armoniza el espacio y significa el fuego del hogar. También es un material muy versátil y tiene una estética cálida. Es perfecto para la cocina</p><p>Usa colores como el verde, colores tierra o colores que inspiren una imagen de naturaleza. Esto te conecta con la tierra, de donde provienen los alimentos</p><p>Es el espacio en donde debe reinar el orden y la limpieza. Una cocina limpia te inspira, así que opta por crear un espacio organizado: Haz uso de organizadores y almacena todo en orden. Marca tus alimentos y dale un espacio especial a cada uno. En la medida en la que todo tenga un puesto, va a ser más fácil cocinar</p><p>Para decorar puedes usar los mismos implementos de cocina, arriésgate a encontrar elementos de colores vivos que le den un pop de color al diseño interior y moderniza ese espacio</p><p>También puedes usar los mismos alimentos como fruteros o jarrones con frutas</p><h3>La habitación es un lugar sagrado</h3><p>El dormitorio es el espacio más importante y privado. Es el lugar donde descansas y recuperas la energía. Es importante que el diseño interior sea fresco, trata de que el 80% del color del entorno sea neutro y que no abrume el espacio.</p><p>La distribución del espacio es muy importante. La cama siempre debe ir en contra de la puerta y procura que no este sobre una ventana</p><p>Es importante que tu espacio tenga elementos propios y que reflejen tu personalidad: Libros, cuadros o fotografías que te gustan</p><p>Mantén en orden tu armario</p><p>Haz uso de aromas que te inspiren descanso como la lavanda, el jazmín, eucalipto o menta e incluso café. Son aromas que te relajan y quitan el estrés</p><p>Las diferentes texturas estimulan tus sentidos: elige un estilo y usa texturas y estampados para armonizar el diseño interior</p><p>Recuerda que tu dormitorio es el espacio más privado. No dejes entrar a cualquiera, lleva las mejores energías allí y purifica constantemente el espacio con elementos aromáticos: esencias, velas (fuego) o especies como el palo santo.</p><p>Menos es más, el espacio debe ser fluido. No llenes tu habitación de cosas que no necesitas</p><p>Sí quieres saber cómo renovar tu casa, esta entrada sobre 5 consejos que te pueden servir a la hora de renovar tu casa te puede interesar</p><h3>Las áreas sociales y de comunicación</h3><p>Nuestro hogar también cuenta con espacios de reunión y de bienvenida a familia y amigos. Es importante que estos espacios también tengan elementos que te representen, es la forma en la que le comunicas a quien te visita tu personalidad, tus gustos y tus aficiones. Probablemente es donde lees, escuchas la música que te gusta y te alimentas. Es por eso que es importante tener los siguientes consejos en cuenta:</p><p>Usa la decoración para comunicar algo especial, con elementos como fotografías o libros, objetos que generen de que hablar</p><p>Para la sala distribuye el espacio con un sofá y mínimo un mueble diferente formando un ángulo de 90°, este puede ser una poltrona, una silla o un puff. Esto genera un circulo de comunicación más armónica en el espacio.</p><p>Pon un centro, un elemento que genere gravedad y centralidad en el espacio: una mesa de centro con adornos, velas, flores o libros. Una alfombra central, iluminación dirigida o varios elementos combinados</p><p>Usa 80% de colores cálidos, una luz neutra o blanca y aromatiza el espacio con vainilla, cítricos o canela</p><p>No olvides tener plantas o elementos vivos en tus espacios. Ellos dan vida y juntan dos elementos: el agua y la tierra</p><p>El comedor es el lugar en donde te reúnes a disfrutar los elementos. Debe ser un lugar central, preferiblemente que no esté contra una pared.</p><p>Utiliza una iluminación dirigida al centro de la mesa, más que una general a todo el espacio. Una lampara dirigida invita a la intimidad y a la comunicación directa</p><p>Procura que las paredes no estén vacías, usa cuadros o espejos. Esto va a dar un significado de abundancia</p><p>Elige colores vivos en los elementos, piensa en lo que quieres reflejar: modernidad, elegancia, neutralidad</p><p>Estos son espacios de servicio. Tú siendo anfitrión de tu propio espacio a través del diseño interior de tu hogar</p><h3>El baño es un spa</h3><p>El baño es un espacio privado de purificación y placer. Es un espacio de cuidado y autoestima.</p><p>El espacio de baño debe ser simple. Procura que todos los elementos funcionen adecuadamente.</p><p>La limpieza y el orden también son primordiales. Recuerda que en el la organización se refleja tu personalidad y disciplina</p><p>Agrega decoración con plantas, flores y aromas frescos que te inspiren</p><p>En resumen, el diseño interior es la creación de ambientes generosos con tu ser. Espacios limpios y fluidos te van a permitir sentirte mejor contigo mismo y a tener claridad y así mismo disciplina y prosperidad. Sólo con la sensación de querer mantenerlos en orden vas a darte cuenta que todo en tu vida toma un orden y un estado de armonía y es eso lo que vas a reflejar en las personas invitadas a tu hogar. Por experiencia de clientes, me he podido dar cuenta que pasar de un espacio vacío y sin forma a uno diseñado y pensado cambia su expresión corporal, muchos me dicen: ¡Wow! Esto se siente mejor, no me siento igual y les da una sensación infinita de tranquilidad y felicidad.</p><p>Te invito a que te atrevas a renovar tu espacio, a entender que el diseño interior tiene un sentido e influye totalmente en tu interior. Sí quieres podemos hacerlo juntos. Puedo asesorarte para que lleves tus espacios a otro nivel y te dejes envolver por el interiorismo.</p><p>Sí quieres asesoría visita nuestra página web aquí y atrévete a renovar tu hogar</p><p>Recuerda que tu hogar es un proyecto infinito. En donde el fuego nunca se debe dejar apagar. Evoluciona con tu ser interior.</p><p>Sígueme aquí en redes sociales y descubre más sobre el diseño interior a través de los sentidos.</p>"}, {"title": "Homefullness, una tendencia que marcará nuestro hogar. Aquí, 5 consejos para lograrlo.", "meta": "Por Pao Lozano · 19 ene 2022 · 3 min de lectura", "img": "assets/1c1fcfb3c2fa41a58394493406e03029.jpg", "html": "<p>Si hablar de tendencias se trata, empecemos resaltando que este es un año de muchas expectativas, lleno de retos y procesos. Hay secuelas de una pandemia, pero sobre todo de habernos dado cuenta de la importancia que tiene nuestro hogar como refugio de paz y de tranquilidad. Este año la tendencia que marcará nuestros hogares reflejará tranquilidad y armonía.</p><p>Homefullness es la nueva tendencia de diseño interior, nos lleva a resaltar nuestro hogar como el espacio más importante en nuestra vida, como un santuario de paz, armonía y equilibrio. Lo más importante para este año es darnos cuenta de que la forma en la que vivimos se verá reflejada en todos los aspectos de nuestra vida, y potenciar el sentido de comodidad y pertenencia es súper importante para lograr una estabilidad mental y física.</p><p>Como resultado de la constante necesidad de calmar nuestra ansiedad y nuestra mente, el mindfulness ha sido una fuente de ayuda muy importante, ahora el diseño interior lo adapta con un nuevo concepto: Homefullness. Y se refiere a ese sentimiento de placer, apego y sobre todo alivio que nos provoca llegar a casa y desconectarnos del estrés. Pero… ¿de qué se trata esta nueva tendencia y qué debemos hacer para lograrlo?</p><h3>Una tendencia que marcara nuestro hogar</h3><p>No hay lugar como el hogar, y en la búsqueda de palabras que definan este sentimiento, identificamos sensaciones que nos llevan a pensar que nuestra casa debe ser un santuario de paz. Es por eso que homefullness es la palabra clave en este año. Nace de describir una de las sensaciones más placenteras, la de llegar a casa y descansar, desconectarse y recargarse de uno mismo y de su lugar propio. Tiffany Watt Smith, en su libro The book of Human Emotions, fue la primera en utilizar este término que descresto al mundo del diseño de espacios. Y se traduce como: “El placer de llegar al lugar al que perteneces”. Para lograr esto en su cabalidad, deber seguir estos cinco consejos:</p><p>Mantén el orden en tu hogar: Una de las principales cosas por hacer es mantener tu en orden tu hogar. La sensación de placer desaparece automáticamente cuando hay desorden o hay algo que no está en armonía. El desorden siempre nos genera una sensación de desespero y nos quita automáticamente las ganas de estar en ese espacio que le falta orden, altera nuestra serenidad y nos impide tener calma y tranquilidad. La ley del orden es clave para que nuestros espacios se sientan en paz y nos brinden armonía total, además la sensación de organización y limpieza es automáticamente satisfactoria para el ser humano y nos brinda una energía positiva siempre.</p><p>Todo en su justa medida: Decora y simplifica. Sin importar cual sea el estilo de tu hogar, decorar más que una tendencia tiene que ver con aquellas cosas que te hagan sentir bien. No es necesario llegar al minimalismo, pero puedes usar como primicia que todo debe ser en su justa medida. En cuanto más limpio se vea el espacio, visualmente va a ser mejor para hacerte sentir bien. Ten en cuenta el acceso a tu casa o el recibidor. Debe ser aquello que quieres que te reciba, es la primera estancia de tu casa.</p><p>Un diseño con formas suaves y neutras: Las formas suaves y orgánicas ayudan a llevar la relajación a un nivel más elevado. Colores neutros en formas redondeadas, evitando cortes bruscos como esquinas muy marcadas. Todo aquello que haga sentir acogedor el espacio.</p><p>Materiales naturales son la mejor tendencia: Todo aquello que nos recuerde a la naturaleza siempre nos va a llenar de paz. Llena tu hogar de acabados naturales y cálidos como la madera y los tejidos. Busca elementos que te permitan elevar tu sentido del tacto, acabados suaves y acogedores. Nunca olvides darle vida a tu hogar a través de las plantas, en cada rincón puedes tener una que te recuerde que tienes un hogar en armonía. Hay muchas plantas de interior fáciles de cuidar y le van a dar a tu hogar un look agradable, independiente del estilo que tengas.</p><p>La iluminación es la clave para sentirte acogido: Recuerda siempre que hay diferentes tipos de iluminación. No te conformes con la luz blanca principal. Juega con diferentes tonos de calidez, y siempre ten lámparas de ambiente. Esto te va ayudar a relajarte, sentir paz y el abrazo de tu hogar.</p><p>Vivir en tranquilidad es demasiado importante para lograr bienestar y tranquilidad en tu vida. Es por eso por lo que el diseño interior les apuesta a tendencias que resalten y ayuden a mejorar tu calidad de vida. Ten en cuenta que ningún estilo vale más que lo que te haga sentir bien. Busca que tu hogar sea tu propio santuario y que al final del día no necesites nada más que llegar a tu hogar.</p><p>Para más consejos de como vivir tu vida y tu hogar en bienestar síguenos en nuestras redes como @lookandfeelinterior</p><p>Etiquetas:</p><p>la importancia que tiene nuestro hogar como refugio de paz y de tranquilidad.</p><p>Bienestar</p>"}, {"title": "¿Vas a remodelar? 8 cosas que queremos que sepas a la hora de remodelar tus espacios", "meta": "Por Pao Lozano · 9 jul 2021 · 5 min de lectura", "img": "assets/30e03a_e9d2ab29434540b1b82782358a2ac19f~mv2.png", "html": "<p>La experiencia que nos dejó la pandemia y el haber estado #encasa durante tanto tiempo, nos sirvió para darnos cuenta de que mejorar nuestros espacios es indispensable para tener un buen vivir, nuestra forma de habitar y de crear lugares seguros es indispensable hoy en día para poder lograr la paz y la estabilidad que como seres humanos buscamos.</p><p>Renovar nuestros espacios es una carta que debemos jugar alguna vez en la vida, ya sea porque queremos vender el inmueble, porque queremos mejorarlo para darle valor comercial o simplemente porque queremos sentirnos mejor viviendo en él. Pero remodelar es una montaña rusa de emociones, un caos al que debemos estar dispuestos a enfrentar, pues no importa si vas a remodelar tu baño, tu cocina o toda tu casa, siempre hay cosas que debes enfrentar y que probablemente pueden sacar lo mejor o lo peor de ti…</p><p>Vas a tener que enfrentar desde retrasos con el material, tubos rotos, probablemente podrás quedarte sin luz o tener gastos extras que no habías contemplado. Por eso hemos contemplado los consejos de arquitectos, diseñadores y renovadores de interiores, para que te aconsejen y te cuenten errores de los que tu puedes aprender y tener en cuenta a la hora de renovar o remodelar tus espacios. Por eso es mejor que sepas estas cosas a la hora de remodelar tus espacios…</p><h3>1. Hacer una remodelación por partes</h3><p>“Uno de los mas grandes errores es separar un proyecto por etapas, se cree que dividir la remodelación tiene mayor beneficio económico” Esto no es cierto, dice Alexandra Donohoe Church directora del Studio Decus Interiors. “El proceso de remodelación puede ser desalentador, desafiante y puede poner a prueba todas tus emociones; derrumbar paredes, cambiar pisos… y vivir en el lugar, es una experiencia que es vivir en una sola oportunidad”</p><p>También es mentira que vas a ahorrar haciéndolo por partes, si bien es cierto que remodelar todo de una vez puede ser difícil para tu bolsillo, comprar material y la mano de obra para un proyecto completo puede salir más económico que hacerlo por partes. Así mismo, planeas un proyecto completo y el resultado que vas a tener es armónico, mientras sí lo haces por etapas, pueda que tengas una combinación que no se verá bien al finalizar todos los espacios remodelados.</p><h3>2. Reconsidera no vivir ahí mientras remodelas</h3><p>Sí lo que planeas es remodelar más de un espacio de tu casa, lo mejor es que busques un lugar alterno para vivir mientras todo sucede. No es posible que vivas en un lugar que va a ser un caos, permítete tener dentro de tu presupuesto un adicional para un lugar mientras renuevas tu casa. Te va a ahorrar muchos dolores de cabeza, porque seguramente vas a presenciar cosas normales dentro de una obra pero que para ti pueden llegar a ser caóticas. Y créeme…el resultado al ver el antes y el después, va a ser mucho más satisfactorio a que vivas todo el proceso. Mejor déjale la peor parte a nosotros y tú sólo disfruta el resultado.</p><h3>3. Deja que los expertos se encarguen</h3><p>Sabemos que hacer las cosas por uno mismo es importante, pero no subestimes el valor de contratar a un experto. Asegúrate de tener un buen equipo de trabajo, contrata a un arquitecto y a un diseñador para que guíen tu proceso, te ayuden a planificar el proyecto desde el diseño hasta el resultado final. Los maestros de obra hacen un gran trabajo, pero tener un profesional a cargo te va a ahorrar mucho dinero y muchos dolores de cabeza. Sobre todo, confía en ellos, los expertos puedes buscarle solución a cada cosa que se presente y así tu podrás desentenderte de lo malo y disfrutar lo bueno. Procura tomar siempre las decisiones junto a ellos, pensar con cabeza fría cualquier sugerencia y siempre tener la mejor comunicación. Una mala comunicación puede arruinar los procesos.</p><h3>4. No le bajes el presupuesto a la calidad de los materiales o la mano de obra</h3><p>Los gastos económicos de una remodelación son bastante altos y muchas veces no logramos alcanzar el presupuesto del diseño completo. Pero si estas dispuesto a irte con toda en tu remodelación y lograr el diseño que sueñas, es mejor que mantengas el presupuesto para obra, materiales y acabados estable, no bajes la calidad de los materiales para reducir gastos. Sí no te alcanza, es mejor que quites algunas cosas de decoración, con el tiempo puedes ahorrar y completar el diseño. Mientras tanto asegúrate de tener los mejores materiales y acabados, de eso depende el éxito de tu remodelación</p><h3>5. Planea tu remodelación</h3><p>Tomate el tiempo para planear bien lo que quieres lograr. La ventaja de contratar a un arquitecto o diseñador es que puedes visualizar el proyecto antes de ejecutarlo, cualquier cambio o sugerencia es mejor hacerla sobre papel.</p><h3>6. Toma riesgos</h3><p>Sí vas a remodelar, atrévete a innovar con tus espacios, arriésgate a realmente transformar tus espacios. Hay miles de tendencias en acabados y diseño interior que pueden llevar tu casa a otro nivel. Crea un espacio atemporal, arriésgate en la decoración, estudia tendencias. Ten en cuenta la iluminación y los detalles que hacen un hogar cálido y acogedor. Y siempre procura trabajar con los mejores proveedores.</p><h3>7. Procura ser flexible en tiempos y presupuesto</h3><p>Aunque quisiéramos tener todo bajo control, muchas veces se presentan situaciones que se nos salen de las manos, gastos extra que debemos hacer y sobre todo tiempo extra. No seas tan riguroso a la hora de recibir tu remodelación. A veces pueden tardarse un poco más de lo planeado. Piensa que lo importante es que se entregue de la mejor manera, trabajar con presión del cliente puede ser un dolor de cabeza para tu arquitecto. Créeme nosotros siempre buscamos tu bienestar y que el proyecto salga como lo soñamos. Así que tranquilo, el resultado va a ser como lo esperas, procura ser flexible, comprensivo y estar dispuesto al dialogo para aclarar cualquier situación.</p><h3>8. El diseño lo es todo</h3><p>Suena obvio, pero a veces es difícil entender el concepto de diseñar. Es más que plasmar tus ideas. Diseñar es un acto de pensar más allá del espacio, porque finalmente debe representar lo que eres y lo que quieres ser. Debe responder a la pregunta: ¿Hacía donde quiero ir con lo que quiero cambiar? Porque si vas a realizar una inversión y vas a enfrentarte a un cambio caótico, pues el resultado debe ser transformador, increíble y por supuesto debe transformarte a ti como persona, debe ayudar en tu bienestar y salud mental, sobre todo debe sacar lo mejor de ti. Un mal diseño puede hacerte muy infeliz, como también un mal proceso de remodelación. Aunque el resultado sea lo planeado, puede que no lo disfrutes si no estas abierto a vivir el caos. Todo tiene relación, en el diseño, en la vida y en la forma en la que habitas tus espacios.</p><p>Todos los cambios son un terremoto que no solo transforma tu exterior si no también a ti mismo como persona. Y de esos aprendizajes vas a transformar tu interior en todo el proceso.</p><p>Articulo inspirado en https://www.vogue.com.au/vogue-living/interiors/renovating-interior-designers-want-you-to-know-these-10-things/</p><p>¿Quieres más consejos sobre remodelación y diseño interior? Síguenos aquí en nuestras redes</p><p>Remodelación</p>"}, {"title": "5 secretos para mantener tu casa en orden y con estilo", "meta": "Por Pao Lozano · 13 ene 2021 · 3 min de lectura", "img": "assets/30e03a_ad0c3e85bc364aa289de0453059f6917~mv2.png", "html": "<h3>¿Conoces la forma de tener tu casa en orden sin perder el estilo?</h3><p>Orden y limpieza son palabras que para muchos de nosotros nos dan dolor de cabeza…. ¿O al revés? Bueno, quizá un poco de las dos cosas. Tener nuestra casa desordenada y saber que tenemos que organizar da un poco de pereza, pero sabemos que mantenerla limpia y organizada es una de las cosas más satisfactorias que se puede sentir. #cosasdeseñora. Así que te voy a dar 5 de mis mejores secretos para que sea menos tedioso y la satisfacción de ver todo perfecto sea una sensación diaria y no algo sólo de los fines de semana cuando tienes el tiempo para dedicarte hacerlo.</p><p>Antes de empezar a resolver el misterio, quiero contarte algunos beneficios que tiene tener un espacio ordenado y limpio. Uno de ellos esta directamente relacionado con el bienestar y la salud mental. Muchos estudios determinan que nuestros espacios influyen directamente en la forma en la que nos sentimos, y han determinado que el desorden es una de las causas que más influyen en sentimientos como la depresión y la ansiedad. Incluso, espacios poco aseados pueden afectar no sólo tu salud mental, si no también tu salud física. Mantener rutinas de organización ayuda a mejor tu capacidad de disciplina y amor propio. Así que tenemos razones muy importantes para mantener nuestro bienestar y un hogar equilibrado y organizado.</p><p>Uno-uno: Organiza tu casa diariamente: Un gran truco para no acumular tareas de organización es mantener una rutina diaria de realizar pequeñas cosas de inmediato para mantener todo en orden. Es decir, cosas como: Si te levantas, tiende tu cama instantáneamente, esto va a ayudar a que ésta tarea, que parece simple, no se deje pasar durante el día. Otra cosa que puedes hacer es, una vez que comas o bebas algo, laves los platos; así no vas a acumular losa y no te va a dar pereza lavarla. Objetos que vayas a usar, déjalos en el mismo lugar cuando termines. Recoge tu ropa y clasifícala antes de irte a dormir: lo sucio a la canasta, lo limpio guárdalo de una vez en el closet. Y así, con cada cosa que se te ocurra que puedas hacer de inmediato para mantener en orden tu casa.</p><p>Cada cosa en su lugar: ¿El truco? Que cada objeto tenga un puesto. ¡Si! Así mismo, como cuando nos decía nuestra mamá… “Eso tiene su puesto”. Pues sí, aunque en su momento fuera una frase de cajón #cosasdeseñora. Ahora es el mejor truco para mantener tu casa en orden. Sí cada objeto tiene su puesto, nada tiene que estar fuera de su lugar mientras no este en uso. Búscale puesto a cada cosa y verás como hace la diferencia.</p><p>Descarta, elimina o dona: Los “por si acaso” no deben existir en tu casa. Si no lo usas entonces sácalo de ahí. Aparte de traer mala energía, hace estorbo y a la final NUNCA lo vas a usar. Regla de oro: Sí no lo has usado en 6 meses, es mejor que le des un nuevo uso: ya sea donándolo o reciclándolo si es posible. Pero no te quedes con esas cosas que ni siquiera sabes que tienes y que están ahí durante años sin aportar nada.</p><p>Armonía de materiales: El truco esta en mantener todo lo más sencillo posible. Así que puedes hacer uso de elementos como canastos del mismo tipo de material o tejido o cajones de madera cálidos y acogedores, para guardar y organizar todo aquello que no quieres que se vea. Y de la misma forma, organizar visualmente lo que se va a ver, si todo tiene algo en común (ejemplo: la madera), se una u otra forma tu mente va a asociar esto a un espacio en donde todo es similar y se va a sentir mucho más organizado. Aplica este truco para muchas cosas como: Tarros para tu despensa, ganchos para tu closet, canastos para guardar juguetes o libros, etc.</p><p>Estos son entonces algunos de mis trucos para mantener mi casa en orden, y espero que te sirvan para la tuya. Sí eres apasionado de este tema y quieres mejor y conocer más trucos de orden, te recomiendo dos series que puedes ver por Netflix. The Home Edit y ¡A ordenar! Con Marie Kondo.</p><p>Sí te gusta todo lo relacionado con diseño interior, hogar y decoración y bienestar Sígueme en @Lookandfeelinterior , puedes ver más consejos en IGTV aquí.</p><p>Diseño Interior</p><p>Bienestar</p>"}, {"title": "El secreto del diseño interior para espacios relajantes: Colores 2020", "meta": "Por Pao Lozano · 13 may 2020 · 5 min de lectura", "img": "assets/30e03a_6847402d87124ba5b72b0de6a271dd80~mv2.png", "html": "<p>Los colores son los protagonistas del espacio, son los principales influyentes en nuestras sensaciones y percepciones y a través de ellos generamos la personalidad de los lugares que habitamos. Cada año Pantone anuncia colores que van a ser protagonistas, son colores que van a definir el diseño en todo sentido y debido a la nueva crisis mundial, pensar en los colores es la forma más fácil de reinventarse. Si te interesa saber cómo usar los colores a tu favor, sigue leyendo esta entrada de blog.</p><h3>¿De qué forma entonces podemos mejorar nuestros espacios para sentirnos mejor en tiempo de Covid-19?</h3><p>La psicología del color es una gran herramienta para esto. Expertos en estudios del color del Instituto Pantone, investigan los efectos de color en las diferentes culturas y de que forma el estado de ánimo de las personas puede ser influenciado de maneras positivas para reducir los riesgos en la salud mental. Ya sabemos que el diseño de interiores es la mejor forma de comunicación que tenemos, reinventar nuestros espacios en un lenguaje comunicativo más suave, que inviten a relajarnos y a evitar episodios de estrés, depresión y ansiedad.</p><p>Reinvéntate a través de tu hogar, escríbeme aquí y hablemos de tus espacios</p><p>Mejorar la calidad de tus espacios a través de colores suaves que aporten espacios que te ayuden a liberarte del estrés y la ansiedad en tiempos de crisis es de gran importancia a la hora de reconciliarte contigo mismo y con la forma en la que te sientes con tus espacios 24/7. Es hora de reinventarnos y comenzar a adecuarnos a una nueva etapa del ser humano, teniendo la conciencia de estar en espacios más cerrados. Esto puede llevar a la mente a cansarse y a sentirse abrumada si permanecemos es lugares que tengan una mala elección de colores y sobrecarguen nuestro cerebro.</p><p>Los expertos en el tema se preguntan: ¿De qué manera podemos usar el color como un antídoto para lo que sucede a nuestro alrededor?</p><p>En una marcada movida por volver a lo simple, a la raíz, a lo primario, Pantone define el azul clásico como un color intenso, sugestivo, elegante y perdurable en el tiempo. Pero aparte de eso es un color que inspira confianza, calma y conexión. En esta entrada de Blog quiero contarte algo más sobre el significado de este color, de otros colores que lo complementan y que también estarán en tendencia y más específicamente como involucrarlos en el diseño de tus espacios sin temor.</p><h3>La historia detrás del infinito</h3><p>Elegir el color azul como el color del año es una declaración cultural en un tiempo en el que necesitamos sentirnos diferentes, seguros, sinceros y con la necesidad de continuar y superar la adversidad.</p><p>Cuando asociamos sentimientos a colores pensamos en contextos mucho más amplios. El azul es un color primario, esto significa que es un color puro y que de él se derivan otros colores y a través de la historia ha tenido diferentes significados. Es el color de lo celestial, de lo inmenso, el cielo y el mar son azules. Relacionamos este color con lo profundo, lo eterno y lo divino. El azul se ha convertido en una experiencia continuada, es el color de todo lo que deseamos que permanezca.</p><p>El azul genera una ilusión de infinitud y genera una perspectiva de profundidad, entre más oscuro sea el tono azul, más amplios o infinitos se van a sentir los espacios, aunque también es un color frío, incluso más frío que el color blanco, ópticamente el blanco genera más calidez que el color azul.</p><h3>El azul clásico es tendencia, ¿cómo usarlo en el diseño interior?</h3><p>Para usar el azul o cualquier color lo primero que debes pensar es en el sentimiento y la sensación que quieres generar en el lugar. Ya sabemos que, por sensaciones, el color azul es amplio y profundo, así que lo ideal es elegir espacios pequeños que quieras que se vean más amplios.</p><p>El color azul como elemento individual y protagonista del diseño interior</p><p>Sin temor al inundar tus habitaciones de un color tan intenso, ten en cuenta la regla de porcentajes, el color principal color puede ser un 60% de toda la habitación y el otro 40% úsalo con apliques en decoración y colores que contrasten, en lo personal haría una mezcla entre colores neutros como grises cálidos o blancos y le agregaría detalles de color complementarios como rojo o amarillo y sus derivados: naranja, verde, magenta…</p><p>Puedes escoger la pared principal y pintarla del azul clásico y completar el diseño con elementos decorativos del mismo color.</p><p>Los colores de la madera resaltan muy bien en tonalidades frías, así que puedes aprovechar esto para resaltar el material de tu mobiliario.</p><p>Siempre busca contrastar espacialmente la inmensidad del azul con un color que te acerque y te invite a permanecer en ese espacio</p><p>Si quieres saber más de cómo usar el color en tus espacios te recomiendo esta entrada de blog</p><h3>“Dicen que Dios está en los detalles”: El azul en los detalles</h3><p>Sí tomar la decisión de pintar un espacio de azul es algo abrumador y muy arriesgado, puedes hacer uso del color del año en los detalles y los elementos de decoración.</p><p>Para espacios en áreas sociales puedes usarlo en el color de tus muebles: Siendo un color tan sofisticado y elegante, es perfecto para muebles en terciopelo. Un sofá azul clásico que sea protagonista en el diseño interior. También en mobiliario de este color, restaura tus muebles antiguos o modernos pintándolos de un color azul intenso. Elementos individuales que resalten en el espacio van a darle un toque especial en el estilo de tu casa.</p><p>Elementos decorativos de color azul clásico: cuadros, esculturas, velas, etc.</p><p>Cojines y tapetes con texturas y estampados azules</p><p>Para espacios como el dormitorio en los que buscamos calidez, quizá el azul sea muy frío, pero con elementos decorativos puedes usar el color del año como mantas o cobertores de este tono azul, incluso puedes agregar un mueble tipo poltrona o mobiliario de este color</p><p>En ambientes como baños quedaría perfecto porque el azul también es un color que da la sensación de limpieza, en accesorios como toallas, tapetes, cortinas de baño, elementos para el baño, etc. Incluso puedes aromatizar este espacio con lavanda o aromas de mar. Todo un ambiente completo y perfecto.</p><p>Tu cocina puede ser un espacio único si usas el azul. En Pinterest te dejo algunas ideas para que modernices este espacio con el color del año</p><p>Lo bueno de los colores clásicos es que nunca pasan de moda, así que elegir esta tendencia puede hacer que tus espacios se vean modernos y tradicionales al mismo tiempo. Toda tendencia vuelve y mejora, y con lo que respecta al color puedes elegir el que más se acerque a tu personalidad, ya sea azul, u otro color. Te dejo varios colores más que brindan calma y tranquilidad, los cuales puedes complementar entre sí para crear espacios que te inspiren a continuar en este proceso que es de todos, por tu salud mental y tu paz interior. Piensa en cómo te quieres sentir en cada habitación y usa el color para crear esos estados de ánimo.</p><p>Colores brillantes para espacios en los que quieras sentirte feliz como amarillos o terracotas. En las entradas o en espacios sociales te van a brindar alegría, felicidad y calidez, mientras que puedes usar colores pasteles como verdes, azules claros, grises o tierra, rosas o lilas en espacios íntimos y de calma. No le temas a combinar colores, recuerda que puedes usar el color de muchas formas no solo en las paredes. Piensa en tus sentidos: objetos, detalles, texturas. Agrega dinamismo a tus espacios y llénalos de color, recuerda que estamos en el momento justo para reinventarnos y que mejor manera de hacerlo que a través de nuestro hogar, es nuestro refugio más preciado.</p><p>Sígueme en Instagram @lookandfeelinterior y descubre más contenido sobre diseño interior y bienestar</p><p>Diseño Interior</p><p>Decoración</p><p>Renovación</p>"}, {"title": "El arte de crear un hogar a través del diseño de interiores", "meta": "Por Pao Lozano · 20 nov 2019 · 7 min de lectura", "img": "assets/30e03a_eb00f1c4a30c455cbec87fe40dabc711~mv2.png", "html": "<p>En el proceso de vivir, una de las decisiones más importantes es comprar una vivienda o al menos tomar la decisión de configurar un espacio que te pertenezca, ya sea para ti o para la familia que estas comenzando. Al llegar a este punto de la vida, muchas de las decisiones que tenemos que tomar se hacen complicadas. Pero supongamos que tenemos el presupuesto, entonces llegan los dilemas de que hacer, cómo hacerlo y cómo comenzar.</p><p>Sí es tu caso te puede interesar esta entrada de Blog sobre 5 consejos que te pueden servir a la hora de renovar tu casa. Descubrela aquí</p><p>Así que duramos mucho tiempo sin empoderarnos del lugar en el que vamos a vivir o ya vivimos. Crear un hogar es de las razones más importantes a las que te tienes que enfrentar, pues este hogar tiene que representar quien eres, que quieres y como te quieres sentir. En esta entrada de Blog les quiero contar la historia de alguien que tomo la decisión de trabajar con Look and Feel para transformar su espacio, pues alguien llega a cambiar su vida radicalmente y comenzar por el lugar en donde vive es vital para que este nuevo ser, se sienta en un hogar cálido y lleno de amor.</p><h3>Historia del proceso de diseño interior</h3><p>La protagonista de esta historia llega a mí con la intención de buscar ayuda para decorar su casa. Llevaba tiempo viviendo allí, pero sin intervenir los espacios de una manera adecuada. Un poco cansada de vivir en un espacio sin sentido, busca la solución a través de nosotros. Sus requerimientos eran simples: Quiero darle un hogar a mi bebé.</p><p>A decir verdad, es un reto bastante grande para una persona ajena a lo que eres y lo que puede significar para ti la palabra “Hogar”. Pero partiendo de este hecho comenzamos a diseñar. Los espacios iniciales serían la sala, el comedor y el dormitorio principal. Y para ella los colores requeridos debían ser tonos sobrios entre tierra y neutros. Su casa era un lienzo en blanco literalmente y nuestra clienta fue de esas personas que nosotros como diseñadores soñamos, cerró los ojos y confío plenamente en nosotros para llevar a cabo su sueño de hogar.</p><h3>Necesidades y requerimientos en el diseño de la casa</h3><p>Para el dormitorio principal requería que el espacio se sintiera más cálido y mejor iluminado. Cuando llegamos por primera vez pudimos apreciar que las luces eran demasiado frías y no ayudaban para nada al confort del espacio. Ella escogió una paleta de colores con tonos tierra: marrón, beige, y grises. Y un estilo moderno y elegante.</p><p>Y en los espacios de la zona social, el reto más grande era darle orden y sentido al espacio al tiempo de hacerlo sentir acogedor. El único deseo importante para ella era que pudiera poner fotos de su familia y acomodar los recuerdos de viajes que ha hecho.</p><h3>Moodboards y Look and feel del diseño interior</h3><h3>“Una habitación de ensueño”: Estilo clásico y elegante.</h3><p>La propuesta para este espacio se basó en un estilo clásico, chic y acogedor. Se propone un lugar en el cual la cama es el espacio principal. Esto se logra con el diseño de un cabecero en terciopelo el cual tiene todo el protagonismo. Y un rincón alterno para el tocador con el detalle de un espejo grande para darle amplitud e iluminación a la habitación.</p><p>Tip: Si tienes una habitación poco iluminada, los espejos son una excelente opción para dar una sensación de amplitud. Si los ubicas en contra de la entrada de luz principal, él va a reflejar la luz a todo el espacio. Te puede interesar la entrada de Blog sobre cómo convertir tu casa en un recinto para los sentidos (Click aquí)</p><h3>“Diseño interior a todo color”: Estilo nórdico y colorido</h3><p>La idea de la zona social es un poco más arriesgada. Se presenta una propuesta para sacar un poco de la zona de confort al cliente, implementando colores intensos y poco comunes. Se establece una relación entre el color y el estilo con una tendencia nórdica y minimalista. Aunque el estilo nórdico se caracterice por tener colores neutros y claros, quisimos romper el esquema agregándole colores arriesgados al espacio. Esto se hizo con la intención de unificar la sala y el comedor por medio del contraste y generar un lugar más acogedor. Se agregan detalles con elementos como pufs y mobiliario de bar.</p><p>Sí quieres más información sobre nuestros servicios en renovación de interiores visita nuestra página web aquí</p><p>El arte final</p><p>Todo el proceso de diseño es muy divertido, pero ver el resultado final es lo mejor de todo. Es increíble como los espacios se transformar para lograr lo que quieres. Conformamos un espacio único y funcional, y cumplimos cada una de las expectativas soñadas.</p><h3>El interior: Sala-comedor</h3><p>La magia del color</p><p>El resultado final fueron dos colores complementarios. Para el salón principal se fusiona un color turquesa oscuro con el color del año, un rosa salmón o color del año por pantone: living coral. Son colores que están en tendencia y le brindan al espacio un toque atrevido sin ser tonos que abrumen. Los tonos verdes aportan tranquilidad, te invitan a pertenecer al espacio, mientras que los tonos cálidos como los naranjas, son colores alegres y llenos de vida. Para lograr apropiarlos en un lugar sin sobre cargar el espacio, utilizamos matices que nos permitan jugar con la ambientación y así mismo reflejar la luz.</p><p>La conformación del interior</p><p>Al entrar al interior, lo primero que encuentras es el recibidor, un punto muy importante para cualquier casa; este espacio es muy importante pues es la bienvenida al hogar. En esta ocasión quisimos enmarcar la historia familiar por medio de un recuadro en color coral y adecuarlo con una banca en madera maciza para que funcione como mueble auxiliar. Justo en frente se encuentra el comedor, con mobiliario en madera que hace juego con la banca del recibidor y sillas blancas que son enmarcadas perfectamente por un recuadro en color turquesa oscuro. Resalta totalmente el espacio. Y lo complementa perfectamente una lámpara colgante en color rosa dorado metálico, materiales industriales que se integran en el esquema de diseño.</p><p>Al pasar al salón social, nos encontramos con un espacio abierto que tiene chimenea. El mobiliario es protagonista. Un sofá en L para adecuar la distribución espacial y ahorrar espacio. La mesa de centro en madera y enchapado blanco que hacen juego con los tonos del mobiliario del comedor, un tapete con un diseño sutil en grises y estampado de rombos y finalmente el toque intenso de un otomano en color amarillo mostaza intenso que impacta el espacio y rompe con la sutileza del diseño. Busca generar controversia sin salirse del boceto. La pared principal de la sala está pintada del color coral del cuadro del recibidor. De esta manera unificamos los dos espacios para conformar uno solo. Así mismo, hay un elemento que consolida los dos espacios como uno y es el Bar. Es un mueble de color verde turquesa en una tonalidad más clara que el color de la pared. Funciona como un elemento muy especial dentro del espacio pues agrupa el lugar en forma de T. Unifica el salón e inicia el recorrido al interior en la zona privada del apartamento.</p><p>Para la decoración se usaron elementos que jugaran con el espacio, encima de la chimenea existía un mueble que fue pintado de blanco para fusionarlo con la pared y así poder resaltar los elementos de decoración que la mayoría son souvenirs de viajes que la dueña ha hecho. Elementos vivos, plantas y suculentas, sutilmente le agregan vida al entorno y unos espejos en forma de rombo hacen juego con el tapete y reflejan un poco del color de la pared de enfrente.</p><h3>Un lugar para descansar y encontrarse: La habitación</h3><p>La verdad es que la transformación de este espacio fue increíble. Era una habitación fría y sin disposición. La distribución de los muebles es la misma pero el arte que configuran los colores y el estilo le dieron al espacio una calidez y sensación de tranquilidad muy diferente a la que tenía.</p><p>Se escogió una paleta de colores neutros, una combinación de colores tierra entre fríos y cálidos que no abruma el espacio. La habitación esta enmarcada por la pared del fondo principal y se complementa con un cabecero tapizado en capitoneado que le da un estilo muy elegante al lugar.</p><p>La iluminación es parte fundamental de diseño, pues buscamos una mezcla entre lo clásico y lo moderno. Dos lámparas industriales, con bombillos vintage hacen un encuadre perfecto y aportan iluminación cálida, la cual hacía falta.</p><p>Para completar el espacio, se crea un rincón adicional de tocador, con un tapete en fibras de peluche en el centro de la habitación y algunos elementos en el piso, como luminarías, una caja estilo industrial, y una botella que se transforma en florero, ambientan la habitación a través de un juego entre lo clásico y lo moderno. El espejo redondo de un metro de diámetro, abre el espacio y le aporta luminosidad natural. Y como ya sabemos lo importante que es habitar con los sentidos. La habitación tiene toques sutiles en la decoración con velas de aromas dulces a vainilla, con cojines en diferentes texturas y estampados y una cobija adicional a los pies de la cama que le aporta contraste y calidez al espacio.</p><p>La transformación personal es directamente proporcional a la transformación de tus espacios, estar en un lugar cálido y hogareño te hace sentir mucho mejor interiormente.</p><p>Testimonio</p><p>“Siempre fui una persona muy despegada de la casa, no creía importante el juego que hacían los muebles en el espacio de esta, hasta que me he entere que estaba en estado de embarazo y me pareció importante que mi bebe creciera en un lugar bonito.</p><p>Fue ahí cuando sin pensarlo dos veces me comunique con Paola Lozano, pues ya varios años he tenido el placer de ver su trabajo, y me encanta como logra conectar entre los colores, formas y texturas el ambiente. El proceso fue muy lindo, Paola siempre tuvo en cuenta mi necesidad, mis gustos y mi presupuesto. Desde el primer boceto que me envió me gusto bastante y me fui enamorando cada vez que me veía mas forma a todo. Le encontré significado a las cosas, que no solo son muebles en un espacio, sino objetos que juegan en un ambiente, logrando que uno se desconecte del trajín del día a día y nos relajemos. Dejé de llamar a mi casa: casa, y empecé a llamarlo hogar”</p><p>Puedo concluir que a través del diseño podemos lograr alcanzar corazones, no basta con pegarse de un estilo o un color. Basta con configurar formas y colores para crear experiencias en los espacios que habitas. Nunca olvides que como te sientes es como te ves, y así mismo tu hogar.</p><p>Nos gustaría mucho poder ayudarte a lograr los espacios que sueñas. Contáctanos aquí si necesitas asesoría.</p><p>Entra a nuestra página web sobre renovación de interiores y descubre todo acerca de renovar tus espacios aquí</p><p>Síguenos en Instagram y en Pinterest para que aproveches nuestro contenido y así puedas inspirarte a soñar con habitar tus espacios desde los sentidos.</p><p>Renovación</p><p>Decoración</p><p>Diseño Interior</p>"}, {"title": "5 consejos que te pueden servir a la hora de renovar tu casa", "meta": "Por Pao Lozano · 2 nov 2019 · 7 min de lectura", "img": "assets/30e03a_066e69607b7b438abe1db222c781e753~mv2.png", "html": "<h3>Para empezar, quiero preguntarte…</h3><h3>¿Estás viviendo en la casa de tus sueños?</h3><p>Tenemos la creencia de que nos toca acoplarnos a lo que tenemos por falta de presupuesto o porque es el lugar perfecto porque me queda cerca al trabajo e incluso porque son propiedades que nos heredaron nuestros padres. Y nos acostumbramos a habitarlas sin tener en cuenta que podemos convertirlas en los lugares de nuestros sueños. Sin importar su tamaño, su capacidad espacial o el tiempo de antigüedad. Todas y cada una de las propiedades son adaptables a nuestras necesidades, pero sobre todo a nuestros gustos personales. Como ya les he venido contando, es muy importante que nuestros espacios se adapten a lo que nos hace sentir mejor interior y exteriormente. Para así vivir con sentido o como les digo yo, vivir con los sentidos.</p><p>Esta vez quiero hablarles un poco de lo que significa renovar los espacios y darles algunos consejos para que se animen a tomar la decisión de transformar su casa con pequeños cambios que nos les impliquen mucho presupuesto. Cuando hablamos de renovar algún espacio nos referimos a una intervención en la cual cambiamos la apariencia sin necesidad de cambios radicales u obras en tu casa, con esto tenemos la primera ventaja y es que podemos evitar un gran desastre con un beneficio grande de cambio. Podemos hacerlo con el color de las paredes y la adecuación, distribución y decoración del espacio o con el cambio o transformación de nuestro mobiliario.</p><p>Sí quieres conocer nuestros servicios en diseño interior y renovación de espacios, entra a nuestra página web aquí.</p><p>¿Cuáles son los beneficios de renovar tus espacios?</p><p>Renovar trae muchos beneficios a nivel personal. Transforma la energía de tu hogar. También es una buena oportunidad para que despiertes toda tu creatividad a la hora de escoger como quieres que se vean tus espacios, te permite actualizar tu decoración con las últimas tendencias en diseño y jugar con colores y estilos diferentes a los que tienes actualmente, esto te saca de tu zona de confort y te muestra que vivir en un espacio diferente y atractivo es indispensable para sentirte mejor.</p><p>Así que sin más preámbulo te voy a decir cómo puedes comenzar y dejes de alargar la decisión de mejorar tu calidad de vida a través del lugar que habitas.</p><h3>Define tus prioridades a la hora de decidir si vas renovar</h3><p>Para tener seguridad a la hora de tomar una decisión clara al respeto a la hora de renovar tus espacios es importante que te tomes el tiempo de pensar en que es lo que quieres y que lugares de tu casa vas a renovar. Haz una lista de las cosas que más te gustan de tu casa y otra de las cosas que definitivamente quieres cambiar. Esto te va ayudar a concretar qué es lo que vas a renovar y por cuál de estos vas a empezar. Trata de enumerarlos en orden de prioridad.</p><p>Trata de clasificar tus decisiones con tres preguntas: ¿Qué cosas son indispensables en tu casa?, ¿Qué cosas te gustaría cambiar o adquirir que pueden entrar en el presupuesto? Y por último ¿Cuáles cosas no son necesarias o te dan igual si están o no están?</p><p>Ten en cuenta que pensar con detenimiento cada cosa que quieres hacer te va ayudar a que el proceso sea más claro y menos improvisado.</p><h3>Ten en cuenta estas condiciones para lograr un espacio funcional</h3><p>A la hora de analizar que debes renovar de tus espacios es importante que tengas en cuenta ciertas cosas que pueda que te estén haciendo falta y son indispensables a la hora de mejorar la calidad de un lugar.</p><p>Fluidez visual: Un espacio visualmente fluido da la percepción de orden y amplitud. Independiente que vivas en un lugar en el que los espacios están organizados por habitaciones o que sea tipo loft. Tu casa debe verse libre de contaminación visual. Esto implica que debes quitar todo lo que ocupe o se traviese en el espacio.</p><p>Luz natural: Procura que tus espacios cuenten con la mayor posibilidad de acceso a luz natural. Esto va a mejorar la calidad del ambiente y también va a ayudar que tú te sientas mejor. Es demasiado importante que tengas la posibilidad de que entre luz a tu casa de lo contrario vas a sentir que vives en un lugar deprimente y encerrado.</p><p>Suficiente espacio de almacenamiento: Entre más áreas de almacenamiento tengas en tu casa mejor. Haz uso de organizadores, mobiliario e incluso aprovecha zonas de tu casa muertas como detrás de muebles o debajo de tu cama. Si tienes la posibilidad de guardar, tu casa se va a ver más organizada y menos contaminada visualmente.</p><p>Procura que áreas como tu cocina o tu baño tengan buenas superficies de trabajo. Que tu mobiliario sea adecuado para poder hacer las cosas que debes hacer y no te encuentres en problema por la falta de espacio</p><p>Iluminación perfecta en cada espacio: Ten en cuenta que la calidad de iluminación va hacer una gran diferencia a la hora de habitar tus espacios.</p><p>Te dejo mi Blog en donde te doy algunos consejos sobre iluminación haciendo clic aquí</p><h3>Prepara un diseño claro de lo que quieres hacer en tu casa</h3><p>Saber que hacer siempre es un plus a la hora de tomar una decisión. Debes tener claro cómo quieres que se vea tu casa. Define el estilo, los colores y el tipo de objetos y mobiliario que te gustaría tener. Esto te va ayudar a saber qué es lo que quieres conservar y que quieres cambiar de lo que actualmente tienes.</p><p>Puedes investigar un poco de las tendencias del momento y darte alguna inspiración combinando tendencias y estilos. Elige la paleta de colores que quieres usar.</p><p>Te recomiendo que tu diseño sea a temporal. No te enfoques en un solo estilo porque pueda que tengas que cambiar todo de nuevo en un corto tiempo.</p><h3>Ten en cuenta tu presupuesto para renovar tus espacios</h3><p>Siempre debes saber cuánto vas a gastar en las renovaciones de tu casa. Planifica tus gastos para que no vayas a gastar más de lo planeado y luego te arrepientas de la decisión de renovar. Es importante que busques buenos precios en los materiales, pero sin afectar la calidad. No trates de comprar materiales o cosas más económicas con el fin de ahorrarte unos pesos. Recuerda que la calidad de lo que elijas va a influir en la perdurabilidad de estos y te va a evitar dolores de cabeza más adelante.</p><p>Es bueno que hagas una lista de todo lo que necesitas y averigües en diferentes lugares a la hora de comprar, para finalmente tomar la decisión más acertada. Muchos lugares tienen promociones o te dan beneficios por comprar todo en un mismo lugar. También ten en cuenta estos beneficios que te van ayudar a ahorrar en gastos.</p><p>La decoración es parte del presupuesto. Cuando acabes las pequeñas reformas que tienes pensadas, vas a tener que vestir el lugar. Así que debes controlar tus gastos en este punto pues es cuando más puedes llegar a elegir cosas innecesarias. Conserva lo bueno y descarta lo viejo. Trata de quedarte con al menos el 50% de lo que tienes, o re utilízalo. Puedes hacer reformas de color o tapizado, restaurar lo que este en malas condiciones. Así vas a evitar comprar más cosas y ayudas con el medio ambiente.</p><h3>¿Por qué debes contratar a un profesional para renovar tu hogar?</h3><p>Los expertos saben lo que hacen.</p><p>Muchas veces queremos ahorrar gastos y creemos que haciendo las cosas nosotros mismos vamos a obtener los mismos resultados, pero no. Una parte indispensable de tu presupuesto tiene que ser para que contrates a una persona que te asesore en el proceso y haga que tu experiencia sea más fácil. Al igual que en el momento de contratar a las personas profesionales para que pinten o realicen trabajos de soporte como electricidad, plomería, etc.</p><p>Busca siempre personas de confianza que cobren lo justo por el trabajo que realizan y que te den garantía del trabajo con los mejores resultados. Si tú sabes y quieres hacer parte de algunos procesos para ahorrar gastos también es válido, pero no es malo que te ayuden. Estos son algunos puntos que debes tener en cuenta a la hora de contratar tu personal de apoyo:</p><p>Asesórate de profesionales certificados o con experiencia en lo que hacen.</p><p>Ten presente que licencias o permisos necesitas para tus reformas. Y sí no es el caso asegúrate que estas personas cuenten con los permisos y seguros para no tener inconvenientes.</p><p>Haz una lista de los trabajos de apoyo que requieres, por ejemplo: pintar, hacer conexiones para iluminación, cambiar tuberías, etc. Y a partir de esto has una lista de los profesionales que requieres para estas actividades.</p><p>Ten un plan B. Muchas veces nos encontramos con personas que pueden dejar los trabajos a la mitad. Así que ten varias opciones en el caso de que algo falle.</p><p>Compara precios, cotiza con diferentes personas y asegúrate que lo que vas a pagar es lo justo.</p><p>Si sabes del tema, puedes comprar materiales tú mismo y solo contratar la mano de obra. Pero si no estás seguro, lo mejor es que encargues a un profesional.</p><p>Ten en cuenta que en el contrato te especifiquen los tiempos de desarrollo y entrega. Es muy importante que sean personas puntuales y cumplidas con el trabajo. Aunque siempre puede haber retrasos, deben ser personas honestas y te hagan saber cualquier imprevisto de tu proyecto.</p><p>Te recomiendo que elijas a un profesional que te asesore en todo. En Look and Feel te asesoramos y te acompañamos en el proceso y contamos con profesionales de apoyo que te evitaran muchos dolores de cabeza.</p><p>Estos son algunos de los profesionales que te pueden ayudar: Diseñador o arquitecto, maestro de obra o albañil, carpintero, ornamentador, electricista y plomero.</p><p>Por ultimo quiero darte ideas de algunas de las reformas que puedes hacer en tu hogar para renovar tus espacios:</p><p>Redistribución de un espacio: Puedes cambiar tu cocina o tu baño. Hacer reformas en lavabos y enchapados.</p><p>Apertura de un espacio: Muchos lugares están antiguamente diseñados por habitaciones separadas. Puedes abrirlos para dar más espacialidad y flujo visual, creando una distribución abierta. Esto puedes realizarlo sobre todo en la cocina.</p><p>Crear espacios de almacenaje, con nuevos muebles o con soluciones creativas para guardar lo que no quieres que se vea.</p><p>Cambiar pisos por materiales más durables y que tengan menos cuidado y mantenimiento</p><p>Cambiar el color de tus espacios pintando paredes o agregando detalles como tapizados o 3D.</p><p>Reforma tu mobiliario</p><p>Re decora tus espacios</p><p>Teniendo en cuenta cada uno de estos consejos, es hora de que tomes la decisión de renovar tu hogar. Sí necesitas asesoría para la renovación de tu espacio no dudes en contactarnos. Podemos ayudarte a desarrollar la idea que necesitas y evitarte problemas. Sí ya tomaste la decisión te invito a que visites nuestra web, allí pueden encontrar más razones para tomar la decisión final y renovar tu hogar desde los sentidos.</p><p>Sígueme en Instagram para que sigas más consejos sobre como renovar tus espacios y en Pinterest, tengo tableros para darte inspiración sobre diseño de espacios.</p><p>Renovación</p><p>Diseño Interior</p>"}, {"title": "Trucos para decorar la habitación de tus sueños", "meta": "Por Pao Lozano · 13 oct 2019 · 9 min de lectura", "img": "assets/30e03a_522eafe2c90e4bea94d0534df9b0b835~mv2.png", "html": "<h3>¿Cómo renovar una habitación con bajo presupuesto?</h3><h3>Antes y después de mi habitación</h3><p>Uno de los mayores dilemas es saber que hacer a la hora de decorar tu habitación, sobre todo cuando no cuentas con suficiente presupuesto para hacerlo, pero estas necesitando urgente un lugar en el que te sientas pleno y tranquilo. Ya les había contado en mí Blog anterior que para mí ha sido un proceso lograr entender que apropiarse de los espacios es muy importante para la vida en general, sentirte en un lugar propio, o en un espacio que realmente te brinde paz. Cuando llegas a un lugar nuevo o cuando llevas cierto tiempo en la misma casa, y ya no sabes cómo darle la vuelta a tu habitación para que se vea y se sienta diferente, las posibilidades parecen pocas, aun así, es importante tomar la decisión de arriesgarse para cambiar la forma en la que te sientes, la gran pregunta es:</p><h3>¿Cómo lograr decorar mi habitación si tengo otros gastos y no cuento con suficiente presupuesto?</h3><p>Lo primero que hay que hacer es tomar la decisión de hacerlo, y darte el tiempo necesario para desarrollar lo que quieres lograr. Es importante que tengas un presupuesto asignado y sepas cuánto quieres gastar, a partir de eso ya puedes comenzar…</p><p>La habitación es el espacio más importante de tu casa, es allí donde probablemente pasas la mayor parte del tiempo, es el lugar en el que descansas, te reconfortas y te recuperas, te olvidas de todo, y es el espacio más privado en tu vida. Es muy importante que a la hora de decidir renovar tu casa comiences por este espacio. Incluso si vives en un lugar en arriendo, y no tienes muchas posibilidades, te quiero contar cómo puedes decorar tu habitación para que logres crear un recinto de descanso al que añores llegar cada noche. Y al tiempo te iré mostrando lo que yo hice en mi habitación para darte inspiración.</p><h3>Los primeros pasos para decorar tu habitación</h3><p>Elige cuál es el estilo que buscas, qué es lo que te hace sentir bien, si te gustan los elementos simples o si buscas un espacio más acogedor. Cuando yo empecé a diseñar mi habitación, la verdad no tenía muy claro que quería, así que el proceso fue un poco extraño porque durante mucho tiempo estuve en el mismo espacio sin hacerle nada y las mayores intervenciones las hacía con muebles, pero tampoco generaba grandes cambios, esto evidentemente me hacía sentir inconforme y realmente no disfrutaba estar en mi habitación. Así que en el momento en el que tomé la decisión supe que como tenía bajo presupuesto debía elegir un estilo simple para no tener que invertir mucho. Aunque no es necesario que escojas un solo estilo, en mi caso hice una mezcla y ya verás por qué.</p><p>Sí estas interesado en conocer nuestros servicios de renovación de espacios, visita nuestra página web aquí</p><p>A la hora de pintar tu dormitorio…</p><p>Si para ti es posible intervenir tus paredes te recomiendo que te apropies del color para generar grandes cambios en tu habitación. Es quizá la herramienta más útil que tienes para lograr un gran diseño con bajo presupuesto.</p><p>Si tu espacio es pequeño y tratas de darle amplitud, la mejor elección son los matices claros y, al contrario, si tú habitación es amplia y lo que buscas es darle un toque de intimidad, la mejor elección son los matices oscuros.</p><p>Puedes elegir dos colores para pintar tus paredes, lo importante es que te inclines a mantener el mismo tono, no te recomiendo que generes contrastes pues en la habitación eso es algo que te va a generar ansiedad. Acuérdate que para intervenir una habitación con color debes usar proporciones. El color principal que escojas debe estar en las paredes. Este color puede ser un 60% de toda la habitación.</p><p>Trata de que sean tonos pasteles e incluso la mejor elección para pintar una habitación son colores fríos: Azul, verde, grises. Estos son tonos que generan tranquilidad y armonía. Ponte creativo y pinta formas en tus paredes.</p><p>Puedes hacer formas de colores que ambientan el espacio o puedes dividir una pared con dos tonos.</p><p>Para mi habitación elegí un tono de matiz oscuro pues lo que quería era que se sintiera más acogedora, y opté por un color gris de tonalidad verde. Son tonos que están en tendencia, este tipo de colores son profundos, inspirados en matices de la naturaleza y en piedras preciosas. Evocan elegancia, e invitan a un ambiente de reflexión, de nutrición personal y de acogimiento.</p><h3>Los muebles perfectos para tu cuarto…</h3><p>Elegir los muebles adecuados para tu habitación no tiene que ser un dilema. Trabaja con los que ya tienes y adiciona solo lo que sea necesario para completar tu esquema de decoración.</p><p>La base cama sin cabecero es una opción para un bajo presupuesto, puedes usarla de esta manera, es una buena elección para que tu espacio tenga un estilo minimalista, pero si lo que buscas es algo más acogedor puedes elegir un cabecero en estilo capitoneado. Es un detalle que le da a tu habitación originalidad, así también puedes hacer uso de diferentes texturas dentro del espacio.</p><p>Usualmente tienes un juego de habitación completo, en el que la cama sea del mismo material de las mesitas de noche e incluso del mueble auxiliar. Pero si no es así, te quiero contar que puedes optar por buscar muebles antiguos y adecuarlos a tu espacio sin necesidad de que se vean recargados o viejos.</p><p>Una excelente opción es renovarlos y darles color. Esta es una buena elección para generar contrastes sutiles en la decoración de tu habitación sin arriesgar la sensación de armonía y a la vez crear un contexto más hogareño. Haz uso de muebles de bajo costo que puedes comprar en Homecenter o en lugares como este. Estos muebles no suelen ser muy amigables a la hora de decorar, pero puedes comprarlos e intervenirlos con color.</p><p>En mi caso no tenía mesas de noche así que esto fue lo que hice: Encontré una mesa auxiliar con acabados vintage que usamos en casa de mis papás hace muchísimos años. Es una mesa que me encanta porque tiene un acabado en tono verde turquesa oscuro que quedaba perfecto con el matiz de mi habitación. Y además tiene apliques en cuero que le da un toque mucho más sofisticado.</p><p>Y para la otra mesa usé un contraste temático opuesto: intervine una mesa auxiliar que encontré en Homecenter, a decir verdad me salió muy económica y elegí una pintura en aerosol color rosa intenso para pintarla. Así que use un mueble antiguo y un mueble moderno totalmente opuestos pero que juntos hacen un juego ecléctico en mi habitación.</p><p>Con este ejemplo puedo decirte que no necesitas que todo sea igual, ni simétrico, ni del mismo color o estilo, puedes hacer uso de lo que tengas y adecuarlo al esquema de diseño que buscas.</p><h3>Decora tu habitación con muebles que complementen el espacio…</h3><p>Elige muebles complementarios a tu juego de cama, si tienes el espacio, haz uso de sillas auxiliares tipo poltronas, pufs o muebles que complementan el espacio, si lo necesitas busca muebles que te ayuden a organizar tus cosas.</p><p>Como mi habitación es amplia, elegí hacer una zona que mejora mi dormitorio, junto con una poltrona antigua; renovada con una tela tipo terciopelo de color verde menta que hace juego perfecto con la mesa auxiliar vintage turquesa, un mueble estantería en escalera el cual saque la idea de Pinterest, compre los materiales y lo mande hacer para que saliera más económico y un espejo largo, generé un espacio adicional en el que puedo leer, descansar incluso arreglarme y sentirme “diva” cuando lo hago :D.</p><p>Si logras pensar primero en como quisieras sentirte a la hora de hacer tus actividades cotidianas, vas a poder crear una atmósfera que eleve las sensaciones y te anime en tu día a día.</p><h3>¿Qué hacer con el televisor en tu habitación?</h3><p>Hay muchos que dicen que tener un televisor en el cuarto no es bueno, pero a la hora de la verdad, si a ti te gusta, es lo que debe importar. Ten presente la ubicación de tus muebles o auxiliares, donde vayas a poner tu televisor y la altura para lograr el confort perfecto. Trata de ubicarlo frente a tu cama a una distancia prudente mínimo 50 cm si tienes la posibilidad, la altura del T.V será en un rango de 35 cm sobre la cama, esto va a depender de la persona que esté acostada viendo televisión. Pero para que sea más fácil para ti, ponte en tu cama en la posición en la que ves televisión y ubica el televisor a la altura de tu cabeza, sin mirar más arriba o más debajo de tu postura corporal normal. Así podrás disfrutar de tus programas favoritos sin esforzar tu vista o tu posición.</p><p>Puedes hacer uso de repisas o muebles para poner más elementos que complementen el espacio, puedes esconder tu televisor en el closet para que no se vea o puedes colgarlo en la pared o del techo, pero procura tener en cuenta la recomendación anterior. No té de miedo usar más muebles, siempre debes pensar en el esquema de diseño que quieres y sobre el, basar todas las decisiones que tomes para que tu habitación no se llene de elementos que no necesitas.</p><p>Lo ideal es que compres los materiales tú mismo y le digas a alguien que te ayude armar los muebles, siempre va a ser más asequible que comprar un mueble nuevo, y así puedes personalizarlos como quieras.</p><h3>Complementa la decoración de tu habitación</h3><p>Ten en cuenta que para lograr un esquema completo debes incluir accesorios que le aporten a tu habitación, escoge un color que contraste de una forma sutil el matiz que ya tienes en las paredes, este color va a ser de una proporción aproximada del 30%, escoge los que más te gusten y comienza a jugar:</p><p>Si buscas darle profundidad y luz a tu habitación puedes hacer uso de espejos, ubícalos en sentido opuesto a la entrada de luz natural para que estos reflejen el espacio. Los espejos redondos sobre la cama están en tendencia y le dan un toque bohemio minimalista al espacio.</p><p>Puedes también poner repisas y poner elementos decorativos como cuadros pequeños, velas o accesorios decorativos.</p><p>Los cuadros son esenciales sobre todo puedes hacer uso de ellos si no puedes pintar tus paredes, no tienen que ser muy sofisticados. Pueden ser elementos simples con marcos modernos, fotografías que te gusten o mensajes que te inspiren. Incluso te recomiendo hacer un juego entre tipos de marcos, colores y tamaños.</p><p>Ten en cuenta que cada elemento que uses te va a ayudar a organizar el espacio.</p><p>Para tu lencería de cama y cojines trata de pensar en que si elegiste matices claros para las paredes puedes usar colores más oscuros en tus cobijas y cojines. Y viceversa. Has uso de distintos tipos de cojines: redondos, de colores más fuertes y otros de diferente material. Esto le aporta textura a tu habitación.</p><p>Complementa tu juego de cama con una manta adicional a los pies de la cama.</p><p>Usa tapetes, estos contribuyen a crear un ambiente más cálido.</p><p>Yo escogí complementar mi esquema con un color rosa, aparte de ser uno de los colores que más me gustan, es un tono que contrasta muy bien con los verdes que ya había elegido. Y me inspira tranquilidad, ternura y es un tono muy femenino. Lo use en diferentes tonalidades del mismo rosado para crear un espacio más diverso. El cobertor de mi cama es de color rosa pálido, y use dos cojines en terciopelo color rosa pastel oscuro, y los complemente con un cojín redondo en color verde menta pastel que encierra el esquema. Elegí un tapete tipo peluche de color blanco que rompe visualmente para atraer la atención y decidí aportar algo de mí pintando dos cuadros. Los marcos son de color blanco para que resalten con el tono de la pared.</p><h3>Aporta vida con plantas</h3><p>Las plantas no pueden faltar a la hora de decorar tu habitación, ellas les aportan vida a tus espacios. Y si no te gusta tenerlas, al menos piensa en decorar con flores. Ten en cuenta que tener plantas en exceso en la habitación tampoco es recomendable, puedes poner plantas de la familia \"suculentas\" o cactus, estas son pequeñas y van muy bien con la decoración.</p><h3>La magia está en los detalles</h3><p>Para que tu decoración se vea completa es muy importante que escojas los elementos perfectos. Procura que sean cosas que te identifiquen como revistas que te gustan o libros, estos elementos hacen parte de lo que eres.</p><p>En la decoración de mi habitación elegí elementos vintage como un libro viejo y un jarrón que me heredó mi abuela y una foto de mi mamá, los ubiqué en la mesa rosada más moderna y un cuadro con un mensaje, una vela rosada y un joyero en forma de unicornio que los puse en la mesa vintage. ¿ves? Así continúe jugando con dos estilos, para darle personalidad y diversidad al espacio. Elegí revistas de moda para ponerlas en el piso y complemente con otros elementos de iluminación que le aportan calidez al espacio.</p><p>No dejes de lado por nada del mundo la iluminación de tu habitación, ten siempre una lámpara en tu mesa de noche y recuerda que las luces cálidas son mejores para estos espacios. Las lámparas de techo son una gran elección para que la luz no sea directa y genere un ambiente más acogedor.</p><p>Por último y no menos importante, pon tantas velas como quieras, elige tu aroma favorito, para mi habitación elegí un aroma que evoca serenidad y lo complemente con aromas de coco y vainilla; recuerda que debes diseñar cada espacio pensando en tus sentidos, puedes ir a mí Blog anterior para que recuerdes cómo hacerlo, lo que sientes al ver, al oír, al tocar, al oler e incluso lo que comes, va a definir el esquema principal de tu diseño. Si sigues estos consejos en cada espacio de tu casa va a ser mucho más fácil que lo que creas te haga sentir mejor y logres hacerlo tú mismo.</p><p>Sígueme en Instagram… @lookanfeelinterior</p><p>Para que veas todo el proceso del antes y el después de mi habitación y para que sigas más consejos de como decorar con bajo presupuesto. También puedes seguir mi perfil en</p><p>Pinterest para que veas inspiración sobre habitaciones. ¡No dudes en contactarme si necesitas ayuda! Si tienes alguna idea o si quieres renovar tu habitación y no sabes por dónde empezar, te ayudo en lo que necesites. Déjame en los comentarios que opinas y si te gustaron estos consejos.</p><p>Visita nuestra página web sobre diseño de interiores y renovación de espacios, conoce nuestros servicios aquí.</p><p>Decoración</p><p>Renovación</p><p>Diseño Interior</p>"}, {"title": "Convierte tu casa en un recinto para los sentidos", "meta": "Por Pao Lozano · 1 oct 2019 · 9 min de lectura", "img": "assets/30e03a_5ad2f83f3e2f47bd8ab627720e88d249~mv2.png", "html": "<h3>Consejos para diseñar casas modernas estimulando los 5 sentidos</h3><p>Sí alguna vez te has preguntado cómo poder diseñar la casa de tus sueños, yo quiero contarte cómo puedes llegar a hacerlo de una forma fácil a través de tus sentidos. Quiero que exploremos que significa hacerlo para lograr crear la casa que deseas sin tener que ser el diseñador interior más experto o tener un gran presupuesto.</p><p>Como seres humanos tenemos neuronas que responden a estímulos mediante órganos sensoriales, comúnmente los llamamos los 5 sentidos: la vista, el olfato, el gusto, el oído y el tacto. Los sentidos se activan frente a un tipo de energía especial y nuestro proceso sensorial responde ante la percepción de ciertos elementos en el ambiente los cuales son interpretados por el cerebro y se transforman en olores, colores, texturas, sonidos, formas y sabores.</p><p>¿Sabías que son sensaciones que no existen en realidad? Es información que cobra sentido cuando está en nuestro interior…así que podríamos decir que todos sentimos el mundo de una forma diferente.</p><p>Por esta razón, cada uno de nosotros habitamos nuestros espacios de una manera distinta y para lograr diseñar nuestra casa ideal es importante que usemos nuestros propios sentidos para dar significado a las cosas a través de nosotros mismos y así crear sensaciones que te identifiquen y que les muestren a otros el reflejo de ti mismo y de tu hogar.</p><p>Renueva tus espacios y experimenta tus sentidos. ¿Quieres saber cómo lograrlo? Visita nuestra página web aquí</p><h3>Lo que vemos: el color</h3><p>Para lograr diseñar casas modernas es importante tener en cuenta que la tendencia de los últimos años está enfocada en darle color a las paredes, los colores son los que van a darle vida a tus espacios. Dependiendo de la zona de tu casa, es importante darle personalidad con un color, esto te va a permitir identificar tus espacios y la manera en la que te sientes en ellos. Por ejemplo:</p><p>Usa colores neutros, y fríos como grises, azules, verdes o lavanda para habitaciones o cuartos de descanso. Estos tonos inspiran tranquilidad, calma, frescura y no abruman los espacios, es decir que vas a poder relajarte mejor.</p><p>Para zonas sociales como el comedor o la sala van perfectos tonos cálidos. Colores corales con ambientaciones en colores tierra o amarillos tipo mostaza son colores que están en tendencia y además te hacen sentir calidez y felicidad.</p><p>Utiliza paletas monocromáticas en áreas de estudio como blanco, gris oscuro o negro. ¿¡Negro!? Si, negro. Es un color que se usa para resaltar los demás elementos que están en el espacio y funciona muy bien en áreas neutras de nuestra casa.</p><p>¡No utilices colores llamativos en exceso!, y no pongas a competir los colores. Acuérdate siempre que menos, es más.</p><p>Los colores cálidos siempre van a ser más atractivos, así que, si quieres atraer a alguien a una zona de tu casa, es allí donde debes usar tonalidades en rojos, amarillo o naranja, yo te recomiendo hacerlo con elementos decorativos.</p><p>Por el contrario, si quieres mantener aislado un espacio, si lo que buscas es crear un lugar privado y totalmente personal, usa colores como verdes, azules, y pasteles. Son colores que logran intimidad y resguardo.</p><p>Puedes entrar a mi tablero de Pinterest para ver inspiración, aquí te dejo algunos boards con mis pines favoritos para pintar tus paredes de color</p><h3>Lo que vemos: Las formas, los estilos y los materiales</h3><p>Las formas se complementan. Esta regla es la principal para lograr un diseño interior espectacular. El estilo que elijas va a ser la guía para las formas que tengan tus muebles y elementos decorativos. Para una casa moderna te recomiendo estilos como el minimalista, en donde menos, es más, el estilo nórdico o escandinavo, un estilo Japandi que es la mezcla del escandinavo y el oriental, el oriental e incluso el estilo industrial.</p><p>Usa formas simples, círculos, cuadrados, triángulos en elementos decorativos. Esto le va a dar una imagen más minimalista y moderna a tus espacios.</p><p>Aprovecha patrones o estampados en elementos decorativos para darle personalidad a tu espacio.</p><p>Es importante que tus muebles tengan un estilo especial y todos correspondan al mismo. Los muebles modernos tienen acabados rectos y suaves, busca los que sean más simples, que no tengan elementos decorativos en las patas o manijas.</p><p>Materiales como la madera, el concreto, el metal y el vidrio son esenciales para una casa moderna.</p><p>Recuerda siempre poner elementos verdes en tu espacio, estos le dan vida y ambiente a tu casa.</p><h3>Lo que vemos: La iluminación</h3><p>La luz perfecta para tus espacios es fundamental para la manera de percibirlos. Trata de que tu casa sea iluminada la mayoría por luz natural. Y para luz artificial, trata de usar temperaturas cálidas en los espacios. Para áreas sociales usa luces más frías y vivificantes sin ser blancas y para áreas privadas usa luces cálidas y tenues. Esta relación está directamente proporcional a los colores que elijas. Sí los colores que elegiste para tu cuarto son neutros y fríos como por ejemplo un gris, entonces busca bombillas cálidas, así crearas un ambiente más ameno, relajante y acogedor; de la misma forma usa este consejo para áreas donde elijas pintar de tonos más llamativos como por ejemplo tu sala o comedor, la temperatura de la luz debe ser más fría. No te recomiendo el uso de luces blancas pues tienden a dar una sensación de soledad y de espacios vacíos dentro e nuestras casas.</p><h3>Lo que olemos</h3><p>El aroma de tu casa es de las sensaciones más importantes, pues es el olfato el que más genera memorias y experiencias en tu cerebro. Puedes hacer uso de dos tipos de elementos para darle aromas a tus espacios:</p><p>Las velas son mis favoritas. Aparte de tener una sensación mística, de tranquilidad, tienen olores muy agradables. El que tú elijas es el indicado, esto si va totalmente en tu gusto personal.</p><p>Te recomiendo que los escojas dependiendo también de las zonas, en habitaciones busca aromas que te inspiren tranquilidad y frescura como lavanda, azahar o jazmín y en zonas sociales explora con olores dulces como la vainilla, el coco o cítricos como la naranja. ¡Incluso puedes mezclarlos!</p><p>Los difusores o pebeteros son una opción que está en tendencia. Venden muchas esencias y con ellas miles de sensaciones, experiencias y significados. Los aceites esenciales tienen efectos que brindan un equilibrio físico y mental. Dentro de sus propiedades están disminuir tu estrés, ansiedad y te van ayudan a tener un mejor descanso. Esta opción es ideal para que la uses en tus habitaciones o áreas de descanso e incluso en tu baño; además de los diferentes aromas y el buen olor que trasmitas con tus espacios te pueden ayudar a sentirte mejor interiormente.</p><h3>Lo que probamos</h3><p>Y con este sentido...la cocina es el espacio principal. La palabra hogar viene del fuego y del fuego nace nuestro principal ritual: Alimentarnos. Los miles de sabores que podemos probar y la experiencia detrás de ellos tiene que ver también con los espacios donde preparamos nuestros alimentos.</p><p>¿Sabías que en un principio las casas eran un solo espacio?, las personas dormían y se reunían en el mismo lugar en donde cocinaban para estar al lado del fuego y poderse calentar. Te cuento esto para que hagamos el ejercicio de llevar esto a nuestra casa moderna; La cocina es para mí, uno de los espacios más importantes de nuestro hogar y la forma en la que decoramos y ambientamos la cocina va a influir mucho en la inspiración que tengamos a la hora de cocinar.</p><p>Para diseñar una cocina moderna debes tener en cuenta siempre…</p><p>Que este organizada y limpia.</p><p>Los elementos decorativos son los mismos alimentos, haz uso de frutas y verduras en jarrones o cuencos y puedes exhibirlos en repisas o mesas de centro.</p><p>Puedes hacer uso de cuadros llamativos para que te den inspiración.</p><p>Procura que tus muebles sean de colores neutros.</p><p>Dale al espacio pops de color con elementos decorativos e incluso electrodomésticos como tu nevera o licuadora.</p><p>El color también se ve ideal en elementos de cocina como sartenes, ollas, etcétera. Y no te de miedo ponerlos a la vista. Antiguamente todo se escondía en estanterías. Tu cocina moderna va a exhibir todos estos elementos como si fueran piezas de arte, ¿¡Qué opinas!?</p><p>Si tienes la oportunidad de crear diferentes zonas en tu casa para preparar alimentos, esta es una idea genial para que transportes esta sensación a otros lugares de tu casa. Esta en tendencia crear en zonas de bar o terraza, pequeñas cocinetas o áreas para BBQ, así puedes compartir con invitados y disfrutar tus espacios de una forma diferente.</p><p>Recuerda que la relación que tienes con tus alimentos es directamente proporcional a la relación que tienes con tu cocina.</p><p>Te dejo en Pinterest algunos de mis pines de inspiración para cocinas modernas…</p><p>Lo que sentimos</p><p>Esta es creo yo que una de las sensaciones más placenteras y experimentales. Podemos crear infinidad de estímulos a través del tacto. Y para ser más específicos, podemos diseñar una casa moderna a través de la combinación de texturas y materiales, los cuales te van a ayudar a darle calidez y diferentes temperaturas a tus espacios.</p><p>Las telas de tus muebles influyen mucho en la ambientación. Materiales como el cuero o la madera van a dar sensaciones visuales de calidez, pero al usarlos te van a dar una sensación fría y dura, así que úsalos en espacios en los que no vayas a permanecer mucho tiempo.</p><p>Puedes acompañarlos de elementos como cobertores suaves, o cojines en tela peluche para apaciguar la sensación fría.</p><p>El terciopelo es un tipo de tela que está volviendo a ser tendencia. Va muy bien con un estilo moderno para tu casa. Puedes usarlo en cabeceros de camas, sofás, poltronas o pufs.</p><p>El lino es un material muy resistente y además da una sensación de neutralidad y modernidad. ¡No puede faltar!</p><p>¡Usa cojines! Con diferentes tipos de tela y estampados. Suaves o rugosos. Esta combinación de sensaciones le va a dar a tu espacio un toque especial.</p><p>Si los espacios son muy fríos, aprovecha las alfombras o tapetes, estos le van a dar calidez a los lugares y a la vez ayudan zonificar áreas.</p><p>Una idea genial y moderna es usar telares como papel tapiz, estos sirven para insonorizar y ayudan también a la temperatura. Además, venden un montón de telares preciosos que le darían mucha personalidad a los espacios. Pero, así como el color, no abuses de ellos.</p><h3>Los sonidos</h3><p>¿Alguna vez has estado en un lugar en el cual todo está perfecto y te das cuenta que está demasiado callado? Bueno, la ambientación sonora es muy importante incluso en tu propia casa. Mi recomendación es que no dejes de lado lo que escuchas, a veces los ruidos molestos de la calle quiebran la tranquilidad que buscas para tu hogar. Así que busca listas de reproducción en Spotify o Youtube y escoge una para cada lugar de tu casa.</p><p>Yo suelo ambientar mi habitación escuchando música relajante tipo 432 Hz, estos sonidos te tranquilizan y te ayudan a conciliar el sueño más fácil.</p><p>Puedes también poner piano de fondo, jazz instrumental o Bossa Nova si lo que buscas es relajarte en tu sala mientras tomas una copa de vino.</p><p>¡La música que te guste! Lo importante es que sea lo que te haga feliz.</p><p>Te comparto una de las listas de Spotify que he creado para ambientar espacios, puedes seguirme y usarla cada vez que quieras.</p><p>Como ya ves…</p><p>Diseñar con los 5 sentidos es toda una experiencia tanto para ti como para las personas que van a visitarte. Tu casa debe ser tu refugio y llenarlo de experiencias te permite poder vivir cada área de una forma especial y diferente. Usa tus sentidos para diseñar cada rincón en tu casa, déjate inspirar por tu interior y te vas a dar cuenta que puedes habitar tus espacios desde los sentidos para que tu casa se vea tal cual cómo te sientes y no quieras salir de allí. Pierde el miedo a experimentar, a crear y luego a transformar.</p><p>Haz de tu casa un proyecto personal, dedícale tus tiempos libres a crear, a hacer cosas tú mismo (DIY) que te hagan sentir que ese espacio te pertenece, incluso si vives en un apartamento en arriendo, no te de miedo pintar las paredes o abrir huecos para poner cuadros, convierte ese espacio en algo propio mientras estés allí, esto te va a ayudar a sentirte parte de algo y créeme…</p><p>Te lo digo por experiencia, yo duré un tiempo de mi vida en el que cambiaba mucho de lugar para vivir y no me permitía decorar mis espacios porque no los sentía míos. Sentía que en cualquier momento iba a tener que salir de allí y vivía en una constante zozobra, como si tuviera que empacar todo e irme en cualquier momento. Hoy vivo en un apartamento que tampoco es mío pero la diferencia es que tome la decisión de hacerlo mío mientras esté acá. Poco a poco te iré contando más sobre mi proceso personal y mi experiencia, no solo desde el punto de vista profesional también desde mi propia historia. Y así mismo quiero invitarte a que me cuentes la tuya, a que hagamos de esta una comunidad en donde el buen vivir se convierta en un hábito para sentirnos mejor interior y exteriormente.</p><p>Sígueme en Instagram</p><p>Estaré publicando más ideas y consejos para que puedas diseñar tu casa más moderna. Acuérdate también de seguir mi perfil en Pinterest para que te llenes de inspiración y por favor no te olvides de usar las listas de reproducción de Spotify, las cree especialmente pensando en ti para que ambientes tus espacios de una manera diferente.</p><p>¡No dudes en contactarme si necesitas ayuda! Puedes lograr crear la casa de tus sueños, te voy a guiar con soluciones creativas hasta que logremos juntos lo que sueñas para diseñar tu casa moderna. Visita aquí nuestra página web sobre renovación de interiores y conoce nuestros servicios.</p><p>Diseño Interior</p><p>Decoración</p>"}];
+
+    function dismissLanding(targetHash) {
+      document.getElementById('landing').classList.add('dismissed');
+      if (targetHash) {
+        setTimeout(() => {
+          const el = document.querySelector(targetHash);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 250);
+      }
+    }
+
+    function reopenLanding(e) {
+      if (e) e.preventDefault();
+      document.getElementById('landing').classList.remove('dismissed');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    window.addEventListener('scroll', () => {
+      const h = document.getElementById('mainHeader');
+      if (window.scrollY > 40) {
+        h.classList.add('is-solid');
+      } else {
+        h.classList.remove('is-solid');
+      }
+    });
+
+    
+    function toggleMobileMenu() {
+      const m = document.getElementById('mobileMenu');
+      const btn = document.getElementById('mobileMenuBtn');
+      const isOpen = m.classList.toggle('open');
+      btn.textContent = isOpen ? 'Cerrar' : 'Menú';
+      document.getElementById('mainHeader').classList.toggle('is-solid', isOpen || window.scrollY > 40);
+    }
+    function closeMobileMenu() {
+      const m = document.getElementById('mobileMenu');
+      const btn = document.getElementById('mobileMenuBtn');
+      if (m) m.classList.remove('open');
+      if (btn) btn.textContent = 'Menú';
+    }
+
+    function openAboutDrawer() {
+      document.getElementById('aboutDrawer').classList.add('open');
+    }
+    function closeAboutDrawer() {
+      document.getElementById('aboutDrawer').classList.remove('open');
+    }
+
+    function openContactDrawer(serviceName) {
+      if (serviceName) {
+        document.getElementById('drawerService').value = serviceName;
+      }
+      document.getElementById('contactDrawer').classList.add('open');
+    }
+    function closeContactDrawer() {
+      document.getElementById('contactDrawer').classList.remove('open');
+    }
+
+    function setDrawerService(serviceName, btn) {
+      document.getElementById('drawerService').value = serviceName;
+      document.querySelectorAll('.ashby-pill').forEach(p => p.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+    }
+
+    function openArticle(idx, e) {
+      if (e) e.preventDefault();
+      const art = journalArticles[idx];
+      if (!art) return;
+      document.getElementById('artMeta').textContent = art.meta;
+      document.getElementById('artTitle').textContent = art.title;
+      document.getElementById('artImg').src = art.img;
+      document.getElementById('artContent').innerHTML = art.html;
+      document.getElementById('articleDrawer').classList.add('open');
+    }
+    function closeArticle() {
+      document.getElementById('articleDrawer').classList.remove('open');
+    }
+
+    function submitDrawerWhatsApp(e) {
+      e.preventDefault();
+      const s = document.getElementById('drawerService').value;
+      const n = document.getElementById('dName').value;
+      const em = document.getElementById('dEmail').value;
+      const ph = document.getElementById('dPhone').value;
+      const sp = document.getElementById('dSpace').value;
+      const ar = document.getElementById('dArea').value || 'Por definir';
+      const sh = document.getElementById('dShopper').value;
+      const m = document.getElementById('dMsg').value;
+
+      const text = `Hola Pao, vengo de *lookandfeelinterior.com* y quiero cotizar:%0A%0A` +
+        `• *Servicio:* ${encodeURIComponent(s)}%0A` +
+        `• *Nombre:* ${encodeURIComponent(n)}%0A` +
+        `• *Email:* ${encodeURIComponent(em)}%0A` +
+        `• *Teléfono:* ${encodeURIComponent(ph)}%0A` +
+        `• *Espacio:* ${encodeURIComponent(sp)}%0A` +
+        `• *Metros cuadrados:* ${encodeURIComponent(ar)}%0A` +
+        `• *Asesoría en compras:* ${encodeURIComponent(sh)}%0A` +
+        `• *Mensaje:* ${encodeURIComponent(m)}`;
+
+      window.open(`https://api.whatsapp.com/send?phone=573114445233&text=${text}`, '_blank');
+    }
+  </script>
+</body>
+</html>
