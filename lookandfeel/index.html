@@ -1108,6 +1108,412 @@
       }
     }
 
+  
+    /* ==========================================================================
+       10. SECCIÓN BLOG — ESTRUCTURA DE PÁGINA DE NOTICIAS / REVISTA EDITORIAL
+       ========================================================================== */
+    .news-portal {
+      background-color: var(--c-cream);
+      color: var(--c-mahogany);
+      padding: 72px 24px 88px;
+      border-top: 1px solid rgba(107, 40, 23, 0.15);
+    }
+    @media (min-width: 900px) {
+      .news-portal {
+        padding: 88px 48px 104px;
+      }
+    }
+    .news-container {
+      max-width: 1380px;
+      margin: 0 auto;
+    }
+
+    /* Cabecera estilo periódico / revista (Masthead) */
+    .news-masthead {
+      border-top: 2px solid var(--c-mahogany);
+      border-bottom: 1px solid rgba(107, 40, 23, 0.2);
+      padding: 18px 0;
+      margin-bottom: 36px;
+    }
+    .news-masthead__meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(107, 40, 23, 0.72);
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(107, 40, 23, 0.12);
+    }
+    .news-masthead__main {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 24px;
+      padding: 28px 0 22px;
+    }
+    .news-masthead__title {
+      font-family: var(--font);
+      font-size: clamp(30px, 4.2vw, 54px);
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1.05;
+      color: var(--c-mahogany);
+    }
+    .news-masthead__subtitle {
+      font-size: 13.5px;
+      font-weight: 300;
+      max-width: 440px;
+      line-height: 1.55;
+      color: rgba(107, 40, 23, 0.85);
+    }
+
+    /* Barra de filtros de categorías y buscador de noticias */
+    .news-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(107, 40, 23, 0.12);
+    }
+    .news-categories {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .news-cat-btn {
+      font-family: var(--font);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 8px 16px;
+      border: 1px solid rgba(107, 40, 23, 0.22);
+      color: var(--c-mahogany);
+      transition: all 0.25s ease;
+    }
+    .news-cat-btn.active,
+    .news-cat-btn:hover {
+      background-color: var(--c-mahogany);
+      color: var(--c-cream);
+      border-color: var(--c-mahogany);
+    }
+    .news-search {
+      position: relative;
+      min-width: 250px;
+    }
+    .news-search input {
+      width: 100%;
+      padding: 8px 14px;
+      border: 1px solid rgba(107, 40, 23, 0.25);
+      background: #fff;
+      font-family: var(--font);
+      font-size: 12px;
+      color: var(--c-mahogany);
+      outline: none;
+    }
+    .news-search input:focus {
+      border-color: var(--c-teal);
+    }
+
+    /* Bloque Superior de Portada: Noticia Principal (Izq) + Columna En Tendencia (Der) */
+    .news-top-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 36px;
+      padding-bottom: 48px;
+      margin-bottom: 48px;
+      border-bottom: 1px solid rgba(107, 40, 23, 0.2);
+    }
+    @media (min-width: 980px) {
+      .news-top-grid {
+        grid-template-columns: 1.45fr 1fr;
+        gap: 48px;
+      }
+    }
+
+    /* Noticia Principal Destacada (Lead Story) */
+    .news-lead {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    @media (min-width: 980px) {
+      .news-lead {
+        padding-right: 48px;
+        border-right: 1px solid rgba(107, 40, 23, 0.16);
+      }
+    }
+    .news-lead__media {
+      position: relative;
+      aspect-ratio: 16 / 9.5;
+      overflow: hidden;
+      background: #e6dfd9;
+    }
+    .news-lead__media img {
+      transition: transform 0.8s ease;
+    }
+    .news-lead:hover .news-lead__media img {
+      transform: scale(1.03);
+    }
+    .news-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 5px 11px;
+      color: #fff;
+      background-color: var(--c-teal);
+    }
+    .news-badge--green { background-color: var(--c-green); color: var(--c-mahogany); }
+    .news-badge--purple { background-color: var(--c-purple); color: #fff; }
+    .news-badge--mahogany { background-color: var(--c-mahogany); color: var(--c-lime); }
+    .news-badge--lime { background-color: var(--c-lime); color: var(--c-mahogany); }
+
+    .news-meta-line {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(107, 40, 23, 0.68);
+    }
+    .news-lead__title {
+      font-family: var(--font);
+      font-size: clamp(22px, 2.5vw, 34px);
+      font-weight: 400;
+      line-height: 1.22;
+      color: var(--c-mahogany);
+      transition: color 0.3s ease;
+    }
+    .news-lead:hover .news-lead__title {
+      color: var(--c-teal);
+    }
+    .news-lead__excerpt {
+      font-size: 14.5px;
+      font-weight: 300;
+      line-height: 1.65;
+      color: rgba(107, 40, 23, 0.85);
+    }
+    .news-author-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 12px;
+      border-top: 1px solid rgba(107, 40, 23, 0.12);
+    }
+    .news-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .news-author img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .news-read-cta {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--c-teal);
+      border-bottom: 1px solid var(--c-teal);
+      padding-bottom: 2px;
+    }
+
+    /* Columna Derecha: Últimas Noticias / En Tendencia (Sidebar Editorial) */
+    .news-sidebar {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .news-sidebar__heading {
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--c-mahogany);
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--c-mahogany);
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .news-sidebar__list {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+    .news-side-item {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 18px;
+      align-items: start;
+      padding-bottom: 22px;
+      border-bottom: 1px solid rgba(107, 40, 23, 0.14);
+      cursor: pointer;
+    }
+    .news-side-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .news-side-item__thumb {
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: #e6dfd9;
+    }
+    .news-side-item__thumb img {
+      transition: transform 0.6s ease;
+    }
+    .news-side-item:hover .news-side-item__thumb img {
+      transform: scale(1.06);
+    }
+    .news-side-item__title {
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.35;
+      margin: 6px 0;
+      color: var(--c-mahogany);
+      transition: color 0.25s ease;
+    }
+    .news-side-item:hover .news-side-item__title {
+      color: var(--c-teal);
+    }
+    .news-side-item__excerpt {
+      font-size: 12.5px;
+      font-weight: 300;
+      line-height: 1.48;
+      color: rgba(107, 40, 23, 0.78);
+    }
+
+    /* Parrilla Inferior de Noticias (3 Columnas tipo Revista / Portal) */
+    .news-feed-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+    .news-feed-header h3 {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .news-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    @media (min-width: 680px) {
+      .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .news-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .news-card {
+      background: #ffffff;
+      border: 1px solid rgba(107, 40, 23, 0.14);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    }
+    .news-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--c-mahogany);
+      box-shadow: 0 16px 36px rgba(107, 40, 23, 0.08);
+    }
+    .news-card__img {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: #e6dfd9;
+    }
+    .news-card__img img {
+      transition: transform 0.7s ease;
+    }
+    .news-card:hover .news-card__img img {
+      transform: scale(1.05);
+    }
+    .news-card__badge-pos {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 2;
+    }
+    .news-card__body {
+      padding: 24px 22px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+    .news-card__title {
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 1.35;
+      color: var(--c-mahogany);
+      transition: color 0.25s ease;
+    }
+    .news-card:hover .news-card__title {
+      color: var(--c-teal);
+    }
+    .news-card__excerpt {
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.58;
+      color: rgba(107, 40, 23, 0.8);
+      flex: 1;
+    }
+    .news-card__footer {
+      padding: 14px 22px;
+      border-top: 1px solid rgba(107, 40, 23, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--c-mahogany);
+    }
+
+    @media (max-width: 640px) {
+      .news-side-item {
+        grid-template-columns: 88px 1fr;
+        gap: 14px;
+      }
+      .news-search {
+        width: 100%;
+      }
+    }
+
   </style>
 </head>
 <body class="page-template--home">
@@ -1419,93 +1825,306 @@
       <!-- ====================================================================
            SECTION 8: .IMAGE-ROW (BLOG DE DISEÑO INTERIOR — LAS 9 ENTRADAS)
            ==================================================================== -->
-      <section class="image-row" id="blog">
-        <div class="image-row__header">
-          <span class="image-row__heading">Blog de Diseño Interior · La mejor manera de vivir el diseño es a través de los sentidos</span>
-          <span class="image-row__arrow" style="font-size:11px; letter-spacing:0.15em; text-transform:uppercase;">9 Entradas →</span>
-        </div>
+      <section class="news-portal" id="blog">
+        <div class="news-container">
 
-        <div class="image-row__track" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px 2px; padding: 0 2px;">
-          <div class="image-row__item" onclick="openArticle(0, event)">
-            <div class="image-row__image-wrap">
-              <div class="image-row__image image-row__image--primary">
-                <img src="assets/30e03a_08e83306ee6a49d5aacf308cee795bcd~mv2.png" alt="Estado de ánimo" />
+          <!-- CABECERA DE PERIÓDICO / REVISTA EDITORIAL (MASTHEAD) -->
+          <header class="news-masthead">
+            <div class="news-masthead__meta">
+              <span>LOOK AND FEEL PRESS & JOURNAL · BOGOTÁ, COLOMBIA</span>
+              <span>POR ARQ. PAOLA LOZANO DE LA PAVA</span>
+              <span>#DISEÑANDOCONLOSSENTIDOS · 9 EDICIONES</span>
+            </div>
+
+            <div class="news-masthead__main">
+              <div>
+                <h2 class="news-masthead__title">Noticias & Journal de Diseño</h2>
+              </div>
+              <p class="news-masthead__subtitle">
+                El diseño son historias, experiencias y recuerdos a través de los sentidos. Compartimos tendencias de neuroarquitectura, remodelación, renovación y decoración interior.
+              </p>
+            </div>
+
+            <!-- BARRA DE CATEGORÍAS Y BUSCADOR EN VIVO -->
+            <div class="news-toolbar">
+              <div class="news-categories" role="tablist">
+                <button type="button" class="news-cat-btn active" onclick="filterNews('all', this)">Todas las Noticias (9)</button>
+                <button type="button" class="news-cat-btn" onclick="filterNews('bienestar', this)">Bienestar & Sentidos</button>
+                <button type="button" class="news-cat-btn" onclick="filterNews('remodelacion', this)">Remodelación & Renovación</button>
+                <button type="button" class="news-cat-btn" onclick="filterNews('decoracion', this)">Decoración, DIY & Orden</button>
+              </div>
+
+              <div class="news-search">
+                <input type="search" id="newsSearchInput" placeholder="Buscar artículo o palabra clave..." oninput="searchNews(this.value)" />
               </div>
             </div>
-            <span class="image-row__title">¿Por qué el diseño interior influye en nuestro estado de ánimo?</span>
+          </header>
+
+          <!-- BLOQUE DE PORTADA: NOTICIA PRINCIPAL (LEAD STORY) + SIDEBAR EN TENDENCIA -->
+          <div class="news-top-grid" id="newsHeroBlock">
+            <!-- Noticia Principal 01 -->
+            <article class="news-lead" data-ncat="bienestar" onclick="openArticle(0, event)">
+              <div class="news-lead__media">
+                <img src="assets/30e03a_08e83306ee6a49d5aacf308cee795bcd~mv2.png" alt="¿Por qué el diseño interior influye directamente en nuestro estado de ánimo?" />
+              </div>
+              <div class="news-meta-line">
+                <span class="news-badge">Artículo de Portada · Neuroarquitectura</span>
+                <span>6 Oct 2023</span>
+                <span>•</span>
+                <span>7 min de lectura</span>
+              </div>
+              <h3 class="news-lead__title">
+                ¿Por qué el diseño interior influye directamente en nuestro estado de ánimo?
+              </h3>
+              <p class="news-lead__excerpt">
+                La forma en la que habitamos nuestros espacios es esencial para darnos cuenta de cómo nos sentimos. Mucho se dice de las cosas que influyen en nuestro día a día, pero el diseño interior, la iluminación natural y el orden transforman directamente nuestras emociones y bienestar mental.
+              </p>
+              <div class="news-author-row">
+                <div class="news-author">
+                  <img src="assets/30e03a_b48c8d92561e49aaa48fce7659c43a5f~mv2.jpg" alt="Arq. Pao Lozano" />
+                  <span>Por Arq. Pao Lozano</span>
+                </div>
+                <span class="news-read-cta">Leer reportaje completo →</span>
+              </div>
+            </article>
+
+            <!-- Columna Derecha: Noticias Destacadas / En Tendencia -->
+            <aside class="news-sidebar">
+              <div>
+                <div class="news-sidebar__heading">
+                  <span>En Tendencia · Lecturas Esenciales</span>
+                  <span style="color:var(--c-teal)">01 — 03</span>
+                </div>
+
+                <div class="news-sidebar__list">
+                  <!-- Destacado 1 (Post 2) -->
+                  <article class="news-side-item" data-ncat="bienestar" onclick="openArticle(1, event)">
+                    <div class="news-side-item__thumb">
+                      <img src="assets/1c1fcfb3c2fa41a58394493406e03029.jpg" alt="Homefullness" />
+                    </div>
+                    <div>
+                      <div class="news-meta-line">
+                        <span class="news-badge news-badge--green">Tendencia</span>
+                        <span>19 Ene 2022 · 3 min</span>
+                      </div>
+                      <h4 class="news-side-item__title">Homefullness, una tendencia que marcará nuestro hogar: 5 consejos para lograrlo</h4>
+                      <p class="news-side-item__excerpt">Descubre la importancia de nuestro hogar como refugio de paz, presencia y tranquilidad cotidiana.</p>
+                    </div>
+                  </article>
+
+                  <!-- Destacado 2 (Post 3) -->
+                  <article class="news-side-item" data-ncat="remodelacion" onclick="openArticle(2, event)">
+                    <div class="news-side-item__thumb">
+                      <img src="assets/30e03a_e9d2ab29434540b1b82782358a2ac19f~mv2.png" alt="8 cosas al remodelar" />
+                    </div>
+                    <div>
+                      <div class="news-meta-line">
+                        <span class="news-badge news-badge--mahogany">Remodelación</span>
+                        <span>9 Jul 2021 · 5 min</span>
+                      </div>
+                      <h4 class="news-side-item__title">¿Vas a remodelar? 8 cosas que queremos que sepas a la hora de remodelar tus espacios</h4>
+                      <p class="news-side-item__excerpt">Claves de arquitectura y presupuesto que debes conocer antes de iniciar cambios constructivos en casa.</p>
+                    </div>
+                  </article>
+
+                  <!-- Destacado 3 (Post 4) -->
+                  <article class="news-side-item" data-ncat="decoracion" onclick="openArticle(3, event)">
+                    <div class="news-side-item__thumb">
+                      <img src="assets/30e03a_ad0c3e85bc364aa289de0453059f6917~mv2.png" alt="5 secretos orden" />
+                    </div>
+                    <div>
+                      <div class="news-meta-line">
+                        <span class="news-badge news-badge--purple">DIY & Orden</span>
+                        <span>13 Ene 2021 · 3 min</span>
+                      </div>
+                      <h4 class="news-side-item__title">5 secretos para mantener tu casa en orden y con estilo</h4>
+                      <p class="news-side-item__excerpt">¿Conoces la forma de tener tu casa en orden sin perder el estilo? Trucos prácticos de interiorismo diario.</p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </aside>
           </div>
 
-          <div class="image-row__item" onclick="openArticle(1, event)">
-            <div class="image-row__image-wrap">
-              <div class="image-row__image image-row__image--primary">
-                <img src="assets/1c1fcfb3c2fa41a58394493406e03029.jpg" alt="Homefullness" />
-              </div>
-            </div>
-            <span class="image-row__title">Homefullness: 5 consejos para lograrlo en nuestro hogar</span>
+          <!-- PARRILLA COMPLETA DE ARTÍCULOS Y COLUMNAS (LAS 9 ENTRADAS FILTRABLES) -->
+          <div class="news-feed-header">
+            <h3>Archivo Completo de Publicaciones & Columnas</h3>
+            <span id="newsCountLabel" style="font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--c-teal); font-weight:600;">Mostrando 9 artículos</span>
           </div>
 
-          <div class="image-row__item" onclick="openArticle(2, event)">
-            <div class="image-row__image-wrap">
-              <div class="image-row__image image-row__image--primary">
-                <img src="assets/30e03a_e9d2ab29434540b1b82782358a2ac19f~mv2.png" alt="8 cosas al remodelar" />
+          <div class="news-grid" id="newsGrid">
+            <!-- Card 1 (Post 1) -->
+            <article class="news-card" data-ncat="bienestar" onclick="openArticle(0, event)">
+              <div>
+                <div class="news-card__img">
+                  <span class="news-badge news-card__badge-pos">Bienestar & Ánimo</span>
+                  <img src="assets/30e03a_08e83306ee6a49d5aacf308cee795bcd~mv2.png" alt="Estado de ánimo y diseño interior" />
+                </div>
+                <div class="news-card__body">
+                  <div class="news-meta-line"><span>6 Oct 2023</span><span>•</span><span>7 min de lectura</span></div>
+                  <h4 class="news-card__title">¿Por qué el diseño interior influye directamente en nuestro estado de ánimo?</h4>
+                  <p class="news-card__excerpt">La forma en la que habitamos nuestros espacios es esencial para darnos cuenta cómo nos sentimos interior y exteriormente.</p>
+                </div>
               </div>
-            </div>
-            <span class="image-row__title">¿Vas a remodelar? 8 cosas que queremos que sepas</span>
+              <div class="news-card__footer">
+                <span>Por Pao Lozano</span>
+                <span style="color:var(--c-teal)">Leer noticia →</span>
+              </div>
+            </article>
+
+            <!-- Card 2 (Post 2) -->
+            <article class="news-card" data-ncat="bienestar" onclick="openArticle(1, event)">
+              <div>
+                <div class="news-card__img">
+                  <span class="news-badge news-badge--green news-card__badge-pos">Homefullness</span>
+                  <img src="assets/1c1fcfb3c2fa41a58394493406e03029.jpg" alt="Homefullness" />
+                </div>
+                <div class="news-card__body">
+                  <div class="news-meta-line"><span>19 Ene 2022</span><span>•</span><span>3 min de lectura</span></div>
+                  <h4 class="news-card__title">Homefullness, una tendencia que marcará nuestro hogar. Aquí, 5 consejos para lograrlo.</h4>
+                  <p class="news-card__excerpt">La importancia que tiene nuestro hogar como refugio de paz, confort sensorial y tranquilidad para toda la familia.</p>
+                </div>
+              </div>
+              <div class="news-card__footer">
+                <span>Por Pao Lozano</span>
+                <span style="color:var(--c-teal)">Leer noticia →</span>
+              </div>
+            </article>
+
+            <!-- Card 3 (Post 3) -->
+            <article class="news-card" data-ncat="remodelacion" onclick="openArticle(2, event)">
+              <div>
+                <div class="news-card__img">
+                  <span class="news-badge news-badge--mahogany news-card__badge-pos">Remodelación</span>
+                  <img src="assets/30e03a_e9d2ab29434540b1b82782358a2ac19f~mv2.png" alt="8 cosas al remodelar" />
+                </div>
+                <div class="news-card__body">
+                  <div class="news-meta-line"><span>9 Jul 2021</span><span>•</span><span>5 min de lectura</span></div>
+                  <h4 class="news-card__title">¿Vas a remodelar? 8 cosas que queremos que sepas a la hora de remodelar tus espacios</h4>
+                  <p class="news-card__excerpt">Todo lo que un arquitecto y un ingeniero civil quieren que tengas claro en planificación, tiempos y obra.</p>
+                </div>
+              </div>
+              <div class="news-card__footer">
+                <span>Por Pao Lozano</span>
+                <span style="color:var(--c-teal)">Leer noticia →</span>
+              </div>
+            </article>
+
+            <!-- Card 4 (Post 4) -->
+            <article class="news-card" data-ncat="decoracion" onclick="openArticle(3, event)">
+              <div>
+                <div class="news-card__img">
+                  <span class="news-badge news-badge--purple news-card__badge-pos">DIY & Orden</span>
+                  <img src="assets/30e03a_ad0c3e85bc364aa289de0453059f6917~mv2.png" alt="5 secretos orden" />
+                </div>
+                <div class="news-card__body">
+                  <div class="news-meta-line"><span>13 Ene 2021</span><span>•</span><span>3 min de lectura</span></div>
+                  <h4 class="news-card__title">5 secretos para mantener tu casa en orden y con estilo</h4>
+                  <p class="news-card__excerpt">Orden y limpieza son palabras que a veces dan dolor de cabeza: descubre cómo lograr armonía visual sin perder estilo.</p>
+                </div>
+              </div>
+              <div class="news-card__footer">
+                <span>Por Pao Lozano</span>
+                <span style="color:var(--c-teal)">Leer noticia →</span>
+              </div>
+            </article>
+
+            <!-- Card 5 (Post 5) -->
+            <article class="news-card" data-ncat="bienestar" onclick="openArticle(4, event)">
+              <div>
+                <div class="news-card__img">
+                  <span class="news-badge news-card__badge-pos">Psicología del Color</span>
+                  <img src="assets/30e03a_6847402d87124ba5b72b0de6a271dd80~mv2.png" alt="Espacios relajantes" />
+                </div>
+                <div class="news-card__body">
+                  <div class="news-meta-line"><span>13 May 2020</span><span>•</span><span>5 min de lectura</span></div>
+                  <h4 class="news-card__title">El secreto del diseño interior para espacios relajantes: Colores y armonía</h4>
+                  <p class="news-card__excerpt">Cómo elegir paletas cromáticas inspiradas en la naturaleza para reducir el estrés y llenar de calma tus habitaciones.</p>
+                </div>
+              </div>
+              <div class="news-card__footer">
+                <span>Por Pao Lozano</span>
+                <span style="color:var(--c-teal)">Leer noticia →</span>
+              </div>
+            </article>
+
+            <!-- Card 6 (Post 6) -->
+            <article class="news-card" data-ncat="decoracion" onclick="openArticle(5, event)">
+              <div>
+                <div class="news-card__img">
+                  <span class="news-badge news-badge--purple news-card__badge-pos">Diseño Interior</span>
+                  <img src="assets/30e03a_eb00f1c4a30c455cbec87fe40dabc711~mv2.png" alt="El arte de crear un hogar" />
+                </div>
+                <div class="news-card__body">
+                  <div class="news-meta-line"><span>20 Nov 2019</span><span>•</span><span>7 min de lectura</span></div>
+                  <h4 class="news-card__title">El arte de crear un hogar a través del diseño de interiores</h4>
+                  <p class="news-card__excerpt">Transformar una casa o apartamento vacío en un verdadero hogar que refleje tus memorias, viajes y personalidad.</p>
+                </div>
+              </div>
+              <div class="news-card__footer">
+                <span>Por Pao Lozano</span>
+                <span style="color:var(--c-teal)">Leer noticia →</span>
+              </div>
+            </article>
+
+            <!-- Card 7 (Post 7) -->
+            <article class="news-card" data-ncat="remodelacion" onclick="openArticle(6, event)">
+              <div>
+                <div class="news-card__img">
+                  <span class="news-badge news-card__badge-pos">Renovación</span>
+                  <img src="assets/30e03a_066e69607b7b438abe1db222c781e753~mv2.png" alt="5 consejos para renovar tu casa" />
+                </div>
+                <div class="news-card__body">
+                  <div class="news-meta-line"><span>2 Nov 2019</span><span>•</span><span>7 min de lectura</span></div>
+                  <h4 class="news-card__title">5 consejos que te pueden servir a la hora de renovar tu casa</h4>
+                  <p class="news-card__excerpt">Guía práctica para renovar tus espacios a través de la iluminación, el color, los textiles y la distribución sin obra pesada.</p>
+                </div>
+              </div>
+              <div class="news-card__footer">
+                <span>Por Pao Lozano</span>
+                <span style="color:var(--c-teal)">Leer noticia →</span>
+              </div>
+            </article>
+
+            <!-- Card 8 (Post 8) -->
+            <article class="news-card" data-ncat="decoracion" onclick="openArticle(7, event)">
+              <div>
+                <div class="news-card__img">
+                  <span class="news-badge news-badge--purple news-card__badge-pos">Decoración & Styling</span>
+                  <img src="assets/30e03a_522eafe2c90e4bea94d0534df9b0b835~mv2.png" alt="Habitación de tus sueños" />
+                </div>
+                <div class="news-card__body">
+                  <div class="news-meta-line"><span>13 Oct 2019</span><span>•</span><span>9 min de lectura</span></div>
+                  <h4 class="news-card__title">Trucos para decorar la habitación de tus sueños</h4>
+                  <p class="news-card__excerpt">Proporción de mobiliario, ropa de cama, texturas táctiles e iluminación cálida para lograr un dormitorio de revista.</p>
+                </div>
+              </div>
+              <div class="news-card__footer">
+                <span>Por Pao Lozano</span>
+                <span style="color:var(--c-teal)">Leer noticia →</span>
+              </div>
+            </article>
+
+            <!-- Card 9 (Post 9) -->
+            <article class="news-card" data-ncat="bienestar" onclick="openArticle(8, event)">
+              <div>
+                <div class="news-card__img">
+                  <span class="news-badge news-badge--lime news-card__badge-pos">5 Sentidos</span>
+                  <img src="assets/30e03a_5ad2f83f3e2f47bd8ab627720e88d249~mv2.png" alt="Recinto para los sentidos" />
+                </div>
+                <div class="news-card__body">
+                  <div class="news-meta-line"><span>1 Oct 2019</span><span>•</span><span>9 min de lectura</span></div>
+                  <h4 class="news-card__title">Convierte tu casa en un recinto para los sentidos</h4>
+                  <p class="news-card__excerpt">El manifiesto fundacional de Look and Feel: cómo estimular vista, tacto, olfato, oído y gusto en el diseño de tu hogar.</p>
+                </div>
+              </div>
+              <div class="news-card__footer">
+                <span>Por Pao Lozano</span>
+                <span style="color:var(--c-teal)">Leer noticia →</span>
+              </div>
+            </article>
           </div>
 
-          <div class="image-row__item" onclick="openArticle(3, event)">
-            <div class="image-row__image-wrap">
-              <div class="image-row__image image-row__image--primary">
-                <img src="assets/30e03a_ad0c3e85bc364aa289de0453059f6917~mv2.png" alt="5 secretos orden" />
-              </div>
-            </div>
-            <span class="image-row__title">5 secretos para mantener tu casa en orden y con estilo</span>
-          </div>
-
-          <div class="image-row__item" onclick="openArticle(4, event)">
-            <div class="image-row__image-wrap">
-              <div class="image-row__image image-row__image--primary">
-                <img src="assets/30e03a_6847402d87124ba5b72b0de6a271dd80~mv2.png" alt="Espacios relajantes" />
-              </div>
-            </div>
-            <span class="image-row__title">El secreto del diseño interior para espacios relajantes</span>
-          </div>
-
-          <div class="image-row__item" onclick="openArticle(5, event)">
-            <div class="image-row__image-wrap">
-              <div class="image-row__image image-row__image--primary">
-                <img src="assets/30e03a_eb00f1c4a30c455cbec87fe40dabc711~mv2.png" alt="El arte de crear un hogar" />
-              </div>
-            </div>
-            <span class="image-row__title">El arte de crear un hogar a través del diseño de interiores</span>
-          </div>
-
-          <div class="image-row__item" onclick="openArticle(6, event)">
-            <div class="image-row__image-wrap">
-              <div class="image-row__image image-row__image--primary">
-                <img src="assets/30e03a_066e69607b7b438abe1db222c781e753~mv2.png" alt="5 consejos renovar" />
-              </div>
-            </div>
-            <span class="image-row__title">5 consejos que te pueden servir a la hora de renovar tu casa</span>
-          </div>
-
-          <div class="image-row__item" onclick="openArticle(7, event)">
-            <div class="image-row__image-wrap">
-              <div class="image-row__image image-row__image--primary">
-                <img src="assets/30e03a_522eafe2c90e4bea94d0534df9b0b835~mv2.png" alt="Habitación de tus sueños" />
-              </div>
-            </div>
-            <span class="image-row__title">Trucos para decorar la habitación de tus sueños</span>
-          </div>
-
-          <div class="image-row__item" onclick="openArticle(8, event)">
-            <div class="image-row__image-wrap">
-              <div class="image-row__image image-row__image--primary">
-                <img src="assets/30e03a_5ad2f83f3e2f47bd8ab627720e88d249~mv2.png" alt="Recinto para los sentidos" />
-              </div>
-            </div>
-            <span class="image-row__title">Convierte tu casa en un recinto para los sentidos</span>
-          </div>
         </div>
       </section>
 
@@ -1732,6 +2351,41 @@
       document.getElementById('drawerService').value = serviceName;
       document.querySelectorAll('.ashby-pill').forEach(p => p.classList.remove('active'));
       if (btn) btn.classList.add('active');
+    }
+
+    
+    function filterNews(cat, btn) {
+      document.querySelectorAll('.news-cat-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      const heroBlock = document.getElementById('newsHeroBlock');
+      if (heroBlock) {
+        heroBlock.style.display = (cat === 'all') ? 'grid' : 'none';
+      }
+      let visible = 0;
+      document.querySelectorAll('#newsGrid .news-card').forEach(card => {
+        const match = (cat === 'all' || card.dataset.ncat === cat);
+        card.style.display = match ? 'flex' : 'none';
+        if (match) visible++;
+      });
+      const lbl = document.getElementById('newsCountLabel');
+      if (lbl) lbl.textContent = `Mostrando ${visible} artículo${visible === 1 ? '' : 's'}`;
+    }
+
+    function searchNews(query) {
+      const q = (query || '').trim().toLowerCase();
+      const heroBlock = document.getElementById('newsHeroBlock');
+      if (heroBlock) {
+        heroBlock.style.display = (q === '') ? 'grid' : 'none';
+      }
+      let visible = 0;
+      document.querySelectorAll('#newsGrid .news-card').forEach(card => {
+        const text = card.textContent.toLowerCase();
+        const match = text.includes(q);
+        card.style.display = match ? 'flex' : 'none';
+        if (match) visible++;
+      });
+      const lbl = document.getElementById('newsCountLabel');
+      if (lbl) lbl.textContent = `Mostrando ${visible} artículo${visible === 1 ? '' : 's'}`;
     }
 
     function openArticle(idx, e) {
